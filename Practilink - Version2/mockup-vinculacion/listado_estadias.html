@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Estadías - Practi Link</title>
+   
+</head>
+<body>
+    <div class="header">
+        <div class="logo"><div class="menu-icon"><span></span><span></span><span></span></div><span>Practi Link</span></div>
+        <div class="user-info"><div class="user-icon">👤</div><span>vinculacion@utt.edu.mx</span></div>
+    </div>
+    <div class="sidebar">
+        <a href="dashboard.html" class="sidebar-item">Panel administrativo</a>
+        <a href="gestion_periodos.html" class="sidebar-item">Gestión de periodos de estadías</a>
+        <a href="validacion_empresas.html" class="sidebar-item">Validación de empresas</a>
+        <a href="gestion_vacantes.html" class="sidebar-item">Publicación de vacantes</a>
+        <a href="revision_tesinas.html" class="sidebar-item">Revisión de tesinas</a>
+        <a href="control_estadias.html" class="sidebar-item active">Control general de estadías</a>
+        <a href="notificaciones.html" class="sidebar-item">Reportes de seguimiento</a>
+        <a href="gestion_cuentas.html" class="sidebar-item">Gestión de cuentas</a>
+    </div>
+    <div class="main-content">
+        <h1 class="page-title">Listado de Estadías</h1>
+
+        <div class="stats-container">
+            <div class="stat-card"><div class="stat-number">142</div><div class="stat-label">Activas</div></div>
+            <div class="stat-card"><div class="stat-number">23</div><div class="stat-label">Pendientes</div></div>
+            <div class="stat-card"><div class="stat-number">89</div><div class="stat-label">Finalizadas</div></div>
+            <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">Rechazadas</div></div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active">Todas (260)</button>
+            <button class="tab">Activas (142)</button>
+            <button class="tab">Pendientes (23)</button>
+            <button class="tab">Finalizadas (89)</button>
+            <button class="tab">Rechazadas (6)</button>
+        </div>
+
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" placeholder="Buscar alumno o empresa...">
+                <span class="search-icon">🔍</span>
+            </div>
+            <select class="filter-select">
+                <option>Todos los periodos</option>
+                <option>Feb – Jun 2026</option>
+                <option>Ago – Dic 2025</option>
+            </select>
+            <select class="filter-select">
+                <option>Todas las carreras</option>
+                <option>DSM</option>
+                <option>IA</option>
+                <option>MKT</option>
+            </select>
+            <select class="filter-select">
+                <option>Todos los tutores</option>
+                <option>Mtra. Ana Pineda</option>
+                <option>Mtro. Juan Pérez</option>
+            </select>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Alumno</th>
+                        <th>Empresa</th>
+                        <th>Tutor académico</th>
+                        <th>Periodo</th>
+                        <th>Carrera</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div class="user-cell"><div class="avatar">CR</div><div><div class="u-name">Carlos Ramírez López</div><div class="u-sub">240123</div></div></div></td>
+                        <td>TechInnovate Solutions</td>
+                        <td>Mtra. Ana Pineda</td>
+                        <td>Feb – Jun 2026</td>
+                        <td>DSM</td>
+                        <td><span class="status-badge s-active"><span class="status-dot"></span>Activa</span></td>
+                        <td><button class="btn-sm" onclick="alert('Ver detalle de estadía')">Ver detalle</button></td>
+                    </tr>
+                    <tr>
+                        <td><div class="user-cell"><div class="avatar" style="background:#6b21a8">SG</div><div><div class="u-name">Sofía González Ruiz</div><div class="u-sub">240145</div></div></div></td>
+                        <td>DataBridge Analytics</td>
+                        <td>Mtro. Juan Pérez</td>
+                        <td>Feb – Jun 2026</td>
+                        <td>DSM</td>
+                        <td><span class="status-badge s-pending"><span class="status-dot"></span>Pendiente</span></td>
+                        <td><button class="btn-sm" onclick="alert('Ver detalle de estadía')">Ver detalle</button></td>
+                    </tr>
+                    <tr>
+                        <td><div class="user-cell"><div class="avatar" style="background:#92400e">LM</div><div><div class="u-name">Luis Morales Vega</div><div class="u-sub">240198</div></div></div></td>
+                        <td>CloudNet Systems</td>
+                        <td>Mtra. Ana Pineda</td>
+                        <td>Feb – Jun 2026</td>
+                        <td>IA</td>
+                        <td><span class="status-badge s-active"><span class="status-dot"></span>Activa</span></td>
+                        <td><button class="btn-sm" onclick="alert('Ver detalle de estadía')">Ver detalle</button></td>
+                    </tr>
+                    <tr>
+                        <td><div class="user-cell"><div class="avatar" style="background:#065f46">MP</div><div><div class="u-name">María Pérez Soto</div><div class="u-sub">230087</div></div></div></td>
+                        <td>SecureData Corp</td>
+                        <td>Mtro. Juan Pérez</td>
+                        <td>Ago – Dic 2025</td>
+                        <td>DSM</td>
+                        <td><span class="status-badge s-finished"><span class="status-dot"></span>Finalizada</span></td>
+                        <td><button class="btn-sm" onclick="alert('Ver detalle de estadía')">Ver detalle</button></td>
+                    </tr>
+                    <tr>
+                        <td><div class="user-cell"><div class="avatar" style="background:#dc3545">JR</div><div><div class="u-name">Jorge Reyes Torres</div><div class="u-sub">240211</div></div></div></td>
+                        <td>MobileSoft Studios</td>
+                        <td>Mtra. Ana Pineda</td>
+                        <td>Feb – Jun 2026</td>
+                        <td>DSM</td>
+                        <td><span class="status-badge s-rejected"><span class="status-dot"></span>Rechazada</span></td>
+                        <td><button class="btn-sm" onclick="alert('Ver detalle de estadía')">Ver detalle</button></td>
+                    </tr>
+                    <tr>
+                        <td><div class="user-cell"><div class="avatar" style="background:#1a56db">PH</div><div><div class="u-name">Patricia Herrera Gil</div><div class="u-sub">240302</div></div></div></td>
+                        <td>AI Innovators Lab</td>
+                        <td>Mtro. Juan Pérez</td>
+                        <td>Feb – Jun 2026</td>
+                        <td>IA</td>
+                        <td><span class="status-badge s-active"><span class="status-dot"></span>Activa</span></td>
+                        <td><button class="btn-sm" onclick="alert('Ver detalle de estadía')">Ver detalle</button></td>
+                    </tr>
+                    <tr>
+                        <td><div class="user-cell"><div class="avatar" style="background:#aaa">AF</div><div><div class="u-name">Andrés Flores Meza</div><div class="u-sub">230156</div></div></div></td>
+                        <td>TechInnovate Solutions</td>
+                        <td>Mtra. Ana Pineda</td>
+                        <td>Ago – Dic 2025</td>
+                        <td>DSM</td>
+                        <td><span class="status-badge s-finished"><span class="status-dot"></span>Finalizada</span></td>
+                        <td><button class="btn-sm" onclick="alert('Ver detalle de estadía')">Ver detalle</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pagination">
+                <span>Mostrando 1–7 de 260 estadías</span>
+                <div class="pagination-btns">
+                    <button class="page-btn">‹</button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">›</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.tab').forEach(tab => { tab.addEventListener('click', function() { document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); this.classList.add('active'); }); });
+        document.querySelectorAll('.sidebar-item').forEach(item => { item.addEventListener('click', function() { document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active')); this.classList.add('active'); }); });
+    </script>
+</body>
+</html>

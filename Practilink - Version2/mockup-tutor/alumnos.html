@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PractiLink - Inicio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/practilink.css">
+  <link rel="stylesheet" href="tutor.css">
+</head>
+<body class="tutor-page">
+  <!-- skip to main content for keyboard users -->
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
+  <div id="layout-root"></div>
+
+  <main class="main-content" id="main-content" tabindex="-1" aria-labelledby="welcomeTitle">
+    <section class="welcome-section">
+      <h1 id="welcomeTitle">Bienvenida, MCA. Trejo Medina</h1>
+      <p>Grupo asignado: 6°B <strong>TSU en Tecnologias de la Informacion - Desarrollo de Software Multiplataforma</strong></p>
+    </section>
+
+    <div class="period-banner">
+      <div class="period-item"><span><strong>Periodo:</strong> Septiembre - Diciembre 2026</span></div>
+      <div class="period-divider"></div>
+      <div class="period-item"><span><strong>Duracion:</strong> 4 meses</span></div>
+      <div class="period-divider"></div>
+      <div class="period-item"><span><strong>Grupo:</strong> 7°B DSM</span></div>
+      <div class="period-divider"></div>
+      <div class="period-item"><span><strong>Alumnos:</strong> 22 asignados</span></div>
+    </div>
+
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon blue"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7H11V19H5V7Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 11H19V19H13V11Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="stat-info"><span class="stat-number">22</span><span class="stat-label">Alumnos Asignados</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon orange"><svg viewBox="0 0 24 24" fill="none"><path d="M6 18L10 6L14 18L18 10" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="stat-info"><span class="stat-number">6</span><span class="stat-label">Tesinas Pendientes</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green"><svg viewBox="0 0 24 24" fill="none"><path d="M6 13L10 17L18 7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="stat-info"><span class="stat-number">12</span><span class="stat-label">Tesinas Validadas</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon red"><svg viewBox="0 0 24 24" fill="none"><path d="M7 7L17 17" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 7L7 17" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="stat-info"><span class="stat-number">4</span><span class="stat-label">Con Observaciones</span></div>
+      </div>
+    </section>
+
+    <div class="section-header">
+      <h2 class="alumnos-title">Alumnos Asignados (22) - Grupo 7°B DSM</h2>
+      <div class="search-bar">
+        <label id="searchLabel" for="searchAlumno" class="visually-hidden">Buscar alumno</label>
+        <input type="text" placeholder="Buscar alumno..." aria-labelledby="searchLabel" id="searchAlumno" aria-describedby="searchCount">
+        <span id="searchCount" class="visually-hidden" aria-live="polite"></span>
+      </div>
+    </div>
+    <div class="table-container">
+      <table id="tablaAlumnos">
+        <caption>Listado de alumnos asignados al grupo</caption>
+        <thead>
+          <tr>
+            <th scope="col">Alumno</th>
+            <th scope="col">Empresa</th>
+            <th scope="col">No. Contacto</th>
+            <th scope="col">Documentacion</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><div class="student-cell"><div><div class="student-name">Valenzuela Plata Jesus Virginia</div><div class="student-id">Matricula: 0322103836</div></div></div></td><td>TechSolutions MX</td><td>(664) 123-4501</td><td><span class="badge badge-pendiente">Pendiente</span></td><td><div class="actions-cell"><button class="btn btn-primary">Ver Perfil</button><button class="btn btn-outline">Observaciones</button></div></td></tr>
+          <tr><td><div class="student-cell"><div><div class="student-name">García Ramirez Kerr</div><div class="student-id">Matricula: 0322103837</div></div></div></td><td>InnovaCode SA</td><td>(664) 123-4502</td><td><span class="badge badge-pendiente">Pendiente</span></td><td><div class="actions-cell"><button class="btn btn-primary">Ver Perfil</button><button class="btn btn-outline">Observaciones</button></div></td></tr>
+          <tr><td><div class="student-cell"><div><div class="student-name">Valenzuela Plata Jesus Virginia</div><div class="student-id">Matricula: 0322103837</div></div></div></td><td>SoftwarePro Tijuana</td><td>(664) 123-4503</td><td><span class="badge badge-validado">Completa</span></td><td><div class="actions-cell"><button class="btn btn-primary">Ver Perfil</button><button class="btn btn-outline">Observaciones</button></div></td></tr>
+          <tr><td><div class="student-cell"><div><div class="student-name">Valenzuela Plata Jesus Virginia</div><div class="student-id">Matricula: 0322103836</div></div></div></td><td>CloudNet Systems</td><td>(664) 123-4504</td><td><span class="badge badge-pendiente">Pendiente</span></td><td><div class="actions-cell"><button class="btn btn-primary">Ver Perfil</button><button class="btn btn-outline">Observaciones</button></div></td></tr>
+          <tr><td><div class="student-cell"><div><div class="student-name">Valenzuela Plata Jesus Virginia</div><div class="student-id">Matricula: 0322103836</div></div></div></td><td>Grupo Digital Baja</td><td>(664) 123-4505</td><td><span class="badge badge-validado">Completa</span></td><td><div class="actions-cell"><button class="btn btn-primary">Ver Perfil</button><button class="btn btn-outline">Observaciones</button></div></td></tr>
+          <tr><td><div class="student-cell"><div><div class="student-name">Valenzuela Plata Jesus Virginia</div><div class="student-id">Matricula: 0322103836</div></div></div></td><td>AppFactory MX</td><td>(664) 123-4506</td><td><span class="badge badge-pendiente">Pendiente</span></td><td><div class="actions-cell"><button class="btn btn-primary">Ver Perfil</button><button class="btn btn-outline">Observaciones</button></div></td></tr>
+          <tr><td><div class="student-cell"><div><div class="student-name">Valenzuela Plata Jesus Virginia</div><div class="student-id">Matricula: 0322103836</div></div></div></td><td>Manufactura del Norte</td><td>(664) 123-4507</td><td><span class="badge badge-validado">Completa</span></td><td><div class="actions-cell"><button class="btn btn-primary">Ver Perfil</button><button class="btn btn-outline">Observaciones</button></div></td></tr>
+          <tr><td><div class="student-cell"><div><div class="student-name">Valenzuela Plata Jesus Virginia</div><div class="student-id">Matricula: 0322103836</div></div></div></td><td>SolarTech Baja</td><td>(664) 123-4508</td><td><span class="badge badge-pendiente">Pendiente</span></td><td><div class="actions-cell"><button class="btn btn-primary">Ver Perfil</button><button class="btn btn-outline">Observaciones</button></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pagination">
+      <span class="pagination-info">Mostrando 1-8 de 22 alumnos</span>
+      <div class="pagination-btns">
+        <button disabled aria-disabled="true">&laquo; Anterior</button>
+        <button class="active" aria-current="page">1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>Siguiente &raquo;</button>
+      </div>
+    </div>
+  </main>
+
+  <button class="fab-accessibility" id="fabAccessibility" aria-label="Activar modo de alta visibilidad"><span id="fabLabel">Alta Visibilidad</span></button>
+
+  <script src="js/auth.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/mockup-tutor.js"></script>
+</body>
+</html>

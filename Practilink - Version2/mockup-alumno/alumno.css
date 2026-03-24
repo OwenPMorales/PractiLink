@@ -1,0 +1,629 @@
+/* Alumno module specific styles */
+
+body.alumno-page {
+  --alumno-sidebar-width: 280px;
+  background: radial-gradient(circle at top right, #fff 0%, #f6efe4 38%, #f8f7f5 100%);
+  color: #1f1f1f;
+}
+
+body.alumno-page .skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+}
+
+body.alumno-page .skip-link:focus {
+  left: 16px;
+  top: 12px;
+  z-index: 2000;
+  background: #fff;
+  color: #6a0f1f;
+  border: 1px solid #6a0f1f;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+body.alumno-page .sidebar {
+  background: linear-gradient(180deg, #2d0b14 0%, #1a070d 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+body.alumno-page .sidebar-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+body.alumno-page .logo-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.alumno-page .logo-icon img {
+  width: 84%;
+  height: 84%;
+  object-fit: contain;
+}
+
+body.alumno-page .logo-text h1,
+body.alumno-page .logo-text span {
+  color: #fff;
+}
+
+body.alumno-page .sidebar-nav .nav-item {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+body.alumno-page .sidebar-nav .nav-item svg {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+body.alumno-page .sidebar-nav .nav-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+body.alumno-page .sidebar-nav .nav-item:hover svg {
+  color: #fff;
+}
+
+body.alumno-page .sidebar-nav .nav-item.active {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-weight: 700;
+}
+
+body.alumno-page .sidebar-nav .nav-item.active svg {
+  color: #fff;
+}
+
+body.alumno-page .sidebar-nav .nav-badge {
+  background: #ef4444;
+  color: #fff;
+}
+
+body.alumno-page .sidebar-footer {
+  border-top-color: rgba(255, 255, 255, 0.14);
+}
+
+body.alumno-page .user-details h4 {
+  color: #fff;
+}
+
+body.alumno-page .user-details span {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+body.alumno-page .user-avatar {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+body.alumno-page .logout-btn {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+body.alumno-page .logout-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+body.alumno-page .main-content {
+  max-width: none;
+  padding: 26px 30px;
+}
+
+body.alumno-page .page-header h1 {
+  color: #2f1a1f;
+}
+
+body.alumno-page .card,
+body.alumno-page .info-card,
+body.alumno-page .progress-section,
+body.alumno-page .stat-card,
+body.alumno-page .timeline-section,
+body.alumno-page .activity-section {
+  border: 1px solid #eadfce;
+  box-shadow: 0 8px 24px rgba(28, 16, 16, 0.06);
+}
+
+body.alumno-page .info-card-icon {
+  background: #f7ecef;
+  color: #6a0f1f;
+}
+
+body.alumno-page .progress-header span {
+  color: #6a0f1f;
+}
+
+body.alumno-page .progress-fill {
+  background: linear-gradient(90deg, #6a0f1f 0%, #8b2a3f 100%);
+}
+
+body.alumno-page .stat-card-header {
+  color: #6a0f1f;
+}
+
+body.alumno-page .stat-card-value {
+  color: #2f1a1f;
+}
+
+body.alumno-page .timeline-marker.in-progress {
+  background: #8b2a3f;
+  box-shadow: 0 0 0 4px rgba(139, 42, 63, 0.22);
+}
+
+body.alumno-page .timeline-marker.pending {
+  background: #f5e3c7;
+  color: #8a5b10;
+}
+
+body.alumno-page .timeline-marker.blocked {
+  background: #efe4d7;
+  color: #7a6e65;
+}
+
+body.alumno-page .badge-in-progress {
+  background: #8b2a3f;
+}
+
+body.alumno-page .activity-item {
+  background: #fff;
+}
+
+body.alumno-page .activity-item:hover {
+  border-color: #d8bdc5;
+  box-shadow: 0 2px 8px rgba(106, 15, 31, 0.08);
+}
+
+body.alumno-page .activity-icon.comment {
+  background: #f5eaed;
+  color: #6a0f1f;
+}
+
+body.alumno-page .accessibility-btn {
+  background: #6a0f1f;
+}
+
+body.alumno-page .accessibility-btn:hover {
+  background: #8b2a3f;
+}
+
+body.alumno-page .alumno-module {
+  margin-top: 18px;
+  background: #fff;
+  border: 1px solid #eadfce;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(28, 16, 16, 0.06);
+}
+
+body.alumno-page .alumno-module-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+body.alumno-page .alumno-module-header h2 {
+  font-size: 1.12rem;
+  color: #2f1a1f;
+}
+
+body.alumno-page .alumno-module-sub {
+  font-size: 0.82rem;
+  color: #6f645b;
+}
+
+body.alumno-page .alumno-module input[type="search"] {
+  width: min(340px, 100%);
+  min-height: 40px;
+  border: 1px solid #decfbb;
+  border-radius: 10px;
+  padding: 0 12px;
+}
+
+body.alumno-page .form-group {
+  margin-bottom: 10px;
+}
+
+body.alumno-page .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #3f342f;
+}
+
+body.alumno-page .form-group input,
+body.alumno-page .form-group select,
+body.alumno-page .form-group textarea {
+  width: 100%;
+  border: 1px solid #decfbb;
+  border-radius: 10px;
+  padding: 9px 10px;
+  background: #fff;
+  font: inherit;
+}
+
+body.alumno-page .alumno-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+body.alumno-page .alumno-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+body.alumno-page .vacantes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+body.alumno-page .vacante-card {
+  border: 1px solid #eee2d4;
+  border-radius: 12px;
+  padding: 12px;
+  background: #fffdfa;
+  display: grid;
+  gap: 8px;
+}
+
+body.alumno-page .vacante-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+body.alumno-page .vacante-top h3 {
+  font-size: 0.96rem;
+}
+
+body.alumno-page .vacante-meta {
+  margin-top: 6px;
+  font-size: 0.82rem;
+  color: #6f645b;
+}
+
+body.alumno-page .vacante-text {
+  margin: 8px 0 12px;
+  color: #433833;
+  font-size: 0.9rem;
+}
+
+body.alumno-page .vacante-detail {
+  border: 1px dashed #d9c4b6;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fcf8f2;
+  margin-top: -2px;
+}
+
+body.alumno-page .vacante-detail p {
+  margin: 0 0 6px;
+  font-size: 0.86rem;
+  color: #4b3f38;
+}
+
+body.alumno-page .vacante-detail p:last-child {
+  margin-bottom: 0;
+}
+
+body.alumno-page .btn-vacante-detalle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+body.alumno-page .detalle-caret {
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
+}
+
+body.alumno-page .btn-vacante-detalle.open .detalle-caret {
+  transform: rotate(180deg);
+}
+
+body.alumno-page .alumno-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 780px;
+}
+
+body.alumno-page .alumno-table th,
+body.alumno-page .alumno-table td {
+  text-align: left;
+  padding: 11px 10px;
+  border-bottom: 1px solid #f2e8dc;
+}
+
+body.alumno-page .alumno-table th {
+  font-size: 0.82rem;
+  color: #6c6259;
+  text-transform: uppercase;
+}
+
+body.alumno-page .alumno-table input[type="file"] {
+  width: 100%;
+  font-size: 0.82rem;
+}
+
+body.alumno-page .notificaciones-list {
+  display: grid;
+  gap: 10px;
+}
+
+body.alumno-page .notificacion-item {
+  border: 1px solid #eee2d4;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #fff;
+}
+
+body.alumno-page .notificacion-item h4 {
+  margin: 0 0 4px;
+  font-size: 0.94rem;
+  color: #2f1a1f;
+}
+
+body.alumno-page .notificacion-item p {
+  margin: 0;
+  color: #6f645b;
+  font-size: 0.88rem;
+}
+
+body.alumno-page .anuncios-carousel {
+  margin-top: 6px;
+}
+
+body.alumno-page .carousel-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+body.alumno-page .carousel-track {
+  display: flex;
+  transition: transform 0.32s ease;
+}
+
+body.alumno-page .carousel-slide {
+  min-width: 100%;
+}
+
+body.alumno-page .carousel-card {
+  border: 1px solid #eadfce;
+  border-radius: 14px;
+  background: linear-gradient(165deg, #fff, #f7efe8);
+  padding: 16px 50px;
+}
+
+body.alumno-page .carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid #dfcfbd;
+  background: rgba(255, 255, 255, 0.95);
+  color: #6a0f1f;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+body.alumno-page .carousel-prev { left: 10px; }
+body.alumno-page .carousel-next { right: 10px; }
+
+body.alumno-page .carousel-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+}
+
+body.alumno-page .carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+body.alumno-page .carousel-indicator {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  border: 0;
+  background: #cfbcac;
+  cursor: pointer;
+}
+
+body.alumno-page .carousel-indicator.active {
+  background: #6a0f1f;
+}
+
+body.alumno-page .ver-todos-container {
+  margin-top: 10px;
+}
+
+body.alumno-page .foro-list-container {
+  margin-top: 10px;
+}
+
+body.alumno-page .foro-list {
+  display: grid;
+  gap: 10px;
+}
+
+body.alumno-page .foro-card {
+  border: 1px solid #eadfce;
+  border-radius: 12px;
+  background: #fff;
+  padding: 12px;
+}
+
+body.alumno-page .foro-card-title {
+  margin: 0 0 6px;
+  color: #2f1a1f;
+}
+
+body.alumno-page .foro-card-meta {
+  margin: 0 0 8px;
+  color: #6f645b;
+  font-size: 0.86rem;
+}
+
+body.alumno-page .foro-card-content {
+  margin: 0;
+  color: #403733;
+  line-height: 1.45;
+}
+
+body.alumno-page .documentos-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+body.alumno-page .badge-rechazada {
+  background: #fdebed;
+  color: #b91c1c;
+  border: 1px solid #f5c2c7;
+}
+
+body.alumno-page .seguimiento-highlight {
+  margin: 14px 0 18px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 12px;
+}
+
+body.alumno-page .periodo-calendar-card,
+body.alumno-page .empresa-resumen-card {
+  background: #fff;
+  border: 1px solid #eadfce;
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 8px 24px rgba(28, 16, 16, 0.06);
+}
+
+body.alumno-page .periodo-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  margin: 10px 0;
+}
+
+body.alumno-page .periodo-month {
+  border: 1px solid #eadfce;
+  border-radius: 10px;
+  padding: 10px 8px;
+  text-align: center;
+  background: #fffdfa;
+}
+
+body.alumno-page .periodo-month strong {
+  display: block;
+  font-size: 0.86rem;
+  color: #3f302f;
+}
+
+body.alumno-page .periodo-month span {
+  font-size: 0.76rem;
+  color: #6f645b;
+}
+
+body.alumno-page .periodo-month.active {
+  border-color: #8b2a3f;
+  background: #f5eaed;
+}
+
+body.alumno-page .periodo-month.current {
+  border-color: #6a0f1f;
+  background: #6a0f1f;
+}
+
+body.alumno-page .periodo-month.current strong,
+body.alumno-page .periodo-month.current span {
+  color: #fff;
+}
+
+body.alumno-page .periodo-events {
+  margin-top: 8px;
+  border-top: 1px dashed #d8c4b8;
+  padding-top: 8px;
+  font-size: 0.88rem;
+  color: #4b3f38;
+}
+
+body.alumno-page .empresa-resumen-card h3 {
+  margin: 4px 0 6px;
+  color: #2f1a1f;
+}
+
+body.alumno-page .empresa-resumen-text {
+  margin: 0 0 8px;
+  color: #5d514a;
+  font-size: 0.9rem;
+}
+
+body.alumno-page .empresa-mini-list p {
+  margin: 0 0 4px;
+  font-size: 0.86rem;
+  color: #4b3f38;
+}
+
+body.alumno-page .empresa-mini-list p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1200px) {
+  body.alumno-page .main-content {
+    padding: 22px;
+  }
+  body.alumno-page .vacantes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  body.alumno-page .main-content {
+    padding: 16px;
+  }
+  body.alumno-page .alumno-module-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  body.alumno-page .carousel-btn {
+    display: none;
+  }
+  body.alumno-page .carousel-card {
+    padding: 14px;
+  }
+  body.alumno-page .seguimiento-highlight {
+    grid-template-columns: 1fr;
+  }
+  body.alumno-page .documentos-layout {
+    grid-template-columns: 1fr;
+  }
+  body.alumno-page .periodo-calendar-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  body.alumno-page .alumno-form-row {
+    grid-template-columns: 1fr;
+  }
+  body.alumno-page .vacantes-grid {
+    grid-template-columns: 1fr;
+  }
+}

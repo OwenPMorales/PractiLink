@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PractiLink - Foro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/practilink.css">
+  <link rel="stylesheet" href="tutor.css">
+</head>
+<body class="tutor-page">
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
+  <div id="layout-root"></div>
+
+  <main class="main-content" id="main-content" tabindex="-1">
+    <div class="foro-section-header">
+      <h2>Foro - Anuncios para alumnos tutorados</h2>
+      <button type="button" class="btn btn-primary" id="btnNuevoAnuncio" aria-label="Publicar nuevo anuncio">Nuevo anuncio</button>
+    </div>
+    <p class="foro-intro">Publica comunicados y anuncios para que los alumnos de tu grupo asignado esten al tanto de fechas, requisitos y avisos importantes.</p>
+
+    <!-- Carousel de anuncios destacados -->
+    <div class="anuncios-carousel">
+      <div class="carousel-container">
+        <div class="carousel-track" id="carouselTrack">
+          <!-- Los anuncios del carousel se cargarán dinámicamente -->
+        </div>
+        <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Anuncio anterior">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Anuncio siguiente">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M9 18L15 12L9 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="carousel-indicators" id="carouselIndicators">
+        <!-- Los indicadores se generarán dinámicamente -->
+      </div>
+    </div>
+
+    <!-- Botón para ver todos los anuncios -->
+    <div class="ver-todos-container">
+      <button class="btn btn-outline" id="btnVerTodos">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 6H20M4 12H20M4 18H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Ver todos los anuncios
+      </button>
+    </div>
+
+    <!-- Lista completa de anuncios (inicialmente oculta) -->
+    <div class="foro-list-container" id="foroListContainer" hidden>
+      <div class="foro-list-header">
+        <h3>Todos los anuncios</h3>
+        <div class="foro-filters">
+          <button class="filter-btn active" data-filter="recientes">Más recientes</button>
+          <button class="filter-btn" data-filter="antiguos">Más antiguos</button>
+        </div>
+      </div>
+      <div class="foro-list" id="foroList">
+      <article class="foro-card">
+        <h3 class="foro-card-title">Entrega de reportes parciales</h3>
+        <p class="foro-card-meta">Publicado el 15 feb 2026 · MCA. Laura Trejo Medina</p>
+        <p class="foro-card-content">Recuerden enviar el reporte parcial del mes antes del 28 de febrero. Debe incluir avance en la empresa y avance de tesina. Subir al portal en la seccion Documentacion.</p>
+        <div>
+          <button type="button" class="btn btn-outline btn-eliminar-anuncio">Eliminar</button>
+        </div>
+      </article>
+      <article class="foro-card">
+        <h3 class="foro-card-title">Reunion de seguimiento</h3>
+        <p class="foro-card-meta">Publicado el 10 feb 2026 · MCA. Laura Trejo Medina</p>
+        <p class="foro-card-content">El proximo viernes 21 de febrero tendremos reunion grupal a las 10:00 am en classroom.</p>
+        <div class="foro-card-actions">
+          <button type="button" class="btn btn-outline btn-eliminar-anuncio">Eliminar</button>
+        </div>
+      </article>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="modalAnuncio" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true">
+      <div class="modal-header" id="modalAnuncioTitulo">Nuevo comunicado</div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="anuncioTitulo">Titulo del anuncio <span class="label-required">*Requerido*</span></label>
+          <input type="text" id="anuncioTitulo" placeholder="Ej: Fecha limite de entrega" aria-label="Titulo del anuncio">
+        </div>
+        <div class="form-group">
+          <label for="anuncioContenido">Mensaje</label>
+          <textarea id="anuncioContenido" placeholder="Escribe el contenido del anuncio para tus alumnos..." aria-label="Contenido del anuncio" rows="5"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" id="btnCancelarAnuncio">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="btnPublicarAnuncio">Publicar anuncio</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="fab-accessibility" id="fabAccessibility" aria-label="Activar modo de alta visibilidad"><span id="fabLabel">Alta Visibilidad</span></button>
+
+  <script src="js/auth.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/mockup-tutor.js"></script>
+  <script src="js/foro.js"></script>
+</body>
+</html>

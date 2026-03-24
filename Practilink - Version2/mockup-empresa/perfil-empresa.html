@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil de Empresa | Portal Estadías</title>
+
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../shared/practilink.css" />
+    <link rel="stylesheet" href="empresa.css" />
+  </head>
+
+  <body class="empresa-page">
+    <a class="skip-link" href="#contenidoPrincipal">Saltar al contenido principal</a>
+    <aside class="sidebar" aria-label="Navegación principal">
+      <div class="sidebar-brand">
+        <div class="brand-logo">
+          <img src="../LogoUTT.png" alt="Logo institucional UTT" />
+        </div>
+        <div class="brand-title">Portal Empresa</div>
+      </div>
+
+      <nav>
+        <a href="registro-empresa.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 3v18"/><path d="M3 12h18"/></svg>
+          Registro
+        </a>
+        <a href="perfil-empresa.html" class="active">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="7" r="4"/></svg>
+          Perfil
+        </a>
+        <a href="publicar-vacantes.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
+          Vacantes
+        </a>
+        <a href="postulaciones-alumnos.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Postulaciones
+        </a>
+        <a href="seguimiento-alumnos.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 14 3-3 3 2 4-5"/></svg>
+          Seguimiento
+        </a>
+        <a href="comunicacion.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Comunicación
+        </a>
+      </nav>
+    </aside>
+
+    <main class="main" id="contenidoPrincipal" tabindex="-1">
+      <div class="notice" id="noCompanyNotice" style="display:none;">
+        Aún no has registrado una empresa. Ve a la sección <strong>Registro</strong> para comenzar.
+      </div>
+
+      <div class="banner">
+        <div class="logo">ST</div>
+      </div>
+
+      <div class="profile-header">
+        <h1 id="companyName">Soluciones Tech S.A.</h1>
+        <p id="companyDescription">
+          Empresa del sector Informática especializada en desarrollo web y
+          móvil.
+        </p>
+        <p class="status-success" id="companyStatus">Perfil Activo ✔</p>
+      </div>
+
+      <div class="grid">
+        <div>
+          <div class="card">
+            <h3 class="section-title">Información General</h3>
+            <div class="info-item">
+              <span>RFC</span>
+              <span id="companyRFC">ABC123456XYZ</span>
+            </div>
+            <div class="info-item">
+              <span>Sector</span>
+              <span id="companySector">Tecnologías de la Información</span>
+            </div>
+            <div class="info-item">
+              <span>Tamaño de empresa</span>
+              <span id="companySize">50 - 100 empleados</span>
+            </div>
+            <div class="info-item">
+              <span>Ubicación</span>
+              <span id="companyLocation">Tijuana, Baja California</span>
+            </div>
+            <div class="info-item">
+              <span>Página Web</span>
+              <span id="companyWebsite">www.solucionestech.com</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="section-title">Descripción</h3>
+            <p style="font-size: 14px; color: var(--muted)">
+              Desarrollamos soluciones tecnológicas innovadoras enfocadas en el
+              sector empresarial. Brindamos mentoría técnica a estudiantes y
+              oportunidades reales de desarrollo profesional.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="section-title">Vacantes Publicadas</h3>
+            <p style="font-size: 14px">
+              Desarrollador Frontend <span class="status-success">Activa</span>
+            </p>
+            <p style="font-size: 14px">
+              Backend Jr <span class="status-warning">En revisión</span>
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <h3 class="section-title">Progreso del Perfil</h3>
+            <p style="font-size: 14px; color: var(--muted)">85% completado</p>
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+            <p style="font-size: 12px; color: var(--warning); margin-top: 8px">
+              Falta subir comprobante de domicilio.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="section-title">Contacto Principal</h3>
+            <div class="info-item">
+              <span>Nombre</span>
+              <span id="companyContactName">Lic. María González</span>
+            </div>
+            <div class="info-item">
+              <span>Correo</span>
+              <span id="companyContactEmail">rh@solucionestech.com</span>
+            </div>
+            <div class="info-item">
+              <span>Teléfono</span>
+              <span id="companyContactPhone">664 123 4567</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="section-title">Documentación Legal</h3>
+            <p style="font-size: 14px">
+              Acta constitutiva <span class="status-success">Validada</span>
+            </p>
+            <p style="font-size: 14px">
+              RFC <span class="status-success">Validado</span>
+            </p>
+            <p style="font-size: 14px">
+              Comprobante domicilio
+              <span class="status-warning">Pendiente</span>
+            </p>
+          </div>
+
+          <div class="buttons">
+            <button id="btnEditProfile" class="btn-primary" type="button">Editar Perfil</button>
+            <button id="btnDownloadInfo" class="btn-secondary" type="button">Descargar Información</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="modal-backdrop" id="profileModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.45); align-items:center; justify-content:center;">
+      <div style="background:white; border-radius:14px; padding:24px; width:420px; max-height:90vh; overflow:auto;">
+        <h3 style="margin-top:0;">Editar perfil</h3>
+        <div style="margin-bottom:12px;"><label style="font-size:13px;">Nombre</label><input id="editName" style="width:100%; padding:8px; margin-top:6px;" /></div>
+        <div style="margin-bottom:12px;"><label style="font-size:13px;">RFC</label><input id="editRFC" style="width:100%; padding:8px; margin-top:6px;" /></div>
+        <div style="margin-bottom:12px;"><label style="font-size:13px;">Correo</label><input id="editEmail" type="email" style="width:100%; padding:8px; margin-top:6px;" /></div>
+        <div style="margin-bottom:12px;"><label style="font-size:13px;">Sector</label><input id="editSector" style="width:100%; padding:8px; margin-top:6px;" /></div>
+        <div style="margin-bottom:12px;"><label style="font-size:13px;">Descripción</label><textarea id="editDescription" style="width:100%; padding:8px; margin-top:6px;" rows="3"></textarea></div>
+        <div style="margin-bottom:12px;"><label style="font-size:13px;">Contacto</label><input id="editContactName" style="width:100%; padding:8px; margin-top:6px;" placeholder="Nombre" /><input id="editContactEmail" type="email" style="width:100%; padding:8px; margin-top:6px;" placeholder="Correo" /><input id="editContactPhone" style="width:100%; padding:8px; margin-top:6px;" placeholder="Teléfono" /></div>
+        <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:16px;">
+          <button id="btnCancelEdit" style="border:none; background:#e5e7eb; padding:8px 14px; border-radius:8px; cursor:pointer;">Cancelar</button>
+          <button id="btnSaveEdit" style="border:none; background:#2563eb; color:white; padding:8px 14px; border-radius:8px; cursor:pointer;">Guardar</button>
+        </div>
+      </div>
+    </div>
+
+    <button class="fab-accessibility" data-pl-toggle="a11y" aria-label="Activar o desactivar alta visibilidad">
+      <span id="fabLabel">Alta Visibilidad</span>
+    </button>
+    <script src="../shared/practilink.js"></script>
+    <script src="js/empresa.js"></script>
+    <script>
+      function renderProfile() {
+        var company = window.Empresa.getCurrentCompany();
+        var notice = document.getElementById('noCompanyNotice');
+        var editBtn = document.getElementById('btnEditProfile');
+
+        if (!company) {
+          if (notice) notice.style.display = 'block';
+          if (editBtn) editBtn.disabled = true;
+
+          var placeholders = {
+            companyName: 'Empresa en blanco',
+            companyDescription: 'Registra tu empresa para ver aquí los detalles.',
+            companyRFC: '—',
+            companySector: '—',
+            companySize: '—',
+            companyLocation: '—',
+            companyWebsite: '—',
+            companyContactName: '—',
+            companyContactEmail: '—',
+            companyContactPhone: '—'
+          };
+
+          Object.entries(placeholders).forEach(function ([id, value]) {
+            var el = document.getElementById(id);
+            if (el) el.textContent = value;
+          });
+
+          return;
+        }
+
+        if (notice) notice.style.display = 'none';
+        if (editBtn) editBtn.disabled = false;
+
+        document.getElementById('companyName').textContent = company.name || '';
+        document.getElementById('companyDescription').textContent = company.description || '';
+        document.getElementById('companyRFC').textContent = company.rfc || '';
+        document.getElementById('companySector').textContent = company.sector || '';
+        document.getElementById('companySize').textContent = company.size || '—';
+        document.getElementById('companyLocation').textContent = company.location || '—';
+        document.getElementById('companyWebsite').textContent = company.website || '—';
+        document.getElementById('companyContactName').textContent = company.contactName || '—';
+        document.getElementById('companyContactEmail').textContent = company.contactEmail || '—';
+        document.getElementById('companyContactPhone').textContent = company.contactPhone || '—';
+
+        document.getElementById('editName').value = company.name || '';
+        document.getElementById('editRFC').value = company.rfc || '';
+        document.getElementById('editEmail').value = company.email || '';
+        document.getElementById('editSector').value = company.sector || '';
+        document.getElementById('editDescription').value = company.description || '';
+        document.getElementById('editContactName').value = company.contactName || '';
+        document.getElementById('editContactEmail').value = company.contactEmail || '';
+        document.getElementById('editContactPhone').value = company.contactPhone || '';
+      }
+
+      function openEditModal() {
+        document.getElementById('profileModal').style.display = 'flex';
+      }
+
+      function closeEditModal() {
+        document.getElementById('profileModal').style.display = 'none';
+      }
+
+      function saveProfile() {
+        var data = {
+          name: document.getElementById('editName').value.trim(),
+          rfc: document.getElementById('editRFC').value.trim(),
+          email: document.getElementById('editEmail').value.trim(),
+          sector: document.getElementById('editSector').value.trim(),
+          description: document.getElementById('editDescription').value.trim(),
+          contactName: document.getElementById('editContactName').value.trim(),
+          contactEmail: document.getElementById('editContactEmail').value.trim(),
+          contactPhone: document.getElementById('editContactPhone').value.trim()
+        };
+
+        var res = window.Empresa.updateCompany(data);
+        if (!res.ok) {
+          alert(res.error);
+          return;
+        }
+
+        renderProfile();
+        closeEditModal();
+        alert('Perfil actualizado correctamente.');
+      }
+
+      document.getElementById('btnEditProfile').addEventListener('click', openEditModal);
+      document.getElementById('btnCancelEdit').addEventListener('click', closeEditModal);
+      document.getElementById('btnSaveEdit').addEventListener('click', saveProfile);
+      document.getElementById('btnDownloadInfo').addEventListener('click', function () {
+        var company = window.Empresa.getCurrentCompany();
+        if (!company) return;
+        var content = 'Empresa: ' + company.name + '\nCorreo: ' + company.email + '\nRFC: ' + company.rfc + '\n';
+        window.Empresa.downloadPDF('datos-empresa.pdf', content);
+      });
+
+      renderProfile();
+    </script>
+  </body>
+</html>

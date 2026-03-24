@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificaciones - Practi Link</title>
+
+</head>
+<body>
+    <div class="header">
+        <div class="logo"><div class="menu-icon"><span></span><span></span><span></span></div><span>Practi Link</span></div>
+        <div class="user-info">
+            <div class="notif-bell">🔔<span class="notif-count">7</span></div>
+            <div class="user-icon">👤</div>
+            <span>vinculacion@utt.edu.mx</span>
+        </div>
+    </div>
+    <div class="sidebar">
+        <a href="dashboard.html" class="sidebar-item">Panel administrativo</a>
+        <a href="gestion_periodos.html" class="sidebar-item">Gestión de periodos de estadías</a>
+        <a href="validacion_empresas.html" class="sidebar-item">Validación de empresas</a>
+        <a href="gestion_vacantes.html" class="sidebar-item">Publicación de vacantes</a>
+        <a href="revision_tesinas.html" class="sidebar-item">Revisión de tesinas</a>
+        <a href="control_estadias.html" class="sidebar-item">Control general de estadías</a>
+        <a href="notificaciones.html" class="sidebar-item active">Reportes de seguimiento</a>
+        <a href="gestion_cuentas.html" class="sidebar-item">Gestión de cuentas</a>
+    </div>
+    <div class="main-content">
+        <div class="page-header">
+            <div class="page-title">Notificaciones</div>
+            <button class="btn-mark-all" onclick="markAllRead()">Marcar todo como leído</button>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active">Todas (18)</button>
+            <button class="tab">No leídas (7)</button>
+            <button class="tab">Empresas (5)</button>
+            <button class="tab">Tutores (4)</button>
+            <button class="tab">Alumnos (6)</button>
+            <button class="tab">Sistema (3)</button>
+        </div>
+
+        <div class="notif-container">
+            <!-- Hoy -->
+            <div class="notif-group-label">Hoy · 21 de febrero, 2026</div>
+
+            <div class="notif-item unread" onclick="markRead(this)">
+                <div class="unread-dot"></div>
+                <div class="notif-icon icon-empresa">🏢</div>
+                <div class="notif-content">
+                    <div class="notif-title">Nueva empresa registrada — TechInnovate Solutions</div>
+                    <div class="notif-body">La empresa TechInnovate Solutions completó su registro y está esperando validación por parte del área de vinculación para poder publicar vacantes.</div>
+                    <div class="notif-meta">
+                        <span class="notif-time">Hace 15 min</span>
+                        <span class="notif-tag tag-empresa">Empresa</span>
+                        <span class="notif-action" onclick="event.stopPropagation(); alert('Ir a validación de empresas')">→ Revisar empresa</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notif-item unread" onclick="markRead(this)">
+                <div class="unread-dot"></div>
+                <div class="notif-icon icon-alumno">🎓</div>
+                <div class="notif-content">
+                    <div class="notif-title">Alta de estadía subida — Carlos Ramírez López</div>
+                    <div class="notif-body">El alumno Carlos Ramírez López subió su alta de estadía para revisión. Documento pendiente de aprobación por vinculación.</div>
+                    <div class="notif-meta">
+                        <span class="notif-time">Hace 42 min</span>
+                        <span class="notif-tag tag-alumno">Alumno</span>
+                        <span class="notif-action" onclick="event.stopPropagation(); alert('Ver documento')">→ Ver documento</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notif-item unread" onclick="markRead(this)">
+                <div class="unread-dot"></div>
+                <div class="notif-icon icon-empresa">🏢</div>
+                <div class="notif-content">
+                    <div class="notif-title">Vacante publicada — DataBridge Analytics</div>
+                    <div class="notif-body">DataBridge Analytics publicó 2 nuevas vacantes: "Analista de Datos Junior" y "Diseñador UX/UI". Requieren aprobación antes de ser visibles para alumnos.</div>
+                    <div class="notif-meta">
+                        <span class="notif-time">Hace 2 hrs</span>
+                        <span class="notif-tag tag-empresa">Empresa</span>
+                        <span class="notif-action" onclick="event.stopPropagation(); alert('Ir a gestión de vacantes')">→ Revisar vacantes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notif-item unread" onclick="markRead(this)">
+                <div class="unread-dot"></div>
+                <div class="notif-icon icon-tutor">👩‍🏫</div>
+                <div class="notif-content">
+                    <div class="notif-title">Avance registrado — Mtra. Ana Pineda Cruz</div>
+                    <div class="notif-body">La tutora académica Ana Pineda registró avances para 3 alumnos: Carlos Ramírez, Luis Morales y Patricia Herrera. Los documentos están disponibles para revisión.</div>
+                    <div class="notif-meta">
+                        <span class="notif-time">Hace 3 hrs</span>
+                        <span class="notif-tag tag-tutor">Tutor</span>
+                        <span class="notif-action" onclick="event.stopPropagation(); alert('Ver avances')">→ Ver avances</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayer -->
+            <div class="notif-group-label">Ayer · 20 de febrero, 2026</div>
+
+            <div class="notif-item unread" onclick="markRead(this)">
+                <div class="unread-dot"></div>
+                <div class="notif-icon icon-alumno">🎓</div>
+                <div class="notif-content">
+                    <div class="notif-title">Tesina subida — Sofía González Ruiz</div>
+                    <div class="notif-body">La alumna Sofía González Ruiz subió la versión 2 de su tesina. Esta es una corrección al documento rechazado anteriormente por vinculación.</div>
+                    <div class="notif-meta">
+                        <span class="notif-time">Ayer, 4:15 PM</span>
+                        <span class="notif-tag tag-alumno">Alumno</span>
+                        <span class="notif-action" onclick="event.stopPropagation(); alert('Ver tesina')">→ Revisar tesina</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notif-item unread" onclick="markRead(this)">
+                <div class="unread-dot"></div>
+                <div class="notif-icon icon-empresa">🏢</div>
+                <div class="notif-content">
+                    <div class="notif-title">Postulación aceptada — MobileSoft Studios</div>
+                    <div class="notif-body">MobileSoft Studios aceptó la postulación de Jorge Reyes Torres para la vacante "Desarrollador Mobile Flutter". Se requiere asignación de tutor académico.</div>
+                    <div class="notif-meta">
+                        <span class="notif-time">Ayer, 2:30 PM</span>
+                        <span class="notif-tag tag-empresa">Empresa</span>
+                        <span class="notif-action" onclick="event.stopPropagation(); alert('Ver detalle de postulación')">→ Ver detalle</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notif-item" onclick="markRead(this)">
+                <div class="notif-icon icon-sistema">⚙️</div>
+                <div class="notif-content">
+                    <div class="notif-title">Periodo Feb – Jun 2026 activado</div>
+                    <div class="notif-body">El periodo de estadías profesionales Feb – Jun 2026 fue activado correctamente para las carreras DSM e IA. Los alumnos ya pueden consultar y postularse a vacantes.</div>
+                    <div class="notif-meta">
+                        <span class="notif-time">Ayer, 8:00 AM</span>
+                        <span class="notif-tag tag-sistema">Sistema</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Esta semana -->
+            <div class="notif-group-label">Esta semana</div>
+
+            <div class="notif-item" onclick="markRead(this)">
+                <div class="notif-icon icon-tutor">👩‍🏫</div>
+                <div class="notif-content">
+                    <div class="notif-title">Documento rechazado — Mtro. Juan Pérez Soto</div>
+                    <div class="notif-body">El tutor Juan Pérez rechazó el reporte de avance de Luis Morales Vega. Se dejó el siguiente comentario: "Faltan conclusiones del periodo. Por favor corregir antes del viernes."</div>
+                    <div class="notif-meta">
+                        <span class="notif-time">18 feb, 11:22 AM</span>
+                        <span class="notif-tag tag-tutor">Tutor</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notif-item" onclick="markRead(this)">
+                <div class="notif-icon icon-success">✅</div>
+                <div class="notif-content">
+                    <div class="notif-title">Empresa aprobada — CloudNet Systems</div>
+                    <div class="notif-body">La empresa CloudNet Systems fue aprobada como empresa receptora. Ya puede publicar vacantes y dar seguimiento a los alumnos asignados.</div>
+                    <div class="notif-meta">
+                        <span class="notif-time">17 feb, 3:45 PM</span>
+                        <span class="notif-tag tag-sistema">Sistema</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function() { document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); this.classList.add('active'); });
+        });
+        document.querySelectorAll('.sidebar-item').forEach(item => {
+            item.addEventListener('click', function() { document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active')); this.classList.add('active'); });
+        });
+        function markRead(el) {
+            el.classList.remove('unread');
+            const dot = el.querySelector('.unread-dot');
+            if (dot) dot.remove();
+        }
+        function markAllRead() {
+            document.querySelectorAll('.notif-item.unread').forEach(n => {
+                n.classList.remove('unread');
+                const dot = n.querySelector('.unread-dot');
+                if (dot) dot.remove();
+            });
+            document.querySelector('.notif-count').textContent = '0';
+        }
+    </script>
+</body>
+</html>

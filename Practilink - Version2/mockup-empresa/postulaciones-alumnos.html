@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Postulaciones | Portal Empresa</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../shared/practilink.css" />
+    <link rel="stylesheet" href="empresa.css" />
+  </head>
+
+  <body class="empresa-page">
+    <a class="skip-link" href="#contenidoPrincipal">Saltar al contenido principal</a>
+    <aside class="sidebar" aria-label="Navegación principal">
+      <div class="sidebar-brand">
+        <div class="brand-logo">
+          <img src="../LogoUTT.png" alt="Logo institucional UTT" />
+        </div>
+        <div class="brand-title">Portal Empresa</div>
+      </div>
+      <nav>
+        <a href="registro-empresa.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 3v18"/><path d="M3 12h18"/></svg>
+          Registro
+        </a>
+        <a href="perfil-empresa.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="7" r="4"/></svg>
+          Perfil
+        </a>
+        <a href="publicar-vacantes.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
+          Vacantes
+        </a>
+        <a href="postulaciones-alumnos.html" class="active">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Postulaciones
+        </a>
+        <a href="seguimiento-alumnos.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 14 3-3 3 2 4-5"/></svg>
+          Seguimiento
+        </a>
+        <a href="comunicacion.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Comunicación
+        </a>
+      </nav>
+    </aside>
+
+    <main class="main" id="contenidoPrincipal" tabindex="-1">
+      <div class="notice" id="noCompanyNotice" style="display:none;">
+        Registra una empresa para ver las postulaciones recibidas.
+      </div>
+
+      <h1>Postulaciones Recibidas</h1>
+      <p class="subtitle">
+        Revisa, acepta o rechaza las solicitudes enviadas por los alumnos.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="filters">
+            <input type="text" id="buscar" placeholder="Buscar alumno..." />
+            <select id="filtroEstado">
+              <option value="todos">Todos los estados</option>
+              <option value="pendiente">Pendiente</option>
+              <option value="aceptado">Aceptado</option>
+              <option value="rechazado">Rechazado</option>
+            </select>
+            <button class="btn-secondary" onclick="render()">Filtrar</button>
+            <button class="btn-primary" onclick="crearPostulacionEjemplo()">Simular postulación</button>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Alumno</th>
+                <th>Carrera</th>
+                <th>Vacante</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+
+            <tbody id="tabla"></tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3>Resumen</h3>
+          <p><strong>0</strong> postulaciones recibidas</p>
+          <p><span class="status status-pending">0 Pendiente</span></p>
+          <p><span class="status status-accepted">0 Aceptada</span></p>
+          <p><span class="status status-rejected">0 Rechazada</span></p>
+
+          <div class="help-box">
+            <strong>Flujo del proceso:</strong><br />
+            1. El alumno se postula.<br />
+            2. La empresa revisa su perfil.<br />
+            3. Se acepta o rechaza la solicitud.<br />
+            4. Si se acepta, inicia oficialmente la estadía.
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="modal-backdrop" id="pdfModal">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="pdfModalTitle">
+        <header>
+          <h3 id="pdfModalTitle">Perfil del postulante (CV)</h3>
+          <button type="button" class="btn-secondary" aria-label="Cerrar" onclick="cerrarPdfModal()">✕</button>
+        </header>
+        <div class="card" style="margin: 0; background: #faf8f4;">
+          <p id="pdfMeta" style="margin: 0 0 8px; color: #5f5a56;"></p>
+          <div class="cv-preview">
+            <div class="cv-head">
+              <div>
+                <h4 class="cv-name" id="cvName">Alumno</h4>
+                <p class="cv-role" id="cvRole">Postulante</p>
+              </div>
+              <span class="tag tag-muted" id="cvStatus">Pendiente</span>
+            </div>
+            <div class="cv-grid">
+              <p class="cv-item"><strong>Carrera:</strong> <span id="cvCareer">—</span></p>
+              <p class="cv-item"><strong>Semestre:</strong> <span id="cvSemester">—</span></p>
+              <p class="cv-item"><strong>Promedio:</strong> <span id="cvAverage">—</span></p>
+              <p class="cv-item"><strong>Vacante:</strong> <span id="cvVacancy">—</span></p>
+            </div>
+            <div class="cv-section">
+              <h4>Habilidades destacadas</h4>
+              <p id="cvSkills">—</p>
+            </div>
+            <div class="cv-section">
+              <h4>Experiencia / proyectos</h4>
+              <p id="cvProjects">—</p>
+            </div>
+            <div class="cv-section">
+              <h4>Extracto del PDF</h4>
+              <p id="pdfPreviewContent" style="white-space: pre-line;">—</p>
+            </div>
+          </div>
+        </div>
+        <div class="buttons" style="justify-content: flex-end;">
+          <button type="button" class="btn-success" id="btnAceptarDesdeModal">Aceptar</button>
+          <button type="button" class="btn-danger" id="btnRechazarDesdeModal">Rechazar</button>
+          <button type="button" class="btn-secondary" id="btnContactarDesdeModal">Comunicarse con alumno</button>
+          <button type="button" class="btn-secondary" onclick="cerrarPdfModal()">Cerrar</button>
+          <button type="button" class="btn-primary" id="btnDescargarModalPdf">Descargar PDF</button>
+        </div>
+      </div>
+    </div>
+
+    <button class="fab-accessibility" data-pl-toggle="a11y" aria-label="Activar o desactivar alta visibilidad">
+      <span id="fabLabel">Alta Visibilidad</span>
+    </button>
+    <script src="../shared/practilink.js"></script>
+    <script src="js/empresa.js"></script>
+    <script>
+      const buscar = document.getElementById("buscar");
+      const filtroEstado = document.getElementById("filtroEstado");
+      const tabla = document.getElementById("tabla");
+      const pdfModal = document.getElementById("pdfModal");
+      const pdfMeta = document.getElementById("pdfMeta");
+      const pdfPreviewContent = document.getElementById("pdfPreviewContent");
+      const btnDescargarModalPdf = document.getElementById("btnDescargarModalPdf");
+      const btnAceptarDesdeModal = document.getElementById("btnAceptarDesdeModal");
+      const btnRechazarDesdeModal = document.getElementById("btnRechazarDesdeModal");
+      const btnContactarDesdeModal = document.getElementById("btnContactarDesdeModal");
+      const cvName = document.getElementById("cvName");
+      const cvRole = document.getElementById("cvRole");
+      const cvStatus = document.getElementById("cvStatus");
+      const cvCareer = document.getElementById("cvCareer");
+      const cvSemester = document.getElementById("cvSemester");
+      const cvAverage = document.getElementById("cvAverage");
+      const cvVacancy = document.getElementById("cvVacancy");
+      const cvSkills = document.getElementById("cvSkills");
+      const cvProjects = document.getElementById("cvProjects");
+      let currentPdfAppId = null;
+
+      function getCompany() {
+        const company = window.Empresa.getCurrentCompany();
+        const notice = document.getElementById('noCompanyNotice');
+        if (!company) {
+          if (notice) notice.style.display = 'block';
+        } else {
+          if (notice) notice.style.display = 'none';
+        }
+        return company;
+      }
+
+      function getStatusLabel(status) {
+        if (status === 'aceptado') return { label: 'Aceptado', css: 'status-accepted' };
+        if (status === 'rechazado') return { label: 'Rechazado', css: 'status-rejected' };
+        return { label: 'Pendiente', css: 'status-pending' };
+      }
+
+      function renderResumen(apps) {
+        const total = apps.length;
+        const counts = apps.reduce(
+          (acc, app) => {
+            acc[app.status] = (acc[app.status] || 0) + 1;
+            return acc;
+          },
+          { pendiente: 0, aceptado: 0, rechazado: 0 }
+        );
+
+        const resumenCard = document.querySelector('.card + .card');
+        if (!resumenCard) return;
+        resumenCard.querySelector('p strong').textContent = total;
+        resumenCard.querySelector('p span.status-pending').textContent = `${counts.pendiente} Pendiente`;
+        resumenCard.querySelector('p span.status-accepted').textContent = `${counts.aceptado} Aceptada`;
+        resumenCard.querySelector('p span.status-rejected').textContent = `${counts.rechazado} Rechazada`;
+      }
+
+      function render() {
+        const company = getCompany();
+        const filtro = filtroEstado.value;
+        const texto = buscar.value.toLowerCase();
+
+        if (!company) {
+          tabla.innerHTML = '<tr><td colspan="5" style="color:#555;">Registra una empresa para ver las postulaciones.</td></tr>';
+          renderResumen([]);
+          return;
+        }
+
+        const apps = window.Empresa.getApplicationsByCompany(company.id);
+        const rows = apps
+          .filter((app) => {
+            const matchesText = app.studentName.toLowerCase().includes(texto);
+            const matchesStatus = filtro === 'todos' || app.status === filtro;
+            return matchesText && matchesStatus;
+          })
+          .map((app) => {
+            const vacancy = window.Empresa.getVacancyById(app.vacancyId) || { title: 'Vacante eliminada' };
+            const status = getStatusLabel(app.status);
+            return `
+              <tr data-estado="${app.status}" data-app-id="${app.id}">
+                <td>${app.studentName}</td>
+                <td>${app.career || '—'}</td>
+                <td>${vacancy.title}</td>
+                <td><span class="status ${status.css}">${status.label}</span></td>
+                <td>
+                  <div class="actions-inline">
+                    <button class="btn-primary btn-icon" onclick="verPerfil('${app.id}')" title="Ver perfil del alumno" aria-label="Ver perfil del alumno">👤</button>
+                    <button class="btn-success btn-icon" onclick="cambiarEstado('${app.id}', 'aceptado')" title="Aceptar postulación" aria-label="Aceptar postulación">✓</button>
+                    <button class="btn-danger btn-icon" onclick="cambiarEstado('${app.id}', 'rechazado')" title="Rechazar postulación" aria-label="Rechazar postulación">✕</button>
+                    <button class="btn-secondary btn-icon" onclick="contactarAlumno('${app.id}')" title="Comunicarse con alumno" aria-label="Comunicarse con alumno">💬</button>
+                    <button class="btn-secondary btn-icon" onclick="descargarCv('${app.id}')" title="Descargar CV en PDF" aria-label="Descargar CV en PDF">📄</button>
+                  </div>
+                </td>
+              </tr>
+            `;
+          });
+
+        tabla.innerHTML = rows.join('') || '<tr><td colspan="5" style="color:#555;">No hay postulaciones.</td></tr>';
+        renderResumen(apps);
+      }
+
+      function cambiarEstado(appId, nuevoEstado) {
+        window.Empresa.updateApplicationStatus(appId, nuevoEstado);
+        render();
+        if (nuevoEstado === 'aceptado') {
+          alert('Postulación aceptada ✔ Estadía iniciada');
+        }
+        if (nuevoEstado === 'rechazado') {
+          alert('Postulación rechazada ❌');
+        }
+      }
+
+      function verPerfil(appId) {
+        verPdf(appId);
+      }
+
+      function descargarCv(appId) {
+        const company = getCompany();
+        if (!company) return;
+        const apps = window.Empresa.getApplicationsByCompany(company.id);
+        const app = apps.find((a) => a.id === appId);
+        if (!app) return;
+        const vacancy = window.Empresa.getVacancyById(app.vacancyId);
+        const filename = `CV-${app.studentName.replace(/\s+/g, '_')}.pdf`;
+        const content = `CV de ${app.studentName}\nCarrera: ${app.career || '—'}\nVacante: ${vacancy?.title || '—'}\n\nComentarios:\n${app.notes || 'No hay notas.'}`;
+        window.Empresa.downloadPDF(filename, content);
+      }
+
+      function verPdf(appId) {
+        const company = getCompany();
+        if (!company) return;
+        const apps = window.Empresa.getApplicationsByCompany(company.id);
+        const app = apps.find((a) => a.id === appId);
+        if (!app) return;
+        const vacancy = window.Empresa.getVacancyById(app.vacancyId);
+
+        currentPdfAppId = appId;
+        const statusLabel = getStatusLabel(app.status);
+        pdfMeta.textContent = `Alumno: ${app.studentName} · Documento: CV de postulación (simulado)`;
+        cvName.textContent = app.studentName;
+        cvRole.textContent = `${app.career || 'Carrera no definida'} · ${app.email || 'correo@alumno.mx'}`;
+        cvStatus.textContent = statusLabel.label;
+        cvStatus.className = app.status === "aceptado" ? "tag tag-success" : "tag tag-muted";
+        cvCareer.textContent = app.career || "—";
+        cvSemester.textContent = app.semester || "—";
+        cvAverage.textContent = app.average || "—";
+        cvVacancy.textContent = vacancy?.title || "—";
+        cvSkills.textContent = app.skills || "Trabajo en equipo, comunicación y resolución de problemas.";
+        cvProjects.textContent = app.projects || "Sin proyectos especificados.";
+        pdfPreviewContent.textContent =
+          `Nombre del alumno: ${app.studentName}\n` +
+          `Carrera: ${app.career || '—'}\n` +
+          `Vacante solicitada: ${vacancy?.title || '—'}\n` +
+          `Estado de postulación: ${app.status || 'pendiente'}\n\n` +
+          `Extracto del documento:\n${app.notes || 'Sin observaciones registradas.'}`;
+        pdfModal.style.display = "flex";
+      }
+
+      function cerrarPdfModal() {
+        pdfModal.style.display = "none";
+      }
+
+      function crearPostulacionEjemplo() {
+        const company = getCompany();
+        if (!company) return;
+        const vacancies = window.Empresa.getVacanciesByCompany(company.id);
+        if (!vacancies.length) {
+          alert('Crea una vacante primero para simular postulaciones.');
+          return;
+        }
+        const vac = vacancies[0];
+        const nombre = `Alumno ${Math.floor(Math.random() * 1000)}`;
+        window.Empresa.addApplication({
+          studentName: nombre,
+          career: 'Ingeniería en Sistemas',
+          vacancyId: vac.id,
+          notes: 'Interesado en prácticas y con disponibilidad inmediata.'
+        });
+        render();
+      }
+
+      function contactarAlumno(appId) {
+        const company = getCompany();
+        if (!company) return;
+        const app = window.Empresa.getApplicationsByCompany(company.id).find((a) => a.id === appId);
+        if (!app) return;
+        alert(`Se abrió canal de comunicación con ${app.studentName} (${app.email || 'correo no disponible'}).`);
+      }
+
+      function seedDemoApplicants() {
+        let company = window.Empresa.getCurrentCompany();
+        if (!company) {
+          const companies = window.Empresa.getCompanies();
+          if (companies.length) {
+            window.Empresa.setCurrentCompany(companies[0].id);
+            company = window.Empresa.getCurrentCompany();
+          } else {
+            const res = window.Empresa.registerCompany({
+              name: "Empresa Demo UTT",
+              rfc: "DEM010203AAA",
+              email: "contacto@empresademo.mx",
+              sector: "Tecnologías de la Información",
+              description: "Empresa demo para visualización de postulaciones.",
+              contactName: "Mtra. Laura Méndez",
+              contactPhone: "6641234567",
+              location: "Tijuana, Baja California"
+            });
+            if (res.ok) company = res.company;
+          }
+        }
+        if (!company) return;
+
+        const notice = document.getElementById('noCompanyNotice');
+        if (notice) notice.style.display = 'none';
+
+        const existing = window.Empresa.getApplicationsByCompany(company.id);
+        if (existing.length > 0) return;
+
+        let vacantes = window.Empresa.getVacanciesByCompany(company.id);
+        if (!vacantes.length) {
+          window.Empresa.addVacancy({
+            title: "Soporte de Infraestructura TI",
+            duration: "4 meses",
+            modality: "Presencial",
+            location: "Tijuana, B.C.",
+            contact: "Ing. Laura Torres · ltorres@empresa.mx",
+            stipend: "4500",
+            schedule: "Lunes a viernes · 9:00 a 14:00",
+            activities: "Soporte técnico, tickets, documentación.",
+            requirements: "Conocimientos básicos de redes y hardware."
+          });
+          window.Empresa.addVacancy({
+            title: "QA Tester de Aplicaciones",
+            duration: "4 meses",
+            modality: "Híbrido",
+            location: "Tijuana, B.C.",
+            contact: "Mtro. Ivan Beltrán · ibeltran@empresa.mx",
+            stipend: "4200",
+            schedule: "Lunes a viernes · 8:30 a 13:30",
+            activities: "Pruebas funcionales y evidencias.",
+            requirements: "Base en pruebas de software."
+          });
+          vacantes = window.Empresa.getVacanciesByCompany(company.id);
+        }
+
+        const [vac1, vac2] = vacantes;
+        const demoApps = [
+          {
+            studentName: "Ana Sofía Márquez",
+            career: "Ing. en Desarrollo de Software",
+            vacancyId: vac1.id,
+            semester: "9no",
+            average: "9.4",
+            email: "anasofia.marquez@alumno.utt.mx",
+            skills: "JavaScript, React, soporte técnico, documentación.",
+            projects: "Sistema de tickets con dashboard de incidencias.",
+            notes: "Adjunta CV y carta de motivos. Disponible turno matutino."
+          },
+          {
+            studentName: "Luis Fernando Cota",
+            career: "Ing. en Sistemas Computacionales",
+            vacancyId: vac2.id,
+            semester: "8vo",
+            average: "8.9",
+            email: "luis.cota@alumno.utt.mx",
+            skills: "QA manual, casos de prueba, Jira, comunicación efectiva.",
+            projects: "Plan de pruebas para plataforma escolar web.",
+            notes: "Interesado en asegurar calidad de plataformas académicas."
+          },
+          {
+            studentName: "Mariana López Rivera",
+            career: "Ing. en Tecnologías de la Información",
+            vacancyId: vac1.id,
+            semester: "10mo",
+            average: "9.1",
+            email: "mariana.lopez@alumno.utt.mx",
+            skills: "Redes, mantenimiento preventivo, mesa de ayuda.",
+            projects: "Inventario de activos TI y automatización en Excel.",
+            notes: "Cuenta con certificación básica en redes."
+          }
+        ];
+
+        demoApps.forEach((app) => window.Empresa.addApplication(app));
+      }
+
+      buscar.addEventListener('input', render);
+      filtroEstado.addEventListener('change', render);
+      btnDescargarModalPdf.addEventListener('click', function () {
+        if (!currentPdfAppId) return;
+        descargarCv(currentPdfAppId);
+      });
+      btnAceptarDesdeModal.addEventListener('click', function () {
+        if (!currentPdfAppId) return;
+        cambiarEstado(currentPdfAppId, 'aceptado');
+        cerrarPdfModal();
+      });
+      btnRechazarDesdeModal.addEventListener('click', function () {
+        if (!currentPdfAppId) return;
+        cambiarEstado(currentPdfAppId, 'rechazado');
+        cerrarPdfModal();
+      });
+      btnContactarDesdeModal.addEventListener('click', function () {
+        if (!currentPdfAppId) return;
+        contactarAlumno(currentPdfAppId);
+      });
+      pdfModal.addEventListener('click', function (event) {
+        if (event.target === pdfModal) cerrarPdfModal();
+      });
+
+      seedDemoApplicants();
+      render();
+    </script>
+  </body>
+</html>

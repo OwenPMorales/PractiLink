@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Practi Link</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared/practilink.css">
+</head>
+<body class="pl-login">
+    <div class="login-container">
+        <div class="login-left">
+            <div class="brand-logo">Practi Link</div>
+            <div class="brand-divider"></div>
+            <div class="brand-sub">Sistema Integral de Gestión de Estadías Profesionales</div>
+            <div class="brand-divider"></div>
+            <div class="brand-inst">Universidad Tecnológica de Tijuana</div>
+        </div>
+        <div class="login-right">
+            <div class="login-title">Bienvenido</div>
+            <div class="login-subtitle">Inicia sesión con tu correo institucional</div>
+            <div class="form-group">
+                <label>Correo institucional</label>
+                <input id="loginEmail" type="email" placeholder="usuario@utt.edu.mx">
+            </div>
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input id="loginPassword" type="password" placeholder="••••••••">
+            </div>
+            <div class="form-group">
+                <label>Rol</label>
+                <select id="loginRole">
+                    <option value="tutor">Tutor académico</option>
+                    <option value="alumno">Alumno</option>
+                    <option value="vinculacion">Área de vinculación</option>
+                    <option value="empresa">Empresa</option>
+                </select>
+            </div>
+            <a class="forgot-link" onclick="document.getElementById('modalRecuperar').classList.add('open')">¿Olvidaste tu contraseña?</a>
+            <button class="btn-login" id="btnLogin">Iniciar sesión</button>
+            <p style="margin-top: 12px; font-size: 13px; color: #666;">¿No tienes cuenta? <a href="#" id="linkRegister" style="color: #2c5282; text-decoration: none;">Regístrate</a></p>
+            <div class="login-footer">© 2026 Practi Link · UTT</div>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="modalRecuperar" role="dialog" aria-modal="true" aria-labelledby="recoverTitle">
+        <div class="modal">
+            <div class="modal-title" id="recoverTitle">Recuperar contraseña</div>
+            <div class="modal-text">Ingresa tu correo institucional y te enviaremos un enlace para restablecer tu contraseña.</div>
+            <input id="recoverEmail" type="email" placeholder="usuario@utt.edu.mx">
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="document.getElementById('modalRecuperar').classList.remove('open')">Cancelar</button>
+                <button class="btn-send" id="btnRecover">Enviar enlace</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="modalRegistrarse" role="dialog" aria-modal="true" aria-labelledby="registerTitle">
+        <div class="modal">
+            <div class="modal-title" id="registerTitle">Registro de usuario</div>
+            <div class="modal-text">Crea tu cuenta con tu correo institucional.</div>
+            <div class="form-group">
+                <label>Nombre completo</label>
+                <input id="regName" type="text" placeholder="Nombre completo">
+            </div>
+            <div class="form-group">
+                <label>Correo institucional</label>
+                <input id="regEmail" type="email" placeholder="usuario@utt.edu.mx">
+            </div>
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input id="regPassword" type="password" placeholder="••••••••">
+            </div>
+            <div class="form-group">
+                <label>Rol</label>
+                <select id="regRole">
+                    <option value="alumno">Alumno</option>
+                    <option value="tutor">Tutor académico</option>
+                    <option value="vinculacion">Área de vinculación</option>
+                    <option value="empresa">Empresa</option>
+                </select>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="document.getElementById('modalRegistrarse').classList.remove('open')">Cancelar</button>
+                <button class="btn-send" id="btnRegister">Crear cuenta</button>
+            </div>
+        </div>
+    </div>
+    <button class="fab-accessibility" data-pl-toggle="a11y" aria-label="Activar o desactivar alta visibilidad">
+      <span id="fabLabel">Alta Visibilidad</span>
+    </button>
+  <script src="shared/practilink.js"></script>
+  <script src="mockup-tutor/js/auth.js"></script>
+  <script>
+    // Inicializa la base de datos de usuarios si aún no existe.
+    PLAuth.getUsers();
+
+    function redirectByRole(role) {
+      switch (role) {
+        case 'tutor':
+          return 'mockup-tutor/index.html';
+        case 'alumno':
+          return 'mockup-tutor/index.html';
+        case 'vinculacion':
+          return 'mockup-vinculacion/dashboard.html';
+        case 'empresa':
+          return 'mockup-empresa/publicacion_anuncios.html';
+        default:
+          return 'mockup-tutor/index.html';
+      }
+    }
+
+    document.getElementById('btnLogin').addEventListener('click', function () {
+      var email = document.getElementById('loginEmail').value;
+      var password = document.getElementById('loginPassword').value;
+      var role = document.getElementById('loginRole').value;
+      var result = PLAuth.login(email, password);
+      if (!result.ok) {
+        alert(result.error);
+        return;
+      }
+      if (result.user.role !== role) {
+        alert('El rol seleccionado no coincide con el rol del usuario.');
+        return;
+      }
+      window.location.href = redirectByRole(role);
+    });
+
+    document.getElementById('linkRegister').addEventListener('click', function (event) {
+      event.preventDefault();
+      document.getElementById('modalRegistrarse').classList.add('open');
+    });
+
+    document.getElementById('btnRegister').addEventListener('click', function () {
+      var name = document.getElementById('regName').value.trim();
+      var email = document.getElementById('regEmail').value.trim();
+      var password = document.getElementById('regPassword').value;
+      var role = document.getElementById('regRole').value;
+
+      var result = PLAuth.registerUser(email, password, role, name);
+      if (!result.ok) {
+        alert(result.error);
+        return;
+      }
+
+      alert('Cuenta creada correctamente. Ahora puedes iniciar sesión.');
+      document.getElementById('modalRegistrarse').classList.remove('open');
+    });
+
+    document.getElementById('btnRecover').addEventListener('click', function () {
+      var email = document.getElementById('recoverEmail').value;
+      var users = PLAuth.getUsers();
+      var user = users.find(function (u) { return u.email.toLowerCase() === (email || '').trim().toLowerCase(); });
+      if (!user) {
+        alert('No existe una cuenta con ese correo.');
+        return;
+      }
+      alert('Se ha enviado un enlace de recuperación al correo (simulado).');
+      document.getElementById('modalRecuperar').classList.remove('open');
+    });
+  </script>
+</body>
+</html>

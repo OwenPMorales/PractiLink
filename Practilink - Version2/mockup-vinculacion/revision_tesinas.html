@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisión de Tesinas - Practi Link</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/practilink.css">
+    <link rel="stylesheet" href="vinculacion.css">
+</head>
+<body class="vinculacion-page">
+    <a class="skip-link" href="#contenidoPrincipal">Saltar al contenido principal</a>
+
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo"><img src="../LogoUTT.png" alt="Logo institucional UTT"></div>
+            <div class="brand-title">PractiLink<span class="brand-sub">Vinculación UTT</span></div>
+        </div>
+        <a href="dashboard.html" class="sidebar-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 13h8V3H3z"/><path d="M13 21h8v-6h-8z"/><path d="M13 11h8V3h-8z"/><path d="M3 21h8v-6H3z"/></svg>Panel administrativo</a>
+        <a href="gestion_periodos.html" class="sidebar-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>Gestión de periodos</a>
+        <a href="validacion_empresas.html" class="sidebar-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 11h6"/><path d="M9 15h6"/></svg>Validación de empresas</a>
+        <a href="gestion_vacantes.html" class="sidebar-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>Gestión de vacantes</a>
+        <a href="revision_tesinas.html" class="sidebar-item active"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg>Revisión de tesinas</a>
+        <a href="control_estadias.html" class="sidebar-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 14 3-3 3 2 4-5"/></svg>Control de estadías</a>
+        <a href="gestion_cuentas.html" class="sidebar-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20a6 6 0 0 1 12 0"/></svg>Gestión de cuentas</a>
+        <div class="sidebar-profile">
+            <div class="sidebar-profile-avatar">VC</div>
+            <div>
+                <div class="sidebar-profile-name">Área Vinculación UTT</div>
+                <div class="sidebar-profile-role">vinculacion@utt.edu.mx</div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content" id="contenidoPrincipal" tabindex="-1">
+        <h1 class="page-title">Revisión de Tesinas / Altas de Estadía</h1>
+        <div class="stats-container">
+            <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">Tesinas pendientes</div></div>
+            <div class="stat-card"><div class="stat-number">5</div><div class="stat-label">Altas pendientes</div></div>
+            <div class="stat-card"><div class="stat-number">38</div><div class="stat-label">Aprobados</div></div>
+            <div class="stat-card"><div class="stat-number">4</div><div class="stat-label">Rechazados</div></div>
+        </div>
+        <div class="tabs">
+            <button class="tab active">Pendientes (11)</button>
+            <button class="tab">Aprobados (38)</button>
+            <button class="tab">Rechazados (4)</button>
+            <button class="tab">Todos (53)</button>
+        </div>
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" placeholder="Buscar alumno o documento...">
+            </div>
+            <select class="filter-select">
+                <option>Todos los tipos</option>
+                <option>Tesina</option>
+                <option>Alta de estadía</option>
+            </select>
+            <select class="filter-select">
+                <option>Todos los tutores</option>
+                <option>Mtra. Ana Pineda</option>
+                <option>Mtro. Juan Pérez</option>
+            </select>
+        </div>
+
+        <div class="doc-list">
+            <div class="doc-card">
+                <div class="doc-card-top">
+                    <div class="doc-info">
+                        <div class="doc-icon">📄</div>
+                        <div>
+                            <div class="doc-title">Tesina – Carlos Ramírez López</div>
+                            <div class="doc-type">Tipo: Tesina · Subido: 07/02/2026 · v1</div>
+                            <div class="doc-meta">
+                                <div class="doc-meta-item"><span class="doc-meta-label">Tutor: </span>Mtra. Ana Pineda</div>
+                                <div class="doc-meta-item"><span class="doc-meta-label">Empresa: </span>TechInnovate Solutions</div>
+                                <div class="doc-meta-item"><span class="doc-meta-label">Carrera: </span>DSM</div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="status-badge s-pending">Pendiente</span>
+                </div>
+                <div class="doc-body">
+                    <div class="doc-actions-row">
+                        <div class="comment-box">
+                            <label>Comentario para el alumno (opcional)</label>
+                            <textarea placeholder="Escribe una observación o retroalimentación..."></textarea>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-view" data-doc-title="Tesina – Carlos Ramírez López" data-doc-type="Tesina" data-doc-student="Carlos Ramírez López" data-doc-career="DSM" data-doc-company="TechInnovate Solutions" data-doc-version="v1" data-doc-tutor="Mtra. Ana Pineda" onclick="openTesinaViewer(this)">Ver PDF</button>
+                            <button class="btn btn-cancel" onclick="downloadTesinaPdf('Tesina – Carlos Ramírez López')">Descargar</button>
+                            <button class="btn btn-approve" onclick="confirm('¿Aprobar este documento?') && alert('Documento aprobado')">Aprobar</button>
+                            <button class="btn btn-reject" onclick="confirm('¿Rechazar este documento?') && alert('Documento rechazado')">Rechazar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doc-card">
+                <div class="doc-card-top">
+                    <div class="doc-info">
+                        <div class="doc-icon">📋</div>
+                        <div>
+                            <div class="doc-title">Alta de Estadía – Sofía González Ruiz</div>
+                            <div class="doc-type">Tipo: Alta de estadía · Subido: 06/02/2026 · v2</div>
+                            <div class="doc-meta">
+                                <div class="doc-meta-item"><span class="doc-meta-label">Tutor: </span>Mtro. Juan Pérez</div>
+                                <div class="doc-meta-item"><span class="doc-meta-label">Empresa: </span>DataBridge Analytics</div>
+                                <div class="doc-meta-item"><span class="doc-meta-label">Carrera: </span>DSM</div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="status-badge s-pending">Pendiente</span>
+                </div>
+                <div class="doc-body">
+                    <div class="comments-history">
+                        <div class="comments-history-title">Comentarios anteriores</div>
+                        <div class="comment-item">
+                            <div class="comment-author">Vinculación</div>
+                            <div class="comment-text">Falta la firma del representante de la empresa en la página 3. Por favor corrija y vuelva a subir el documento.</div>
+                            <div class="comment-date">05/02/2026 · 10:24 hrs</div>
+                        </div>
+                    </div>
+                    <div class="doc-actions-row" style="margin-top:12px">
+                        <div class="comment-box">
+                            <label>Comentario para el alumno (opcional)</label>
+                            <textarea placeholder="Escribe una observación o retroalimentación..."></textarea>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-view" data-doc-title="Alta de Estadía – Sofía González Ruiz" data-doc-type="Alta de estadía" data-doc-student="Sofía González Ruiz" data-doc-career="DSM" data-doc-company="DataBridge Analytics" data-doc-version="v2" data-doc-rfc="DBA2312019K7" data-doc-representante="Lic. Marco Salcedo" data-doc-puesto="Gerente de Proyectos" data-doc-direccion="Blvd. Agua Caliente 1120, Tijuana, B.C." onclick="openTesinaViewer(this)">Ver PDF</button>
+                            <button class="btn btn-cancel" onclick="downloadTesinaPdf('Alta de Estadía – Sofía González Ruiz')">Descargar</button>
+                            <button class="btn btn-approve" onclick="confirm('¿Aprobar este documento?') && alert('Documento aprobado')">Aprobar</button>
+                            <button class="btn btn-reject" onclick="confirm('¿Rechazar este documento?') && alert('Documento rechazado')">Rechazar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal-backdrop" id="tesinaViewerModal">
+      <div class="modal tesina-viewer-modal" role="dialog" aria-modal="true" aria-labelledby="tesinaViewerTitle">
+        <div class="tesina-viewer-header">
+          <h3 id="tesinaViewerTitle">Vista previa de tesina</h3>
+          <button class="btn btn-cancel" type="button" onclick="closeTesinaViewer()">Cerrar</button>
+        </div>
+        <div class="tesina-viewer-body">
+          <div class="tesina-doc-head">
+            <h4 id="tesinaDocTitle">Documento</h4>
+            <p id="tesinaDocMeta">Tipo · Alumno · Carrera · Empresa · Versión</p>
+          </div>
+          <div class="tesina-documento" id="tesinaDocContent">
+            <h5>Resumen ejecutivo</h5>
+            <p>Contenido de documento simulado.</p>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-cancel" type="button" onclick="closeTesinaViewer()">Cerrar</button>
+          <button class="btn btn-primary" id="btnDownloadViewerPdf" type="button">Descargar PDF</button>
+        </div>
+      </div>
+    </div>
+
+    <button class="fab-accessibility" data-pl-toggle="a11y" aria-label="Activar o desactivar alta visibilidad">
+      <span id="fabLabel">Alta Visibilidad</span>
+    </button>
+    <script src="../shared/practilink.js"></script>
+    <script>
+        document.querySelectorAll('.tab').forEach(tab => { tab.addEventListener('click', function() { document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); this.classList.add('active'); }); });
+
+        const tesinaViewerModal = document.getElementById('tesinaViewerModal');
+        const tesinaDocTitle = document.getElementById('tesinaDocTitle');
+        const tesinaDocMeta = document.getElementById('tesinaDocMeta');
+        const tesinaDocContent = document.getElementById('tesinaDocContent');
+        const btnDownloadViewerPdf = document.getElementById('btnDownloadViewerPdf');
+        const tesinaViewerTitle = document.getElementById('tesinaViewerTitle');
+        let currentDocTitle = '';
+
+        function buildTesinaContent(title, student, career, company, tutor) {
+          return `
+            <section class="doc-cover">
+              <h4>Portada</h4>
+              <p><strong>Universidad Tecnológica de Tijuana</strong></p>
+              <p>Dirección de Vinculación y Estadías Profesionales</p>
+              <p><strong>Documento:</strong> ${title}</p>
+              <p><strong>Alumno:</strong> ${student}</p>
+              <p><strong>Carrera:</strong> ${career}</p>
+              <p><strong>Empresa receptora:</strong> ${company}</p>
+              <p><strong>Tutor académico:</strong> ${tutor || '—'}</p>
+              <p><strong>Fecha de entrega:</strong> 07/02/2026</p>
+            </section>
+            <section class="doc-index">
+              <h5>Índice (vista inicial)</h5>
+              <ol>
+                <li>Resumen ejecutivo</li>
+                <li>Introducción y contexto</li>
+                <li>Metodología aplicada</li>
+                <li>Resultados preliminares</li>
+                <li>Conclusiones parciales</li>
+              </ol>
+            </section>
+            <h5>Resumen</h5>
+            <p>El documento describe el desarrollo de una propuesta técnica aplicada durante la estadía, incluyendo diagnóstico, diseño, implementación y validación de resultados.</p>
+            <h5>Introducción y contexto</h5>
+            <p>Durante la estadía se identificaron áreas de mejora operativa relacionadas con trazabilidad de actividades y control documental. Esta tesina propone una estrategia de mejora basada en métricas y evidencia técnica.</p>
+            <h5>Metodología</h5>
+            <ul>
+              <li>Levantamiento de requerimientos con el área asignada.</li>
+              <li>Definición de alcance, cronograma y entregables.</li>
+              <li>Iteraciones semanales con seguimiento y evidencia.</li>
+            </ul>
+            <h5>Resultados y evidencias</h5>
+            <p>Se presentan métricas de avance, capturas de evidencia, incidencias atendidas y cumplimiento de objetivos planteados.</p>
+            <h5>Conclusiones y recomendaciones</h5>
+            <p>Se valida que la solución propuesta aporta mejoras operativas. Se sugieren acciones de continuidad para la empresa y líneas de trabajo futuro.</p>
+          `;
+        }
+
+        function buildAltaContent(student, career, company, rfc, representante, puesto, direccion) {
+          return `
+            <section class="doc-cover">
+              <h4>Portada</h4>
+              <p><strong>Universidad Tecnológica de Tijuana</strong></p>
+              <p>Formato institucional de Alta de Estadía</p>
+              <p><strong>Alumno:</strong> ${student}</p>
+              <p><strong>Carrera:</strong> ${career}</p>
+              <p><strong>Empresa:</strong> ${company}</p>
+              <p><strong>Fecha:</strong> 06/02/2026</p>
+            </section>
+            <section class="doc-index">
+              <h5>Índice (vista inicial)</h5>
+              <ol>
+                <li>Datos del alumno</li>
+                <li>Datos de la empresa</li>
+                <li>Datos del representante legal</li>
+                <li>Periodo y condiciones de estadía</li>
+                <li>Firmas y validaciones</li>
+              </ol>
+            </section>
+            <h5>Formato de Alta de Estadía</h5>
+            <div class="doc-data-grid">
+              <p><strong>Alumno:</strong> ${student}</p>
+              <p><strong>Carrera:</strong> ${career}</p>
+              <p><strong>Empresa receptora:</strong> ${company}</p>
+              <p><strong>RFC empresa:</strong> ${rfc || '—'}</p>
+              <p><strong>Representante legal:</strong> ${representante || '—'}</p>
+              <p><strong>Puesto:</strong> ${puesto || '—'}</p>
+              <p><strong>Domicilio fiscal:</strong> ${direccion || '—'}</p>
+              <p><strong>Periodo de estadía:</strong> Feb-Jun 2026</p>
+            </div>
+            <h5>Validaciones requeridas</h5>
+            <ul>
+              <li>Datos fiscales de empresa completos y legibles.</li>
+              <li>Firma de representante y sello institucional.</li>
+              <li>Firma de tutor académico y alumno.</li>
+              <li>Coincidencia de periodo/carrera con convocatoria activa.</li>
+            </ul>
+            <h5>Observación administrativa</h5>
+            <p>Documento orientado a control y validación administrativa previo al inicio formal de la estadía.</p>
+          `;
+        }
+
+        function openTesinaViewer(button) {
+          const title = button.getAttribute('data-doc-title') || 'Documento';
+          const type = button.getAttribute('data-doc-type') || 'Tesina';
+          const student = button.getAttribute('data-doc-student') || 'Alumno';
+          const career = button.getAttribute('data-doc-career') || '—';
+          const company = button.getAttribute('data-doc-company') || '—';
+          const version = button.getAttribute('data-doc-version') || 'v1';
+          const tutor = button.getAttribute('data-doc-tutor') || '—';
+          const rfc = button.getAttribute('data-doc-rfc') || '—';
+          const representante = button.getAttribute('data-doc-representante') || '—';
+          const puesto = button.getAttribute('data-doc-puesto') || '—';
+          const direccion = button.getAttribute('data-doc-direccion') || '—';
+
+          currentDocTitle = title;
+          tesinaViewerTitle.textContent = type.toLowerCase().includes('alta')
+            ? 'Vista previa de alta de estadía'
+            : 'Vista previa de tesina';
+          tesinaDocTitle.textContent = title;
+          tesinaDocMeta.textContent = `${type} · ${student} · ${career} · ${company} · ${version}`;
+          tesinaDocContent.innerHTML = type.toLowerCase().includes('alta')
+            ? buildAltaContent(student, career, company, rfc, representante, puesto, direccion)
+            : buildTesinaContent(title, student, career, company, tutor);
+          tesinaViewerModal.classList.add('open');
+        }
+
+        function closeTesinaViewer() {
+          tesinaViewerModal.classList.remove('open');
+        }
+
+        function downloadTesinaPdf(title) {
+          const content = `Documento: ${title}\nDescarga simulada de PDF desde mockup Vinculación.`;
+          const blob = new Blob([content], { type: 'application/pdf' });
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = `${title.replace(/\s+/g, '_')}.pdf`;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
+
+        btnDownloadViewerPdf.addEventListener('click', function () {
+          downloadTesinaPdf(currentDocTitle || 'tesina');
+        });
+
+        tesinaViewerModal.addEventListener('click', function (e) {
+          if (e.target === tesinaViewerModal) closeTesinaViewer();
+        });
+
+        window.openTesinaViewer = openTesinaViewer;
+        window.closeTesinaViewer = closeTesinaViewer;
+        window.downloadTesinaPdf = downloadTesinaPdf;
+    </script>
+</body>
+</html>

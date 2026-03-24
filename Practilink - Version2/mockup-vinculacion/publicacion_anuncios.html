@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicación de Anuncios - Practi Link</title>
+ 
+</head>
+<body>
+    <div class="header">
+        <div class="logo"><div class="menu-icon"><span></span><span></span><span></span></div><span>Practi Link</span></div>
+        <div class="user-info"><div class="user-icon">👤</div><span>vinculacion@utt.edu.mx</span></div>
+    </div>
+    <div class="sidebar">
+        <a href="dashboard.html" class="sidebar-item">Panel administrativo</a>
+        <a href="gestion_periodos.html" class="sidebar-item">Gestión de periodos de estadías</a>
+        <a href="validacion_empresas.html" class="sidebar-item">Validación de empresas</a>
+        <a href="gestion_vacantes.html" class="sidebar-item active">Publicación de vacantes</a>
+        <a href="revision_tesinas.html" class="sidebar-item">Revisión de tesinas</a>
+        <a href="control_estadias.html" class="sidebar-item">Control general de estadías</a>
+        <a href="notificaciones.html" class="sidebar-item">Reportes de seguimiento</a>
+        <a href="gestion_cuentas.html" class="sidebar-item">Gestión de cuentas</a>
+    </div>
+    <div class="main-content">
+        <div class="page-header">
+            <div class="page-title">Publicación de Anuncios</div>
+        </div>
+        <div class="layout">
+            <!-- Formulario -->
+            <div class="form-card">
+                <div class="form-card-title">Nuevo anuncio</div>
+                <div class="form-group">
+                    <label>Título del anuncio</label>
+                    <input type="text" placeholder="Ej. Recordatorio: fecha límite de entrega">
+                </div>
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <textarea placeholder="Escribe aquí el contenido del anuncio..." id="msgArea" oninput="updateCount()"></textarea>
+                    <div class="char-count"><span id="charCount">0</span> / 500 caracteres</div>
+                </div>
+                <div class="form-group">
+                    <label>Dirigido a</label>
+                    <div class="recipient-chips">
+                        <div class="chip selected" onclick="toggleChip(this)">Tutores académicos</div>
+                        <div class="chip" onclick="toggleChip(this)">Empresas</div>
+                        <div class="chip" onclick="toggleChip(this)">Todos</div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Prioridad</label>
+                        <select>
+                            <option>Normal</option>
+                            <option>Importante</option>
+                            <option>Urgente</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha de expiración (opcional)</label>
+                        <input type="date">
+                    </div>
+                </div>
+                <button class="btn-submit" onclick="alert('Anuncio publicado correctamente')">Publicar anuncio</button>
+            </div>
+
+            <!-- Lista de anuncios -->
+            <div class="list-card">
+                <div class="list-card-title">Anuncios publicados</div>
+                <div class="list-subtitle">Historial de anuncios enviados a los usuarios</div>
+
+                <div class="announcement">
+                    <div class="ann-header">
+                        <div class="ann-title">Fecha límite de entrega de altas de estadía</div>
+                        <div class="ann-badges"><span class="badge badge-tutor">Tutores</span></div>
+                    </div>
+                    <div class="ann-body">Se les recuerda a todos los tutores académicos que la fecha límite para validar y enviar las altas de estadía de sus alumnos es el próximo 28 de febrero del 2026. Por favor revisar que los documentos estén completos y firmados.</div>
+                    <div class="ann-footer">
+                        <span class="ann-date">📅 Publicado: 08/02/2026 · Expira: 28/02/2026</span>
+                        <div class="ann-actions">
+                            <button class="btn-xs btn-edit" onclick="alert('Editar anuncio')">Editar</button>
+                            <button class="btn-xs btn-delete" onclick="confirm('¿Eliminar este anuncio?') && alert('Anuncio eliminado')">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="announcement">
+                    <div class="ann-header">
+                        <div class="ann-title">Apertura de nuevas vacantes para DSM</div>
+                        <div class="ann-badges"><span class="badge badge-tutor">Tutores</span><span class="badge badge-alumno">Alumnos</span></div>
+                    </div>
+                    <div class="ann-body">Se han aprobado 12 nuevas vacantes para el área de Desarrollo de Software Multiplataforma. Los alumnos pueden consultar y postularse desde su panel de vacantes disponibles.</div>
+                    <div class="ann-footer">
+                        <span class="ann-date">📅 Publicado: 06/02/2026</span>
+                        <div class="ann-actions">
+                            <button class="btn-xs btn-edit" onclick="alert('Editar anuncio')">Editar</button>
+                            <button class="btn-xs btn-delete" onclick="confirm('¿Eliminar este anuncio?') && alert('Anuncio eliminado')">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="announcement">
+                    <div class="ann-header">
+                        <div class="ann-title">Inicio del periodo Feb – Jun 2026</div>
+                        <div class="ann-badges"><span class="badge badge-all">Todos</span></div>
+                    </div>
+                    <div class="ann-body">Se da inicio oficial al periodo de estadías profesionales Feb – Jun 2026. Todos los usuarios pueden acceder al sistema y comenzar con sus procesos correspondientes según su rol.</div>
+                    <div class="ann-footer">
+                        <span class="ann-date">📅 Publicado: 03/02/2026</span>
+                        <div class="ann-actions">
+                            <button class="btn-xs btn-edit" onclick="alert('Editar anuncio')">Editar</button>
+                            <button class="btn-xs btn-delete" onclick="confirm('¿Eliminar este anuncio?') && alert('Anuncio eliminado')">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="announcement">
+                    <div class="ann-header">
+                        <div class="ann-title">Actualización en el formato de tesinas</div>
+                        <div class="ann-badges"><span class="badge badge-tutor">Tutores</span></div>
+                    </div>
+                    <div class="ann-body">Se informa que a partir de este periodo se utilizará un nuevo formato institucional para la entrega de tesinas. El documento actualizado está disponible en la sección de recursos.</div>
+                    <div class="ann-footer">
+                        <span class="ann-date">📅 Publicado: 01/02/2026</span>
+                        <div class="ann-actions">
+                            <button class="btn-xs btn-edit" onclick="alert('Editar anuncio')">Editar</button>
+                            <button class="btn-xs btn-delete" onclick="confirm('¿Eliminar este anuncio?') && alert('Anuncio eliminado')">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const sidebar = document.querySelector('.sidebar');
+        const mainContent = document.querySelector('.main-content');
+        const menuIcon = document.querySelector('.menu-icon');
+
+        function toggleChip(chip) {
+            chip.classList.toggle('selected');
+        }
+
+        function updateCount() {
+            const val = document.getElementById('msgArea').value.length;
+            document.getElementById('charCount').textContent = val;
+        }
+
+        function closeSidebarOnMobile() {
+            if (window.innerWidth <= 980) {
+                sidebar.classList.remove('open');
+                mainContent.classList.add('narrow');
+            }
+        }
+
+        function openSidebarOnMobile() {
+            sidebar.classList.add('open');
+            mainContent.classList.remove('narrow');
+        }
+
+        menuIcon.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+            mainContent.classList.toggle('narrow');
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 980) {
+                sidebar.classList.remove('open');
+                mainContent.classList.remove('narrow');
+            }
+        });
+
+        document.querySelectorAll('.sidebar-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+
+                if (window.innerWidth <= 980) {
+                    closeSidebarOnMobile();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Practi Link</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/practilink.css">
+    <link rel="stylesheet" href="vinculacion.css">
+</head>
+<body class="vinculacion-dashboard vinculacion-page">
+    <a class="skip-link" href="#contenidoPrincipal">Saltar al contenido principal</a>
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo"><img src="../LogoUTT.png" alt="Logo institucional UTT"></div>
+            <div class="brand-title">PractiLink<span class="brand-sub">Vinculación UTT</span></div>
+        </div>
+        <a href="dashboard.html" class="sidebar-item active"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 13h8V3H3z"/><path d="M13 21h8v-6h-8z"/><path d="M13 11h8V3h-8z"/><path d="M3 21h8v-6H3z"/></svg>Panel administrativo</a>
+        <a href="gestion_periodos.html" class="sidebar-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>Gestión de periodos</a>
+        <a href="validacion_empresas.html" class="sidebar-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 11h6"/><path d="M9 15h6"/></svg>Validación de empresas</a>
+        <a href="gestion_vacantes.html" class="sidebar-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>Gestión de vacantes</a>
+        <a href="revision_tesinas.html" class="sidebar-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg>Revisión de tesinas</a>
+        <a href="control_estadias.html" class="sidebar-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 14 3-3 3 2 4-5"/></svg>Control de estadías</a>
+        <a href="gestion_cuentas.html" class="sidebar-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20a6 6 0 0 1 12 0"/></svg>Gestión de cuentas</a>
+        <div class="sidebar-profile">
+            <div class="sidebar-profile-avatar">VC</div>
+            <div>
+                <div class="sidebar-profile-name">Área Vinculación UTT</div>
+                <div class="sidebar-profile-role">vinculacion@utt.edu.mx</div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content" id="contenidoPrincipal" tabindex="-1">
+        <div class="page-title">Panel Administrativo</div>
+        <div class="page-subtitle">Bienvenida, Área de Vinculación · Periodo activo: Feb – Jun 2026</div>
+
+        <!-- KPIs -->
+        <div class="kpi-grid">
+            <div class="kpi-card blue">
+                <div class="kpi-number">142</div>
+                <div class="kpi-label">Estadías activas</div>
+                <div class="kpi-sub">↑ 12 vs periodo anterior</div>
+            </div>
+            <div class="kpi-card yellow">
+                <div class="kpi-number">23</div>
+                <div class="kpi-label">Pendientes de revisión</div>
+                <div class="kpi-sub">Documentos y solicitudes</div>
+            </div>
+            <div class="kpi-card green">
+                <div class="kpi-number">89</div>
+                <div class="kpi-label">Estadías finalizadas</div>
+                <div class="kpi-sub">Periodo Ago – Dic 2025</div>
+            </div>
+            <div class="kpi-card red">
+                <div class="kpi-number">8</div>
+                <div class="kpi-label">Empresas por validar</div>
+                <div class="kpi-sub">Registros nuevos</div>
+            </div>
+        </div>
+
+        <!-- Row 1 -->
+        <div class="row-3">
+            <div class="card">
+                <div class="card-title">Actividad reciente <span class="card-link">Ver todo</span></div>
+                <div class="activity-item">
+                    <div class="activity-dot dot-green"></div>
+                    <div>
+                        <div class="activity-text">TechInnovate Solutions fue aprobada como empresa receptora</div>
+                        <div class="activity-time">Hace 15 minutos</div>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-dot dot-yellow"></div>
+                    <div>
+                        <div class="activity-text">Carlos Ramírez López subió su alta de estadía para revisión</div>
+                        <div class="activity-time">Hace 42 minutos</div>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-dot dot-blue"></div>
+                    <div>
+                        <div class="activity-text">Mtra. Ana Pineda registró avance de 3 alumnos asignados</div>
+                        <div class="activity-time">Hace 1 hora</div>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-dot dot-red"></div>
+                    <div>
+                        <div class="activity-text">DataBridge Analytics publicó 2 vacantes pendientes de aprobación</div>
+                        <div class="activity-time">Hace 2 horas</div>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-dot dot-green"></div>
+                    <div>
+                        <div class="activity-text">Tesina de Sofía González aprobada por tutor académico</div>
+                        <div class="activity-time">Hace 3 horas</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Pendientes urgentes</div>
+                <div class="task-item">
+                    <div class="task-label">Empresas por validar</div>
+                    <span class="task-badge badge-red">8</span>
+                </div>
+                <div class="task-item">
+                    <div class="task-label">Vacantes por aprobar</div>
+                    <span class="task-badge badge-yellow">12</span>
+                </div>
+                <div class="task-item">
+                    <div class="task-label">Tesinas por revisar</div>
+                    <span class="task-badge badge-yellow">6</span>
+                </div>
+                <div class="task-item">
+                    <div class="task-label">Altas de estadía</div>
+                    <span class="task-badge badge-blue">5</span>
+                </div>
+                <div class="task-item">
+                    <div class="task-label">Cuentas inactivas</div>
+                    <span class="task-badge badge-red">12</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="row">
+            <div class="card">
+                <div class="card-title">Estadías por carrera</div>
+                <div class="bar-chart">
+                    <div class="bar-group">
+                        <div class="bar" style="height:85px;background:#2c5282;"></div>
+                        <div class="bar-label">DSM</div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height:60px;background:#2c5282;"></div>
+                        <div class="bar-label">IA</div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height:45px;background:#2c5282;"></div>
+                        <div class="bar-label">MKT</div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height:30px;background:#2c5282;"></div>
+                        <div class="bar-label">CN</div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height:55px;background:#2c5282;"></div>
+                        <div class="bar-label">ME</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Periodos activos <span class="card-link">Gestionar</span></div>
+                <div class="period-row">
+                    <div>
+                        <div class="period-name">Feb – Jun 2026 · DSM</div>
+                        <div class="period-dates">Inicio: 03/02/2026 · Cierre: 20/06/2026</div>
+                    </div>
+                    <span class="status-pill pill-green">Activo</span>
+                </div>
+                <div class="period-row">
+                    <div>
+                        <div class="period-name">Feb – Jun 2026 · IA</div>
+                        <div class="period-dates">Inicio: 03/02/2026 · Cierre: 20/06/2026</div>
+                    </div>
+                    <span class="status-pill pill-green">Activo</span>
+                </div>
+                <div class="period-row">
+                    <div>
+                        <div class="period-name">Feb – Jun 2026 · MKT</div>
+                        <div class="period-dates">Inicio: 10/02/2026 · Cierre: 20/06/2026</div>
+                    </div>
+                    <span class="status-pill pill-yellow">Por iniciar</span>
+                </div>
+                <div class="period-row">
+                    <div>
+                        <div class="period-name">Ago – Dic 2025 · DSM</div>
+                        <div class="period-dates">Cerrado el 20/12/2025</div>
+                    </div>
+                    <span class="status-pill pill-gray">Cerrado</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <button class="fab-accessibility" data-pl-toggle="a11y" aria-label="Activar o desactivar alta visibilidad">
+      <span id="fabLabel">Alta Visibilidad</span>
+    </button>
+
+    <script src="../shared/practilink.js"></script>
+    <script>
+        document.querySelectorAll('.sidebar-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

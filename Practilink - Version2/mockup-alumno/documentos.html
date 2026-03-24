@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PractiLink - Documentos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/practilink.css">
+  <link rel="stylesheet" href="alumno.css">
+</head>
+<body class="alumno-page">
+  <a href="#documentosMain" class="skip-link">Saltar al contenido</a>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <div class="logo-icon"><img src="../Logo.png" alt="Logo PractiLink institucional"></div>
+          <div class="logo-text"><h1>PractiLink</h1><span>Gestion de Estadias</span></div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="seguimiento-estadia.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+          Inicio
+        </a>
+        <a href="vacantes.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Vacantes
+        </a>
+        <a href="postulaciones.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Postulaciones
+        </a>
+        <a href="seguimiento-estadia.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
+          Seguimiento
+        </a>
+        <a href="documentos.html" class="nav-item active">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17,8 12,3 7,8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Documentos
+        </a>
+        <a href="foro.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Foro
+        </a>
+        <a href="notificaciones.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          Notificaciones <span class="nav-badge">3</span>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="main-content" id="documentosMain" tabindex="-1">
+      <header class="page-header">
+        <h1>Gestión de documentos</h1>
+        <p>RF-32 / RF-37 · Carga inicial y reenvío de documentos corregidos.</p>
+      </header>
+      <section class="alumno-module">
+        <div class="alumno-module-header">
+          <h2>Tesina profesional</h2>
+          <span class="alumno-module-sub">Sube nuevas versiones y da seguimiento a observaciones del tutor.</span>
+        </div>
+        <div class="alumno-form-row">
+          <div class="form-group">
+            <label for="tesinaFile">Archivo de tesina</label>
+            <input type="file" id="tesinaFile" accept=".pdf,.doc,.docx">
+          </div>
+          <div class="form-group">
+            <label for="tesinaVersion">Versión</label>
+            <input type="text" id="tesinaVersion" placeholder="Ej. v3.2">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="tesinaNotasAlumno">Notas del alumno</label>
+          <textarea id="tesinaNotasAlumno" rows="3" placeholder="Describe brevemente qué cambiaste en esta versión..."></textarea>
+        </div>
+        <div class="alumno-form-actions">
+          <button class="btn btn-secondary" type="button">Guardar borrador</button>
+          <button class="btn btn-primary" type="button" id="btnSubirVersion">Subir versión</button>
+        </div>
+      </section>
+
+      <section class="documentos-layout">
+        <article class="alumno-module">
+          <div class="alumno-module-header">
+            <h2>Documentación requerida</h2>
+            <span class="alumno-module-sub">Carga y reenvío de archivos institucionales.</span>
+          </div>
+          <div class="table-container">
+            <table class="alumno-table" id="tablaDocumentos">
+              <thead>
+                <tr><th>Documento</th><th>Estado</th><th>Archivo</th><th>Acción</th></tr>
+              </thead>
+              <tbody>
+                <tr data-doc="Carta de presentación">
+                  <td>Carta de presentación</td>
+                  <td><span class="badge badge-validado doc-status">Aprobado</span></td>
+                  <td><input type="file" class="doc-file" aria-label="Archivo carta de presentación"></td>
+                  <td><button class="btn btn-secondary btn-upload" type="button">Cargar</button></td>
+                </tr>
+                <tr data-doc="Reporte parcial 1">
+                  <td>Reporte parcial 1</td>
+                  <td><span class="badge badge-pendiente doc-status">Con observaciones</span></td>
+                  <td><input type="file" class="doc-file" aria-label="Archivo reporte parcial 1"></td>
+                  <td><button class="btn btn-outline btn-reupload" type="button">Volver a subir</button></td>
+                </tr>
+                <tr data-doc="Seguro facultativo">
+                  <td>Seguro facultativo</td>
+                  <td><span class="badge badge-pendiente doc-status">Pendiente</span></td>
+                  <td><input type="file" class="doc-file" aria-label="Archivo seguro facultativo"></td>
+                  <td><button class="btn btn-secondary btn-upload" type="button">Cargar</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="alumno-module">
+          <div class="alumno-module-header">
+            <h2>Comentarios del tutor</h2>
+            <span class="alumno-module-sub">Retroalimentación sobre tus entregables.</span>
+          </div>
+          <div class="notificaciones-list" id="comentariosTutorList">
+            <article class="notificacion-item">
+              <h4>Reporte parcial 1 · MC. Resffa Fierro</h4>
+              <p>Corregir objetivos específicos y agregar evidencia de actividades en la empresa.</p>
+            </article>
+            <article class="notificacion-item">
+              <h4>Tesina v2.1 · MC. Resffa Fierro</h4>
+              <p>Mejorar redacción en metodología y actualizar referencias bibliográficas.</p>
+            </article>
+          </div>
+        </article>
+      </section>
+
+      <section class="alumno-module">
+        <div class="alumno-module-header">
+          <h2>Histórico de versiones</h2>
+          <span class="alumno-module-sub">Registro cronológico de cada envío de tesina.</span>
+        </div>
+        <div class="table-container">
+          <table class="alumno-table" id="tablaHistoricoTesina">
+            <thead>
+              <tr><th>Versión</th><th>Fecha</th><th>Estado</th><th>Comentario del tutor</th></tr>
+            </thead>
+            <tbody id="historicoBody">
+              <tr>
+                <td>v3.1</td>
+                <td>23 mar 2026</td>
+                <td><span class="badge badge-pendiente">En revisión</span></td>
+                <td>Pendiente de validación.</td>
+              </tr>
+              <tr>
+                <td>v3.0</td>
+                <td>20 mar 2026</td>
+                <td><span class="badge badge-validado">Con observaciones</span></td>
+                <td>Corregir formato APA y agregar diagrama de arquitectura.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="../shared/practilink.js"></script>
+  <script>
+    (function () {
+      var uploadBtns = document.querySelectorAll(".btn-upload");
+      var reuploadBtns = document.querySelectorAll(".btn-reupload");
+      var btnSubirVersion = document.getElementById("btnSubirVersion");
+      var tesinaFile = document.getElementById("tesinaFile");
+      var tesinaVersion = document.getElementById("tesinaVersion");
+      var tesinaNotasAlumno = document.getElementById("tesinaNotasAlumno");
+      var historicoBody = document.getElementById("historicoBody");
+
+      function processRow(btn, isReupload) {
+        var row = btn.closest("tr");
+        if (!row) return;
+        var fileInput = row.querySelector(".doc-file");
+        var status = row.querySelector(".doc-status");
+        if (!fileInput || !fileInput.value) {
+          alert("Selecciona un archivo antes de continuar.");
+          return;
+        }
+        if (status) {
+          status.textContent = isReupload ? "Reenviado" : "Enviado";
+          status.className = "badge badge-validado doc-status";
+        }
+      }
+      uploadBtns.forEach(function (btn) { btn.addEventListener("click", function () { processRow(btn, false); }); });
+      reuploadBtns.forEach(function (btn) { btn.addEventListener("click", function () { processRow(btn, true); }); });
+
+      if (btnSubirVersion && tesinaFile && tesinaVersion && historicoBody) {
+        btnSubirVersion.addEventListener("click", function () {
+          if (!tesinaFile.value) {
+            alert("Selecciona un archivo de tesina para subir.");
+            return;
+          }
+          var version = tesinaVersion.value.trim() || "vNueva";
+          var row = document.createElement("tr");
+          row.innerHTML =
+            "<td>" + version + "</td>" +
+            "<td>" + new Date().toLocaleDateString("es-MX") + "</td>" +
+            "<td><span class=\"badge badge-pendiente\">En revisión</span></td>" +
+            "<td>" + (tesinaNotasAlumno.value.trim() || "Versión enviada para revisión del tutor.") + "</td>";
+          historicoBody.prepend(row);
+          tesinaFile.value = "";
+          tesinaVersion.value = "";
+          tesinaNotasAlumno.value = "";
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

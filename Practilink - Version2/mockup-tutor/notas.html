@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PractiLink - Notas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/practilink.css">
+  <link rel="stylesheet" href="tutor.css">
+</head>
+<body class="tutor-page">
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
+  <div id="layout-root"></div>
+
+  <main class="main-content" id="main-content" tabindex="-1">
+    <div class="section-header">
+      <h2>Notas</h2>
+      <p class="section-sub">Registra observaciones y calificaciones rápidamente.</p>
+    </div>
+
+    <section class="notas-grid">
+      <article class="info-card notas-form-card">
+        <div class="info-card-header">
+          <div class="icon-circle blue-bg">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 6H20V18H4V6Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 10H16" stroke-width="1.8" stroke-linecap="round"/><path d="M8 14H13" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <h3>Registro de nota</h3>
+            <p>Captura rápida por alumno para seguimiento académico.</p>
+          </div>
+        </div>
+        <div class="info-card-body">
+          <form class="notas-form" aria-label="Formulario de registro de notas">
+            <div class="form-group">
+              <label for="notaAlumno">Alumno</label>
+              <select id="notaAlumno">
+                <option>Valenzuela Plata Jesus Virginia</option>
+                <option>García Ramírez Kerr</option>
+                <option>Fernando Torres Mejía</option>
+              </select>
+            </div>
+            <div class="notas-form-row">
+              <div class="form-group">
+                <label for="notaTipo">Tipo</label>
+                <select id="notaTipo">
+                  <option>Seguimiento semanal</option>
+                  <option>Evaluación parcial</option>
+                  <option>Observación de documento</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="notaCalificacion">Calificación</label>
+                <input id="notaCalificacion" type="number" min="0" max="100" placeholder="0 - 100">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="notaComentario">Comentario</label>
+              <textarea id="notaComentario" rows="4" placeholder="Ej. Reforzar estructura del marco teórico y citar fuentes."></textarea>
+            </div>
+            <div class="notas-form-actions">
+              <button type="button" class="btn btn-secondary">Guardar borrador</button>
+              <button type="button" class="btn btn-primary">Guardar nota</button>
+            </div>
+          </form>
+        </div>
+      </article>
+
+      <article class="info-card notas-kpi-card">
+        <div class="info-card-header">
+          <div class="icon-circle green-bg">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6 13L10 17L18 7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h3>Resumen de notas</h3>
+            <p>Estado general del grupo actual.</p>
+          </div>
+        </div>
+        <div class="notas-kpi-list">
+          <div class="notas-kpi-item"><span>Promedio general</span><strong>88</strong></div>
+          <div class="notas-kpi-item"><span>Con observaciones</span><strong>4</strong></div>
+          <div class="notas-kpi-item"><span>Notas capturadas</span><strong>22</strong></div>
+          <div class="notas-kpi-item"><span>Sin evaluar</span><strong>3</strong></div>
+        </div>
+      </article>
+    </section>
+
+    <div class="info-cards-grid">
+      <div class="info-card">
+        <div class="info-card-header">
+          <div class="icon-circle blue-bg">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M3 5H21V19H3V5Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 9H21" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h3>Registro rápido</h3>
+            <p>Guarda notas y observaciones por alumno.</p>
+          </div>
+        </div>
+        <div class="info-card-body">
+          <ul class="simple-list">
+            <li>Alumno A: Observación pendiente</li>
+            <li>Alumno B: Documentos incompletos</li>
+            <li>Alumno C: Tesina aprobada</li>
+          </ul>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-header">
+          <div class="icon-circle orange-bg">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 5H19V19H5V5Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 9H15" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 13H15" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h3>Ayuda</h3>
+            <p>Consejos rápidos para llenar las notas.</p>
+          </div>
+        </div>
+        <div class="info-card-body">
+          <ul class="simple-list">
+            <li>Define criterios claros para cada calificación.</li>
+            <li>Revisa el desempeño en actividades prácticas.</li>
+            <li>Comunica objetivos al alumno.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <section class="table-container notas-table-container">
+      <div class="section-header">
+        <h3>Últimas notas registradas</h3>
+        <p class="section-sub">Visualización rápida de los últimos movimientos.</p>
+      </div>
+      <table class="notas-table">
+        <thead>
+          <tr>
+            <th>Alumno</th>
+            <th>Tipo</th>
+            <th>Calificación</th>
+            <th>Comentario</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Valenzuela Plata Jesus Virginia</td>
+            <td>Evaluación parcial</td>
+            <td><span class="badge badge-validado">92</span></td>
+            <td>Buen avance, mejorar documentación técnica.</td>
+            <td>23 mar 2026</td>
+          </tr>
+          <tr>
+            <td>García Ramírez Kerr</td>
+            <td>Seguimiento semanal</td>
+            <td><span class="badge badge-pendiente">78</span></td>
+            <td>Faltan evidencias de avance en empresa.</td>
+            <td>22 mar 2026</td>
+          </tr>
+          <tr>
+            <td>Fernando Torres Mejía</td>
+            <td>Observación de documento</td>
+            <td><span class="badge badge-validado">95</span></td>
+            <td>Tesina muy completa, listo para validación.</td>
+            <td>21 mar 2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <button class="fab-accessibility" id="fabAccessibility" aria-label="Activar modo de alta visibilidad"><span id="fabLabel">Alta Visibilidad</span></button>
+
+  <script src="js/auth.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/mockup-tutor.js"></script>
+</body>
+</html>

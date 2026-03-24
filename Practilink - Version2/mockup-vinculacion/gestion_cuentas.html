@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Cuentas - Practi Link</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/practilink.css">
+    <link rel="stylesheet" href="vinculacion.css">
+</head>
+<body class="vinculacion-page">
+    <a class="skip-link" href="#contenidoPrincipal">Saltar al contenido principal</a>
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo"><img src="../LogoUTT.png" alt="Logo institucional UTT"></div>
+            <div class="brand-title">PractiLink<span class="brand-sub">Vinculación UTT</span></div>
+        </div>
+        <a href="dashboard.html" class="sidebar-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 13h8V3H3z"/><path d="M13 21h8v-6h-8z"/><path d="M13 11h8V3h-8z"/><path d="M3 21h8v-6H3z"/></svg>Panel administrativo</a>
+        <a href="gestion_periodos.html" class="sidebar-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>Gestión de periodos</a>
+        <a href="validacion_empresas.html" class="sidebar-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 11h6"/><path d="M9 15h6"/></svg>Validación de empresas</a>
+        <a href="gestion_vacantes.html" class="sidebar-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>Gestión de vacantes</a>
+        <a href="revision_tesinas.html" class="sidebar-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg>Revisión de tesinas</a>
+        <a href="control_estadias.html" class="sidebar-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 14 3-3 3 2 4-5"/></svg>Control de estadías</a>
+        <a href="gestion_cuentas.html" class="sidebar-item active"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20a6 6 0 0 1 12 0"/></svg>Gestión de cuentas</a>
+        <div class="sidebar-profile">
+            <div class="sidebar-profile-avatar">VC</div>
+            <div>
+                <div class="sidebar-profile-name">Área Vinculación UTT</div>
+                <div class="sidebar-profile-role">vinculacion@utt.edu.mx</div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content" id="contenidoPrincipal" tabindex="-1">
+        <h1 class="page-title">Gestión de Cuentas de Usuario</h1>
+
+        <!-- Stats -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number" id="statAlumnos">0</div>
+                <div class="stat-label">Alumnos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="statTutores">0</div>
+                <div class="stat-label">Tutores</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="statEmpresas">0</div>
+                <div class="stat-label">Empresas</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="statInactivos">0</div>
+                <div class="stat-label">Inactivos</div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab active">Todos (219)</button>
+            <button class="tab">Alumnos (142)</button>
+            <button class="tab">Tutores (18)</button>
+            <button class="tab">Empresas (56)</button>
+            <button class="tab">Inactivos (12)</button>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <div class="controls-left">
+                <div class="search-box">
+                    <input id="searchInput" type="text" placeholder="Buscar por nombre o correo...">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <select id="filterRole" class="filter-select">
+                    <option value="all">Todos los roles</option>
+                    <option value="alumno">Alumno</option>
+                    <option value="tutor">Tutor académico</option>
+                    <option value="empresa">Empresa</option>
+                    <option value="vinculacion">Vinculación</option>
+                </select>
+                <select id="filterStatus" class="filter-select">
+                    <option value="all">Todos los estados</option>
+                    <option value="active">Activo</option>
+                    <option value="inactive">Inactivo</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Rol</th>
+                        <th>Fecha de registro</th>
+                        <th>Estado</th>
+                        <th>Activar / Desactivar</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTableBody">
+                    <!-- Fila 1 -->
+                    <tr>
+                        <td>
+                            <div class="user-cell">
+                                <div class="user-avatar">CR</div>
+                                <div>
+                                    <div class="user-name">Carlos Ramírez López</div>
+                                    <div class="user-email">carlos.ramirez@utt.edu.mx</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="role-badge role-alumno">Alumno</span></td>
+                        <td>10/01/2026</td>
+                        <td>
+                            <span class="status-badge status-active">
+                                <span class="status-dot"></span>Activo
+                            </span>
+                        </td>
+                        <td>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked onchange="confirmToggle(this, 'Carlos Ramírez López', true)">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <div class="actions-cell">
+                                <button class="btn-action btn-view" onclick="alert('Ver perfil de Carlos Ramírez López')">Ver perfil</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Fila 2 -->
+                    <tr>
+                        <td>
+                            <div class="user-cell">
+                                <div class="user-avatar" style="background-color:#6b21a8;">TI</div>
+                                <div>
+                                    <div class="user-name">TechInnovate Solutions</div>
+                                    <div class="user-email">contacto@techinnovate.mx</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="role-badge role-empresa">Empresa</span></td>
+                        <td>05/02/2026</td>
+                        <td>
+                            <span class="status-badge status-active">
+                                <span class="status-dot"></span>Activo
+                            </span>
+                        </td>
+                        <td>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked onchange="confirmToggle(this, 'TechInnovate Solutions', true)">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <div class="actions-cell">
+                                <button class="btn-action btn-view" onclick="alert('Ver perfil de TechInnovate Solutions')">Ver perfil</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Fila 3 -->
+                    <tr>
+                        <td>
+                            <div class="user-cell">
+                                <div class="user-avatar" style="background-color:#92400e;">MT</div>
+                                <div>
+                                    <div class="user-name">Mtro. Juan Pérez Soto</div>
+                                    <div class="user-email">juan.perez@utt.edu.mx</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="role-badge role-tutor">Tutor académico</span></td>
+                        <td>08/01/2026</td>
+                        <td>
+                            <span class="status-badge status-active">
+                                <span class="status-dot"></span>Activo
+                            </span>
+                        </td>
+                        <td>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked onchange="confirmToggle(this, 'Mtro. Juan Pérez Soto', true)">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <div class="actions-cell">
+                                <button class="btn-action btn-view" onclick="alert('Ver perfil de Mtro. Juan Pérez Soto')">Ver perfil</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Fila 4 - Inactivo -->
+                    <tr>
+                        <td>
+                            <div class="user-cell">
+                                <div class="user-avatar" style="background-color:#aaa;">SG</div>
+                                <div>
+                                    <div class="user-name">Sofía González Ruiz</div>
+                                    <div class="user-email">sofia.gonzalez@utt.edu.mx</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="role-badge role-alumno">Alumno</span></td>
+                        <td>12/01/2026</td>
+                        <td>
+                            <span class="status-badge status-inactive">
+                                <span class="status-dot"></span>Inactivo
+                            </span>
+                        </td>
+                        <td>
+                            <label class="toggle-switch">
+                                <input type="checkbox" onchange="confirmToggle(this, 'Sofía González Ruiz', false)">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <div class="actions-cell">
+                                <button class="btn-action btn-view" onclick="alert('Ver perfil de Sofía González Ruiz')">Ver perfil</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Fila 5 -->
+                    <tr>
+                        <td>
+                            <div class="user-cell">
+                                <div class="user-avatar" style="background-color:#6b21a8;">DB</div>
+                                <div>
+                                    <div class="user-name">DataBridge Analytics</div>
+                                    <div class="user-email">rrhh@databridge.com</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="role-badge role-empresa">Empresa</span></td>
+                        <td>04/02/2026</td>
+                        <td>
+                            <span class="status-badge status-active">
+                                <span class="status-dot"></span>Activo
+                            </span>
+                        </td>
+                        <td>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked onchange="confirmToggle(this, 'DataBridge Analytics', true)">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <div class="actions-cell">
+                                <button class="btn-action btn-view" onclick="alert('Ver perfil de DataBridge Analytics')">Ver perfil</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Fila 6 - Inactivo -->
+                    <tr>
+                        <td>
+                            <div class="user-cell">
+                                <div class="user-avatar" style="background-color:#aaa;">LM</div>
+                                <div>
+                                    <div class="user-name">Luis Morales Vega</div>
+                                    <div class="user-email">luis.morales@utt.edu.mx</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="role-badge role-alumno">Alumno</span></td>
+                        <td>15/01/2026</td>
+                        <td>
+                            <span class="status-badge status-inactive">
+                                <span class="status-dot"></span>Inactivo
+                            </span>
+                        </td>
+                        <td>
+                            <label class="toggle-switch">
+                                <input type="checkbox" onchange="confirmToggle(this, 'Luis Morales Vega', false)">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <div class="actions-cell">
+                                <button class="btn-action btn-view" onclick="alert('Ver perfil de Luis Morales Vega')">Ver perfil</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Fila 7 -->
+                    <tr>
+                        <td>
+                            <div class="user-cell">
+                                <div class="user-avatar" style="background-color:#92400e;">AP</div>
+                                <div>
+                                    <div class="user-name">Mtra. Ana Pineda Cruz</div>
+                                    <div class="user-email">ana.pineda@utt.edu.mx</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="role-badge role-tutor">Tutor académico</span></td>
+                        <td>07/01/2026</td>
+                        <td>
+                            <span class="status-badge status-active">
+                                <span class="status-dot"></span>Activo
+                            </span>
+                        </td>
+                        <td>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked onchange="confirmToggle(this, 'Mtra. Ana Pineda Cruz', true)">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <div class="actions-cell">
+                                <button class="btn-action btn-view" onclick="alert('Ver perfil de Mtra. Ana Pineda Cruz')">Ver perfil</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <span id="paginationInfo">Mostrando 1–7 de 219 usuarios</span>
+                <div class="pagination-btns">
+                    <button class="page-btn">‹</button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">›</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de confirmación -->
+    <div class="modal-backdrop" id="modalBackdrop">
+        <div class="modal">
+            <div class="modal-title" id="modalTitle">¿Desactivar cuenta?</div>
+            <div class="modal-text" id="modalText">¿Está seguro que desea desactivar la cuenta de este usuario? El usuario no podrá acceder al sistema hasta que su cuenta sea reactivada.</div>
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="cancelToggle()">Cancelar</button>
+                <button class="btn-confirm-deactivate" id="modalConfirmBtn" onclick="applyToggle()">Desactivar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../mockup-tutor/js/auth.js"></script>
+    <script>
+        const roleBadgeMap = {
+            alumno: { class: 'role-alumno', label: 'Alumno' },
+            tutor: { class: 'role-tutor', label: 'Tutor académico' },
+            empresa: { class: 'role-empresa', label: 'Empresa' },
+            vinculacion: { class: 'role-vinculacion', label: 'Vinculación' }
+        };
+
+        let pendingToggle = null;
+
+        function formatInitials(name) {
+            if (!name) return '';
+            const parts = name.trim().split(/\s+/);
+            if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+            return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+        }
+
+        function updateUserInfoHeader() {
+            const user = PLAuth.getCurrentUser();
+            const profileName = document.querySelector('.sidebar-profile-name');
+            const profileRole = document.querySelector('.sidebar-profile-role');
+            if (user && profileName && profileRole) {
+                profileName.textContent = user.name;
+                profileRole.textContent = user.email;
+            }
+        }
+
+        function computeStats(users) {
+            const stats = { alumnos: 0, tutores: 0, empresas: 0, inactivos: 0 };
+            users.forEach(u => {
+                switch (u.role) {
+                    case 'alumno': stats.alumnos++; break;
+                    case 'tutor': stats.tutores++; break;
+                    case 'empresa': stats.empresas++; break;
+                }
+                if (!u.active) stats.inactivos++;
+            });
+            return stats;
+        }
+
+        function renderStats(users) {
+            const stats = computeStats(users);
+            document.getElementById('statAlumnos').textContent = stats.alumnos;
+            document.getElementById('statTutores').textContent = stats.tutores;
+            document.getElementById('statEmpresas').textContent = stats.empresas;
+            document.getElementById('statInactivos').textContent = stats.inactivos;
+        }
+
+        function buildUserRow(user) {
+            const role = roleBadgeMap[user.role] || { class: '', label: user.role || '—' };
+            const checked = user.active ? 'checked' : '';
+            const statusClass = user.active ? 'status-active' : 'status-inactive';
+            const statusLabel = user.active ? 'Activo' : 'Inactivo';
+
+            return `
+                <tr>
+                    <td>
+                        <div class="user-cell">
+                            <div class="user-avatar" style="background-color:#2c5282;">${formatInitials(user.name)}</div>
+                            <div>
+                                <div class="user-name">${user.name}</div>
+                                <div class="user-email">${user.email}</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="role-badge ${role.class}">${role.label}</span></td>
+                    <td>${new Date().toLocaleDateString()}</td>
+                    <td>
+                        <span class="status-badge ${statusClass}">
+                            <span class="status-dot"></span>${statusLabel}
+                        </span>
+                    </td>
+                    <td>
+                        <label class="toggle-switch">
+                            <input type="checkbox" ${checked} onchange="confirmToggle(this, '${user.email}', '${user.name}', ${user.active})">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </td>
+                    <td>
+                        <div class="actions-cell">
+                            <button class="btn-action btn-view" onclick="alert('Ver perfil de ${user.name}')">Ver perfil</button>
+                        </div>
+                    </td>
+                </tr>
+            `;
+        }
+
+        function getFilters() {
+            const search = (document.getElementById('searchInput') || {}).value || '';
+            const role = (document.getElementById('filterRole') || {}).value || 'all';
+            const status = (document.getElementById('filterStatus') || {}).value || 'all';
+            return { search, role, status };
+        }
+
+        function filterUsers(users) {
+            const { search, role, status } = getFilters();
+            const normalizedSearch = search.trim().toLowerCase();
+
+            return users.filter(u => {
+                if (role !== 'all' && u.role !== role) return false;
+                if (status === 'active' && !u.active) return false;
+                if (status === 'inactive' && u.active) return false;
+                if (!normalizedSearch) return true;
+                const haystack = `${u.name} ${u.email}`.toLowerCase();
+                return haystack.includes(normalizedSearch);
+            });
+        }
+
+        function renderAccountTable() {
+            const users = PLAuth.getUsers();
+            renderStats(users);
+
+            const filtered = filterUsers(users);
+            const tbody = document.getElementById('usersTableBody');
+            if (!tbody) return;
+
+            tbody.innerHTML = filtered.map(u => buildUserRow(u)).join('');
+
+            const paginationInfo = document.getElementById('paginationInfo');
+            if (paginationInfo) {
+                paginationInfo.textContent = `Mostrando 1–${filtered.length} de ${users.length} usuarios`;
+            }
+        }
+
+        function attachControls() {
+            document.getElementById('searchInput')?.addEventListener('input', renderAccountTable);
+            document.getElementById('filterRole')?.addEventListener('change', renderAccountTable);
+            document.getElementById('filterStatus')?.addEventListener('change', renderAccountTable);
+
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', function () {
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    renderAccountTable();
+                });
+            });
+
+            document.querySelectorAll('.sidebar-item').forEach(item => {
+                item.addEventListener('click', function () {
+                    document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        }
+
+        function confirmToggle(checkbox, userEmail, userName, wasActive) {
+            checkbox.checked = wasActive;
+            pendingToggle = { checkbox, userEmail, userName, wasActive };
+
+            const modal = document.getElementById('modalBackdrop');
+            const title = document.getElementById('modalTitle');
+            const text = document.getElementById('modalText');
+            const btn = document.getElementById('modalConfirmBtn');
+
+            if (wasActive) {
+                title.textContent = '¿Desactivar cuenta?';
+                text.textContent = `¿Está seguro que desea desactivar la cuenta de ${userName}? El usuario no podrá acceder al sistema hasta que sea reactivado.`;
+                btn.textContent = 'Desactivar';
+                btn.className = 'btn-confirm-deactivate';
+            } else {
+                title.textContent = '¿Activar cuenta?';
+                text.textContent = `¿Está seguro que desea activar la cuenta de ${userName}? El usuario podrá acceder nuevamente al sistema.`;
+                btn.textContent = 'Activar';
+                btn.className = 'btn-confirm-activate';
+            }
+
+            modal.classList.add('open');
+        }
+
+        function applyToggle() {
+            if (!pendingToggle) return;
+
+            const toggled = PLAuth.toggleUserActive(pendingToggle.userEmail);
+            if (!toggled) {
+                alert('No se pudo actualizar el estado del usuario.');
+            }
+
+            const current = PLAuth.getCurrentUser();
+            if (current && current.email.toLowerCase() === (pendingToggle.userEmail || '').toLowerCase() && !PLAuth.getUsers().find(u => u.email === current.email)?.active) {
+                alert('Tu cuenta ha sido desactivada. Serás redirigido al inicio de sesión.');
+                PLAuth.logout();
+                return;
+            }
+
+            pendingToggle = null;
+            document.getElementById('modalBackdrop').classList.remove('open');
+            renderAccountTable();
+        }
+
+        function cancelToggle() {
+            pendingToggle = null;
+            document.getElementById('modalBackdrop').classList.remove('open');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            PLAuth.ensureAuth(['vinculacion']);
+            updateUserInfoHeader();
+            attachControls();
+            renderAccountTable();
+        });
+    </script>
+    <button class="fab-accessibility" data-pl-toggle="a11y" aria-label="Activar o desactivar alta visibilidad">
+      <span id="fabLabel">Alta Visibilidad</span>
+    </button>
+    <script src="../shared/practilink.js"></script>
+</body>
+</html>

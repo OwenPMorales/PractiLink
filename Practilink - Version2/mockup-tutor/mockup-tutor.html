@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PractiLink - Panel Tutor Academico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/practilink.css">
+  <link rel="stylesheet" href="tutor.css">
+</head>
+<body class="tutor-page">
+
+  <div id="layout-root"></div>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <main class="main-content">
+
+    <!-- Welcome -->
+    <section class="welcome-section">
+      <h1>Bienvenida, MCA. Trejo Medina</h1>
+      <p>Grupo asignado: 6°B <strong>TSU en Tecnologias de la Informacion - Desarrollo de Software Multiplataforma</strong></p>
+    </section>
+
+    <!-- Period Banner -->
+    <div class="period-banner">
+      <div class="period-item">
+        <span><strong>Periodo:</strong> Septiembre - Diciembre 2026</span>
+      </div>
+      <div class="period-divider"></div>
+      <div class="period-item">
+        <span><strong>Duracion:</strong> 4 meses</span>
+      </div>
+      <div class="period-divider"></div>
+      <div class="period-item">
+        <span><strong>Grupo:</strong> 7°B DSM</span>
+      </div>
+      <div class="period-divider"></div>
+      <div class="period-item">
+        <span><strong>Alumnos:</strong> 22 asignados</span>
+      </div>
+    </div>
+
+    <!-- Stats -->  
+    <!----
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon blue">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M5 7H11V19H5V7Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M13 11H19V19H13V11Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-number">22</span>
+          <span class="stat-label">Alumnos Asignados</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon orange">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M6 18L10 6L14 18L18 10" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-number">6</span>
+          <span class="stat-label">Tesinas Pendientes</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon green">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M6 13L10 17L18 7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-number">12</span>
+          <span class="stat-label">Tesinas Validadas</span>
+        </div>
+      </div>
+    -->
+   <!---
+   <div class="stat-card">
+        <div class="stat-icon red">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M7 7L17 17" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M17 7L7 17" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-number">4</span>
+          <span class="stat-label">Con Observaciones</span>
+        </div>
+      </div>
+    </section>
+  --->
+    <!-- ========== TABS NAVIGATION ========== -->
+    <div class="tabs">
+      <button class="tab-btn active" data-target="tab-alumnos">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M8 12C9.65685 12 11 10.6569 11 9C11 7.34315 9.65685 6 8 6C6.34315 6 5 7.34315 5 9C5 10.6569 6.34315 12 8 12Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 18C4.6 15.8 6.2 14.5 8 14.5C9.8 14.5 11.4 15.8 12 18" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Alumnos</span>
+      </button>
+      <button class="tab-btn" data-target="tab-tesina">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M7 3.5H15.5L19 7V19C19 19.8284 18.3284 20.5 17.5 20.5H7C6.17157 20.5 5.5 19.8284 5.5 19V5C5.5 4.17157 6.17157 3.5 7 3.5Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Documentos</span>
+      </button>
+      <button class="tab-btn" data-target="tab-vinculacion">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M5 5.5H19C19.8284 5.5 20.5 6.17157 20.5 7V15C20.5 15.8284 19.8284 16.5 19 16.5H9L5 19V7C5 6.17157 5.67157 5.5 6.5 5.5Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Comunicados</span>
+      </button>
+    </div>
+
+    <!-- ========== TAB: ALUMNOS ========== -->
+    <div class="tab-content active" id="tab-alumnos">
+      <div class="section-header">
+        <h2>Alumnos Asignados (22) - Grupo 7°B DSM</h2>
+        <div class="search-bar">
+          <input type="text" placeholder="Buscar alumno..." aria-label="Buscar alumno" id="searchAlumno">
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table id="tablaAlumnos">
+          <thead>
+            <tr>
+              <th>Alumno</th>
+              <th>Empresa</th>
+              <th>No. Contacto</th>
+              <th>Documentacion</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><div class="student-cell"><div class="student-avatar">AG</div><div><div class="student-name">Valenzuela Plata Jesus Virginia</div><div class="student-id">Matricula: 0322103836</div></div></div></td><td>TechSolutions MX</td><td>(664) 123-4501</td><td><span class="badge badge-pendiente">Pendiente</span></td><td><div class="actions-cell"><button class="btn btn-primary">Ver Perfil</button><button class="btn btn-outline">Observaciones</button></div></td></tr>
+            <tr><td><div class="student-cell"><div class="student-avatar">BM</div><div><div class="student-name">García Ramirez Kerr</div><div class="student-id">Matricula: 0322103837</div></div></div></td><td>InnovaCode SA</td><td>(664) 123-4502</td><td><span class="badge badge-pendiente">Pendiente</span></td><td><div class="actions-cell"><button class="btn btn-primary">Ver Perfil</button><button class="btn btn-outline">Observaciones</button></div></td></tr>
+            <tr><td><div class="student-cell"><div class="student-avatar">CF</div><div><div class="student-name">Valenzuela Plata Jesus Virginia</div><div class="student-id">Matricula: 0322103837</div></div></div></td><td>SoftwarePro Tijuana</td><td>(664) 123-4503</td><td><span class="badge badge-validado">Completa</span></td><td><div class="actions-cell"><button class="btn btn-primary">Ver Perfil</button><button class="btn btn-outline">Observaciones</button></div></td></tr>
+            <tr><td><div class="student-cell"><div class="student-avatar">DH</div><div><div class="student-name">Valenzuela Plata Jesus Virginia</div><div class="student-id">Matricula: 0322103836</div></div></div></td><td>CloudNet Systems</td><td>(664) 123-4504</td><td><span class="badge badge-pendiente">Pendiente</span></td><td><div class="actions-cell"><button class="btn btn-primary">Ver Perfil</button><button class="btn btn-outline">Observaciones</button></div></td></tr>
+            <tr><td><div class="student-cell"><div class="student-avatar">ER</div><div><div class="student-name">Valenzuela Plata Jesus Virginia</div><div class="student-id">Matricula: 0322103836</div></div></div></td><td>Grupo Digital Baja</td><td>(664) 123-4505</td><td><span class="badge badge-validado">Completa</span></td><td><div class="actions-cell"><button class="btn btn-primary">Ver Perfil</button><button class="btn btn-outline">Observaciones</button></div></td></tr>
+            <tr><td><div class="student-cell"><div class="student-avatar">FT</div><div><div class="student-name">Valenzuela Plata Jesus Virginia</div><div class="student-id">Matricula: 0322103836</div></div></div></td><td>AppFactory MX</td><td>(664) 123-4506</td><td><span class="badge badge-pendiente">Pendiente</span></td><td><div class="actions-cell"><button class="btn btn-primary">Ver Perfil</button><button class="btn btn-outline">Observaciones</button></div></td></tr>
+            <tr><td><div class="student-cell"><div class="student-avatar">GL</div><div><div class="student-name">Valenzuela Plata Jesus Virginia</div><div class="student-id">Matricula: 0322103836</div></div></div></td><td>Manufactura del Norte</td><td>(664) 123-4507</td><td><span class="badge badge-validado">Completa</span></td><td><div class="actions-cell"><button class="btn btn-primary">Ver Perfil</button><button class="btn btn-outline">Observaciones</button></div></td></tr>
+            <tr><td><div class="student-cell"><div class="student-avatar">HV</div><div><div class="student-name">Valenzuela Plata Jesus Virginia</div><div class="student-id">Matricula: 0322103836</div></div></div></td><td>SolarTech Baja</td><td>(664) 123-4508</td><td><span class="badge badge-pendiente">Pendiente</span></td><td><div class="actions-cell"><button class="btn btn-primary">Ver Perfil</button><button class="btn btn-outline">Observaciones</button></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pagination">
+        <span class="pagination-info">Mostrando 1-8 de 22 alumnos</span>
+        <div class="pagination-btns">
+          <button disabled>&laquo; Anterior</button>
+          <button class="active">1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>Siguiente &raquo;</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== TAB: TESINA ========== -->
+    <div class="tab-content" id="tab-tesina">
+      <div class="section-header">
+        <h2>Documentacion - Tesina</h2>
+      </div>
+      <p class="docs-intro">Revision y seguimiento del avance de la tesina de cada alumno del grupo. Desde aqui puedes abrir los documentos, revisar su historial, agregar comentarios y aprobar o rechazar versiones.</p>
+
+      <div class="docs-table-container table-container">
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Alumno</th>
+              <th>Documento</th>
+              <th>Fecha y hora</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="docs-student-name">Andrea Gomez Rios</div>
+                <div class="docs-student-id">Matricula: 0322103801</div>
+              </td>
+              <td>
+                Tesina - Capitulo 2 v3.pdf
+              </td>
+              <td>20 feb 2026 · 11:15 h</td>
+              <td><span class="badge badge-progreso">En revision</span></td>
+              <td>
+                <div class="doc-actions">
+                  <button type="button" class="btn btn-outline btn-doc-ver" data-alumno="Andrea Gomez Rios" data-doc="Tesina - Capitulo 2 v3.pdf">Ver</button>
+                  <button type="button" class="btn btn-outline btn-doc-descargar">Descargar</button>
+                  <button type="button" class="btn btn-secondary btn-doc-historial" data-alumno="Andrea Gomez Rios">Historial</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="docs-student-name">Bruno Martinez Luna</div>
+                <div class="docs-student-id">Matricula: 0322103802</div>
+              </td>
+              <td>
+                Tesina - Borrador inicial.docx
+              </td>
+              <td>19 feb 2026 · 18:42 h</td>
+              <td><span class="badge badge-pendiente">Sin revisar</span></td>
+              <td>
+                <div class="doc-actions">
+                  <button type="button" class="btn btn-outline btn-doc-ver" data-alumno="Bruno Martinez Luna" data-doc="Tesina - Borrador inicial.docx">Ver</button>
+                  <button type="button" class="btn btn-outline btn-doc-descargar">Descargar</button>
+                  <button type="button" class="btn btn-secondary btn-doc-historial" data-alumno="Bruno Martinez Luna">Historial</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="docs-student-name">Fernando Torres Mejia</div>
+                <div class="docs-student-id">Matricula: 0322103803</div>
+              </td>
+              <td>
+                Tesina - Version final.pdf
+              </td>
+              <td>18 feb 2026 · 09:30 h</td>
+              <td><span class="badge badge-validado">Validada</span></td>
+              <td>
+                <div class="doc-actions">
+                  <button type="button" class="btn btn-outline btn-doc-ver" data-alumno="Fernando Torres Mejia" data-doc="Tesina - Version final.pdf">Ver</button>
+                  <button type="button" class="btn btn-outline btn-doc-descargar">Descargar</button>
+                  <button type="button" class="btn btn-secondary btn-doc-historial" data-alumno="Fernando Torres Mejia">Historial</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="docs-student-name">Diego Hernandez Vega</div>
+                <div class="docs-student-id">Matricula: 0322103804</div>
+              </td>
+              <td>
+                Tesina - Capitulo 1 revisado.pdf
+              </td>
+              <td>17 feb 2026 · 16:05 h</td>
+              <td><span class="badge badge-observacion">Con observaciones</span></td>
+              <td>
+                <div class="doc-actions">
+                  <button type="button" class="btn btn-outline btn-doc-ver" data-alumno="Diego Hernandez Vega" data-doc="Tesina - Capitulo 1 revisado.pdf">Ver</button>
+                  <button type="button" class="btn btn-outline btn-doc-descargar">Descargar</button>
+                  <button type="button" class="btn btn-secondary btn-doc-historial" data-alumno="Diego Hernandez Vega">Historial</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="info-card docs-summary-card">
+        <div class="info-card-header" style="border-bottom: none; padding-bottom: 6px; margin-bottom: 8px;">
+          <div>
+            <h3>Resumen rapido</h3>
+            <p>Estado general de los documentos del grupo</p>
+          </div>
+        </div>
+        <ul class="docs-summary-list">
+          <li><strong>4</strong> ultimos documentos cargados</li>
+          <li><strong>1</strong> sin revisar</li>
+          <li><strong>2</strong> en revision / con observaciones</li>
+          <li><strong>1</strong> version final validada</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ========== TAB: VINCULACION ========== -->
+    <div class="tab-content" id="tab-vinculacion">
+      <div class="section-header">
+        <h2>Comunicacion con Vinculacion</h2>
+      </div>
+      <p style="margin-bottom: 18px; color: var(--texto-secundario);">Canal de comunicacion con el departamento de Vinculacion para el envio de tesinas validadas y seguimiento administrativo del proceso de estadias.</p>
+
+      <div class="info-cards-grid">
+        <div class="info-card">
+          <div class="info-card-header">
+            <div class="icon-circle blue-bg">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M6 5.5H18C18.8284 5.5 19.5 6.17157 19.5 7V17C19.5 17.8284 18.8284 18.5 18 18.5H9L6 20V7C6 6.17157 6.67157 5.5 7.5 5.5Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Contacto de Vinculacion</h3>
+              <p>Departamento de Vinculacion - UTT</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Responsable</div>
+            <div class="contact-value">Lic. Patricia Mendoza Ruiz</div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Correo Electronico</div>
+            <div class="contact-value"><a href="mailto:vinculacion@uttijuana.edu.mx">vinculacion@uttijuana.edu.mx</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Telefono</div>
+            <div class="contact-value">(664) 969-4300 Ext. 120</div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Ubicacion</div>
+            <div class="contact-value">Edificio A, Planta Baja, Oficina 12</div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-header">
+            <div class="icon-circle orange-bg">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 7H19V17H5V7Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 11L11.5 13.5L15 10" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Envios Recientes</h3>
+              <p>Documentacion enviada a Vinculacion</p>
+            </div>
+          </div>
+          <ul class="tesina-list">
+            <li><span class="doc-name">Camila Flores - Tesina Final</span><span class="badge badge-validado">Recibido</span></li>
+            <li><span class="doc-name">Elena Ramirez - Tesina Final</span><span class="badge badge-validado">Recibido</span></li>
+            <li><span class="doc-name">Lote 3 tesinas - Feb 2026</span><span class="badge badge-pendiente">En proceso</span></li>
+          </ul>
+          <div style="margin-top: 16px;">
+            <button class="btn btn-primary">Enviar Nueva Documentacion</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== TAB: CONTACTO EMPRESAS ========== -->
+    <div class="tab-content" id="tab-empresas">
+      <div class="section-header">
+        <h2>Contacto con Empresas</h2>
+      </div>
+      <p style="margin-bottom: 18px; color: var(--texto-secundario);">Directorio de empresas donde los alumnos realizan su periodo de estadias. Puedes consultar los datos de contacto para dar seguimiento.</p>
+
+      <div class="info-cards-grid">
+        <div class="info-card">
+          <div class="info-card-header">
+            <div class="icon-circle blue-bg">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4.5 19.5H19.5V10.5L13 4.5L4.5 10.5V19.5Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>TechSolutions MX</h3>
+              <p>1 alumno en estadias</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Contacto</div>
+            <div class="contact-value">Ing. Roberto Castillo</div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Correo</div>
+            <div class="contact-value"><a href="mailto:rcastillo@techsolutions.mx">rcastillo@techsolutions.mx</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Telefono</div>
+            <div class="contact-value">(664) 123-4567</div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Direccion</div>
+            <div class="contact-value">Blvd. Agua Caliente #1045, Zona Rio, Tijuana, B.C.</div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-header">
+            <div class="icon-circle blue-bg">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 7H19V17H5V7Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 10.5H16" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M8 13.5H13" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>InnovaCode SA</h3>
+              <p>1 alumno en estadias</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Contacto</div>
+            <div class="contact-value">Lic. Mariana Orozco</div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Correo</div>
+            <div class="contact-value"><a href="mailto:morozco@innovacode.com">morozco@innovacode.com</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Telefono</div>
+            <div class="contact-value">(664) 234-5678</div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Direccion</div>
+            <div class="contact-value">Calle Segunda #892, Centro, Tijuana, B.C.</div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-header">
+            <div class="icon-circle blue-bg">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M9.5 10C9.89782 8.284 11.3467 7 13.1 7C15.1569 7 16.8333 8.67641 16.8333 10.7333C18.2264 11.0276 19.25 12.2522 19.25 13.7C19.25 15.373 17.923 16.7 16.25 16.7H8.25C6.45507 16.7 5 15.2449 5 13.45C5 11.8631 6.12061 10.5576 7.64615 10.2741C7.99333 9.40818 8.68288 8.72519 9.5 8.4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>CloudNet Systems</h3>
+              <p>1 alumno en estadias</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Contacto</div>
+            <div class="contact-value">Ing. Carlos Navarro</div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Correo</div>
+            <div class="contact-value"><a href="mailto:cnavarro@cloudnet.mx">cnavarro@cloudnet.mx</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Telefono</div>
+            <div class="contact-value">(664) 345-6789</div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Direccion</div>
+            <div class="contact-value">Av. Paseo de los Heroes #5020, Zona Rio, Tijuana, B.C.</div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-header">
+            <div class="icon-circle blue-bg">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M6 6H18V10H6V6Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 14H10V18H6V14Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 14H18V18H14V14Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>SoftwarePro Tijuana</h3>
+              <p>1 alumno en estadias</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Contacto</div>
+            <div class="contact-value">Ing. Luis Alberto Pena</div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Correo</div>
+            <div class="contact-value"><a href="mailto:lapena@softwarepro.com.mx">lapena@softwarepro.com.mx</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Telefono</div>
+            <div class="contact-value">(664) 456-7890</div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Direccion</div>
+            <div class="contact-value">Blvd. Industrial #3050, Parque Industrial Pacifico, Tijuana, B.C.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== TAB: FORO ========== -->
+    <div class="tab-content" id="tab-foro">
+      <div class="foro-section-header">
+        <h2>Foro - Anuncios para alumnos tutorados</h2>
+        <button type="button" class="btn btn-primary" id="btnNuevoAnuncio" aria-label="Publicar nuevo anuncio">
+          Nuevo anuncio
+        </button>
+      </div>
+      <p class="foro-intro">Publica comunicados y anuncios para que los alumnos de tu grupo asignado esten al tanto de fechas, requisitos y avisos importantes.</p>
+      <div class="foro-list" id="foroList">
+        <article class="foro-card">
+          <h3 class="foro-card-title">Entrega de reportes parciales</h3>
+          <p class="foro-card-meta">Publicado el 15 feb 2026 · MCA. Laura Trejo Medina</p>
+          <p class="foro-card-content">Recuerden enviar el reporte parcial del mes antes del 28 de febrero. Debe incluir avance en la empresa y avance de tesina. Subir al portal en la seccion Documentacion.</p>
+          <div style="margin-top: 14px; text-align: right;">
+            <button type="button" class="btn btn-outline btn-eliminar-anuncio">Eliminar</button>
+          </div>
+        </article>
+        <article class="foro-card">
+          <h3 class="foro-card-title">Reunion de seguimiento</h3>
+          <p class="foro-card-meta">Publicado el 10 feb 2026 · MCA. Laura Trejo Medina</p>
+          <p class="foro-card-content">El proximo viernes 21 de febrero tendremos reunion grupal a las 10:00 am en classroom.</p>
+          <div style="margin-top: 14px; text-align: right;">
+            <button type="button" class="btn btn-outline btn-eliminar-anuncio">Eliminar</button>
+          </div>
+        </article>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========== MODAL DOCUMENTO TESINA ========== -->
+  <div class="modal-overlay" id="modalDocumento" aria-hidden="true" aria-labelledby="modalDocumentoTitulo">
+    <div class="modal-box" role="dialog" aria-modal="true">
+      <div class="modal-header" id="modalDocumentoTitulo">Documento del alumno</div>
+      <div class="modal-body">
+        <div class="doc-modal-layout">
+          <div class="doc-preview">
+            <p class="doc-preview-meta" id="docPreviewMeta">Selecciona un documento de la lista para ver mas detalles.</p>
+            <div class="doc-preview-box">
+              <p><strong>Vista previa del documento</strong></p>
+              <p style="margin-top: 6px;">Aqui se mostraria el PDF o archivo subido por el alumno.</p>
+            </div>
+            <button type="button" class="btn btn-outline" id="btnDescargarDesdeModal">Descargar documento</button>
+          </div>
+          <div class="doc-side-panel">
+            <h4>Comentarios del tutor</h4>
+            <div class="doc-comments-list" id="docCommentsList">
+              <p class="doc-comment-empty">Sin comentarios por el momento. Agrega tus observaciones para el alumno.</p>
+            </div>
+            <div class="form-group">
+              <label for="docComentario">Agregar comentario</label>
+              <textarea id="docComentario" placeholder="Escribe un comentario sobre esta version del documento..." aria-label="Comentario del tutor"></textarea>
+            </div>
+            <div style="margin-top: 6px; margin-bottom: 4px; text-align: right;">
+              <button type="button" class="btn btn-secondary" id="btnAgregarComentario">Agregar comentario</button>
+            </div>
+            <div class="doc-modal-actions">
+              <button type="button" class="btn btn-outline" id="btnCerrarDoc">Cerrar</button>
+              <button type="button" class="btn btn-danger" id="btnRechazarDoc">Rechazar version</button>
+              <button type="button" class="btn btn-primary" id="btnAprobarDoc">Aprobar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== MODAL HISTORIAL DOCUMENTOS ========== -->
+  <div class="modal-overlay" id="modalHistorialDocs" aria-hidden="true" aria-labelledby="modalHistorialTitulo">
+    <div class="modal-box" role="dialog" aria-modal="true">
+      <div class="modal-header" id="modalHistorialTitulo">Historial de documentos</div>
+      <div class="modal-body">
+        <p class="docs-history-intro" id="historialAlumnoNombre">Alumno: Selecciona un alumno para ver su historial.</p>
+        <ul class="docs-history-list">
+          <li class="docs-history-item">
+            <div class="docs-history-main">
+              <span class="docs-history-title">Tesina - Version final.pdf</span>
+              <span class="docs-history-meta">18 feb 2026 · 09:30 h · Estado: Validada</span>
+            </div>
+            <div class="docs-history-actions">
+              <button type="button" class="btn btn-outline btn-doc-ver">Ver</button>
+              <button type="button" class="btn btn-outline btn-doc-descargar">Descargar</button>
+            </div>
+          </li>
+          <li class="docs-history-item">
+            <div class="docs-history-main">
+              <span class="docs-history-title">Tesina - Version 2.pdf</span>
+              <span class="docs-history-meta">10 feb 2026 · 15:05 h · Estado: Con observaciones</span>
+            </div>
+            <div class="docs-history-actions">
+              <button type="button" class="btn btn-outline btn-doc-ver">Ver</button>
+              <button type="button" class="btn btn-outline btn-doc-descargar">Descargar</button>
+            </div>
+          </li>
+          <li class="docs-history-item">
+            <div class="docs-history-main">
+              <span class="docs-history-title">Tesina - Borrador inicial.docx</span>
+              <span class="docs-history-meta">02 feb 2026 · 19:22 h · Estado: Recibido</span>
+            </div>
+            <div class="docs-history-actions">
+              <button type="button" class="btn btn-outline btn-doc-ver">Ver</button>
+              <button type="button" class="btn btn-outline btn-doc-descargar">Descargar</button>
+            </div>
+          </li>
+        </ul>
+        <div class="doc-modal-actions" style="margin-top: 16px;">
+          <button type="button" class="btn btn-outline" id="btnCerrarHistorial">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== MODAL NUEVO COMUNICADO ========== -->
+  <div class="modal-overlay" id="modalAnuncio" aria-hidden="true" aria-labelledby="modalAnuncioTitulo">
+    <div class="modal-box" role="dialog" aria-modal="true" id="modalAnuncioBox">
+      <div class="modal-header" id="modalAnuncioTitulo">Nuevo comunicado</div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="anuncioTitulo">Titulo del anuncio <span class="label-required">*Requerido*</span></label>
+          <input type="text" id="anuncioTitulo" placeholder="Ej: Fecha limite de entrega" aria-label="Titulo del anuncio">
+        </div>
+        <div class="form-group">
+          <label for="anuncioContenido">Mensaje</label>
+          <textarea id="anuncioContenido" placeholder="Escribe el contenido del anuncio para tus alumnos..." aria-label="Contenido del anuncio" rows="5"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" id="btnCancelarAnuncio">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="btnPublicarAnuncio">Publicar anuncio</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FLOATING ACCESSIBILITY BUTTON ============ -->
+  <button class="fab-accessibility" id="fabAccessibility" aria-label="Activar modo de alta visibilidad">
+    <span id="fabLabel">Alta Visibilidad</span>
+  </button>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script src="js/auth.js"></script>
+  <script src="js/layout.js"></script>
+  <script>
+    // Toggle Alta Visibilidad
+    const fabBtn = document.getElementById('fabAccessibility');
+    const fabLabel = document.getElementById('fabLabel');
+    let altaVisibilidadActiva = false;
+
+    fabBtn.addEventListener('click', function() {
+      altaVisibilidadActiva = !altaVisibilidadActiva;
+      document.body.classList.toggle('alta-visibilidad', altaVisibilidadActiva);
+      fabLabel.textContent = altaVisibilidadActiva ? 'Modo Normal' : 'Alta Visibilidad';
+      fabBtn.setAttribute('aria-label',
+        altaVisibilidadActiva ? 'Desactivar modo de alta visibilidad' : 'Activar modo de alta visibilidad'
+      );
+    });
+
+    // Sidebar mobile toggle
+    const hamburger = document.getElementById('hamburgerBtn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+
+    hamburger.addEventListener('click', function() {
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', function() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('active');
+    });
+
+    // Search filter for students table
+    const searchInput = document.getElementById('searchAlumno');
+    searchInput.addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      const rows = document.querySelectorAll('#tablaAlumnos tbody tr');
+      rows.forEach(function(row) {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(query) ? '' : 'none';
+      });
+    });
+
+    // Tabs functionality
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+
+        tabBtns.forEach(function(b) { b.classList.remove('active'); });
+        tabContents.forEach(function(tc) { tc.classList.remove('active'); });
+
+        this.classList.add('active');
+        document.getElementById(targetId).classList.add('active');
+      });
+    });
+
+    // Sidebar nav links also switch tabs
+    const sidebarLinks = document.querySelectorAll('.sidebar-link[data-tab]');
+    sidebarLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const tab = this.getAttribute('data-tab');
+
+        // Map sidebar data-tab to content tab ids
+        const tabMap = {
+          'inicio': 'tab-alumnos',
+          'alumnos': 'tab-alumnos',
+          'tesina': 'tab-tesina',
+          'vinculacion': 'tab-vinculacion',
+          'empresas': 'tab-empresas',
+          'calendario': 'tab-alumnos',
+          'foro': 'tab-foro',
+          'mensajes': 'tab-vinculacion'
+        };
+
+        const targetId = tabMap[tab];
+        if (targetId) {
+          tabBtns.forEach(function(b) { b.classList.remove('active'); });
+          tabContents.forEach(function(tc) { tc.classList.remove('active'); });
+
+          // Activate matching tab button
+          tabBtns.forEach(function(b) {
+            if (b.getAttribute('data-target') === targetId) {
+              b.classList.add('active');
+            }
+          });
+          document.getElementById(targetId).classList.add('active');
+        }
+
+        // Update sidebar active state
+        sidebarLinks.forEach(function(l) { l.classList.remove('active'); });
+        this.classList.add('active');
+
+        // Close mobile sidebar
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+      });
+    });
+
+    // Modal Documento Tesina
+    const modalDocumento = document.getElementById('modalDocumento');
+    const docPreviewMeta = document.getElementById('docPreviewMeta');
+    const btnDescargarDesdeModal = document.getElementById('btnDescargarDesdeModal');
+    const btnCerrarDoc = document.getElementById('btnCerrarDoc');
+    const btnAprobarDoc = document.getElementById('btnAprobarDoc');
+    const btnRechazarDoc = document.getElementById('btnRechazarDoc');
+    const docCommentsList = document.getElementById('docCommentsList');
+    const docComentario = document.getElementById('docComentario');
+    const docsVerBtns = document.querySelectorAll('.btn-doc-ver');
+    const docsDescargarBtns = document.querySelectorAll('.btn-doc-descargar');
+    const docsHistorialBtns = document.querySelectorAll('.btn-doc-historial');
+
+    const btnAgregarComentario = document.getElementById('btnAgregarComentario');
+
+    function abrirModalDocumento(alumno, doc) {
+      modalDocumento.classList.add('active');
+      modalDocumento.setAttribute('aria-hidden', 'false');
+      docPreviewMeta.textContent = alumno + ' - ' + doc;
+      docComentario.value = '';
+      docCommentsList.innerHTML = '<p class="doc-comment-empty">Sin comentarios por el momento. Agrega tus observaciones para el alumno.</p>';
+    }
+
+    function cerrarModalDocumento() {
+      modalDocumento.classList.remove('active');
+      modalDocumento.setAttribute('aria-hidden', 'true');
+    }
+
+    function escTextoComentario(s) {
+      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    docsVerBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const alumno = this.getAttribute('data-alumno');
+        const doc = this.getAttribute('data-doc');
+        abrirModalDocumento(alumno, doc);
+      });
+    });
+
+    docsDescargarBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        // En un sistema real aqui se iniciaria la descarga
+        alert('Descarga de documento simulada para este prototipo.');
+      });
+    });
+
+    btnDescargarDesdeModal.addEventListener('click', function() {
+      alert('Descarga de documento simulada para este prototipo.');
+    });
+
+    btnCerrarDoc.addEventListener('click', function() {
+      cerrarModalDocumento();
+    });
+
+    modalDocumento.addEventListener('click', function(e) {
+      if (e.target === modalDocumento) {
+        cerrarModalDocumento();
+      }
+    });
+
+    btnAprobarDoc.addEventListener('click', function() {
+      alert('Documento aprobado (accion simulada).');
+      cerrarModalDocumento();
+    });
+
+    btnRechazarDoc.addEventListener('click', function() {
+      alert('Documento marcado como rechazado (accion simulada).');
+      cerrarModalDocumento();
+    });
+
+    btnAgregarComentario.addEventListener('click', function() {
+      var texto = docComentario.value.trim();
+      if (!texto) return;
+      if (docCommentsList.querySelector('.doc-comment-empty')) {
+        docCommentsList.innerHTML = '';
+      }
+      var item = document.createElement('div');
+      item.className = 'doc-comment-item';
+      var ahora = new Date();
+      var opts = { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+      var fechaStr = ahora.toLocaleDateString('es-MX', opts);
+      item.innerHTML =
+        '<span>' + escTextoComentario(texto) + '</span>' +
+        '<span class="doc-comment-meta">Comentario del tutor · ' + fechaStr + '</span>';
+      docCommentsList.appendChild(item);
+      docComentario.value = '';
+    });
+
+    // Modal historial documentos
+    const modalHistorialDocs = document.getElementById('modalHistorialDocs');
+    const historialAlumnoNombre = document.getElementById('historialAlumnoNombre');
+    const btnCerrarHistorial = document.getElementById('btnCerrarHistorial');
+
+    function abrirModalHistorial(alumno) {
+      modalHistorialDocs.classList.add('active');
+      modalHistorialDocs.setAttribute('aria-hidden', 'false');
+      historialAlumnoNombre.textContent = 'Alumno: ' + alumno;
+    }
+
+    function cerrarModalHistorial() {
+      modalHistorialDocs.classList.remove('active');
+      modalHistorialDocs.setAttribute('aria-hidden', 'true');
+    }
+
+    docsHistorialBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const alumno = this.getAttribute('data-alumno');
+        abrirModalHistorial(alumno);
+      });
+    });
+
+    modalHistorialDocs.addEventListener('click', function(e) {
+      if (e.target === modalHistorialDocs) {
+        cerrarModalHistorial();
+      }
+    });
+
+    btnCerrarHistorial.addEventListener('click', function() {
+      cerrarModalHistorial();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        if (modalDocumento.classList.contains('active')) {
+          cerrarModalDocumento();
+        }
+        if (modalHistorialDocs.classList.contains('active')) {
+          cerrarModalHistorial();
+        }
+      }
+    });
+
+    // Modal Foro - Nuevo anuncio
+    const modalAnuncio = document.getElementById('modalAnuncio');
+    const btnNuevoAnuncio = document.getElementById('btnNuevoAnuncio');
+    const btnCancelarAnuncio = document.getElementById('btnCancelarAnuncio');
+    const btnPublicarAnuncio = document.getElementById('btnPublicarAnuncio');
+    const foroList = document.getElementById('foroList');
+    const anuncioTitulo = document.getElementById('anuncioTitulo');
+    const anuncioContenido = document.getElementById('anuncioContenido');
+
+    function abrirModalAnuncio() {
+      modalAnuncio.classList.add('active');
+      modalAnuncio.setAttribute('aria-hidden', 'false');
+      anuncioTitulo.value = '';
+      anuncioContenido.value = '';
+      anuncioTitulo.focus();
+    }
+
+    function cerrarModalAnuncio() {
+      modalAnuncio.classList.remove('active');
+      modalAnuncio.setAttribute('aria-hidden', 'true');
+    }
+
+    btnNuevoAnuncio.addEventListener('click', abrirModalAnuncio);
+
+    btnCancelarAnuncio.addEventListener('click', function() {
+      cerrarModalAnuncio();
+    });
+
+    modalAnuncio.addEventListener('click', function(e) {
+      if (e.target === modalAnuncio) {
+        cerrarModalAnuncio();
+      }
+    });
+
+    btnPublicarAnuncio.addEventListener('click', function() {
+      var titulo = anuncioTitulo.value.trim();
+      var contenido = anuncioContenido.value.trim();
+      if (titulo && contenido) {
+        var card = document.createElement('article');
+        card.className = 'foro-card';
+        var fecha = new Date();
+        var opts = { day: 'numeric', month: 'short', year: 'numeric' };
+        var fechaStr = fecha.toLocaleDateString('es-MX', opts);
+        var esc = function(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); };
+        card.innerHTML =
+          '<h3 class="foro-card-title">' + esc(titulo) + '</h3>' +
+          '<p class="foro-card-meta">Publicado el ' + fechaStr + ' · MCA. Laura Trejo Medina</p>' +
+          '<p class="foro-card-content">' + esc(contenido).replace(/\n/g, '<br>') + '</p>' +
+          '<div style="margin-top: 14px; text-align: right;">' +
+            '<button type="button" class="btn btn-outline btn-eliminar-anuncio">Eliminar</button>' +
+          '</div>';
+        foroList.insertBefore(card, foroList.firstChild);
+        cerrarModalAnuncio();
+      }
+    });
+
+    // Eliminar anuncio del foro (delegacion de eventos)
+    foroList.addEventListener('click', function(e) {
+      if (e.target && e.target.classList.contains('btn-eliminar-anuncio')) {
+        const card = e.target.closest('.foro-card');
+        if (card) {
+          card.remove();
+        }
+      }
+    });
+  </script>
+</body>
+</html>

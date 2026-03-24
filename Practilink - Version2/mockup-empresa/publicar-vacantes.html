@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Publicar Vacante | Portal Empresa</title>
+  
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../shared/practilink.css" />
+    <link rel="stylesheet" href="empresa.css" />
+  </head>
+
+  <body class="empresa-page">
+    <a class="skip-link" href="#contenidoPrincipal">Saltar al contenido principal</a>
+    <aside class="sidebar" aria-label="Navegación principal">
+      <div class="sidebar-brand">
+        <div class="brand-logo">
+          <img src="../LogoUTT.png" alt="Logo institucional UTT" />
+        </div>
+        <div class="brand-title">Portal Empresa</div>
+      </div>
+      <nav>
+        <a href="registro-empresa.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 3v18"/><path d="M3 12h18"/></svg>
+          Registro
+        </a>
+        <a href="perfil-empresa.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="7" r="4"/></svg>
+          Perfil
+        </a>
+        <a href="publicar-vacantes.html" class="active">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
+          Vacantes
+        </a>
+        <a href="postulaciones-alumnos.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Postulaciones
+        </a>
+        <a href="seguimiento-alumnos.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 14 3-3 3 2 4-5"/></svg>
+          Seguimiento
+        </a>
+        <a href="comunicacion.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Comunicación
+        </a>
+      </nav>
+    </aside>
+
+    <main class="main" id="contenidoPrincipal" tabindex="-1">
+      <div class="notice" id="noCompanyNotice" style="display:none;">
+        Registra una empresa para ver y crear vacantes.
+      </div>
+
+      <h1>Publicar Vacante</h1>
+      <p class="subtitle">Crea una nueva oferta de estadía profesional.</p>
+
+      <div class="progress-container">
+        <div class="progress" id="progressBar"></div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <form id="vacanteForm">
+            <label>Título de vacante</label>
+            <input id="titulo" required />
+            <div class="error" id="errorTitulo">El título es obligatorio.</div>
+
+            <label>Duración de estadía</label>
+            <input id="duracion" placeholder="Ej. 4 meses" required />
+            <div class="error" id="errorDuracion">
+              La duración es obligatoria.
+            </div>
+
+            <label>Modalidad</label>
+            <select id="modalidad" required>
+              <option value="">Seleccionar modalidad</option>
+              <option>Presencial</option>
+              <option>Remoto</option>
+              <option>Híbrido</option>
+            </select>
+
+            <label>Ubicación</label>
+            <input id="ubicacion" placeholder="Ej. Zona Río, Tijuana, B.C." required />
+
+            <label>Contacto de vacante</label>
+            <input id="contacto" placeholder="Nombre y correo de contacto" required />
+
+            <label>Apoyo económico mensual (MXN)</label>
+            <input id="apoyo" placeholder="Ej. 4200" required />
+
+            <label>Horario</label>
+            <input id="horario" placeholder="Ej. Lunes a viernes · 9:00 a 14:00" required />
+
+            <label>Descripción de actividades</label>
+            <textarea id="actividades" maxlength="320"></textarea>
+            <small id="contador">0 / 320 caracteres</small>
+
+            <label>Requisitos</label>
+            <textarea id="requisitos"></textarea>
+
+            <div class="buttons">
+              <button type="button" class="btn-secondary" id="btnAgregarVacante">+ Agregar vacante</button>
+              <button type="submit" class="btn-success">Publicar todas</button>
+            </div>
+          </form>
+
+          <div class="help-box">
+            <strong>Consejos para publicar vacantes:</strong><br />
+            - Incluye ubicación real y modalidad.<br />
+            - Define contacto, horario y apoyo económico.<br />
+            - Redacta actividades claras para el alumno.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-header-inline">
+            <h3 style="margin:0;">Vacantes por publicar</h3>
+            <span class="tag tag-muted" id="draftCount">0 en cola</span>
+          </div>
+          <div id="draftVacancyList"></div>
+          <hr style="border:none; border-top:1px solid #eee2d4; margin:12px 0;" />
+          <h3>Vacantes Publicadas</h3>
+          <div id="vacancyList"></div>
+        </div>
+      </div>
+    </main>
+
+    <div class="modal-backdrop" id="vacancyModal">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="vacancyModalTitle">
+        <header>
+          <h3 id="vacancyModalTitle">Editar vacante</h3>
+          <button type="button" class="btn-secondary" aria-label="Cerrar" onclick="closeModal()">✕</button>
+        </header>
+
+        <input type="hidden" id="editVacancyId" />
+
+        <div class="modal-row">
+          <label>Título</label>
+          <input id="editTitle" />
+        </div>
+
+        <div class="modal-row">
+          <label>Duración</label>
+          <input id="editDuration" />
+        </div>
+
+        <div class="modal-row">
+          <label>Actividades</label>
+          <textarea id="editActivities" rows="3"></textarea>
+        </div>
+
+        <div class="modal-row">
+          <label>Requisitos</label>
+          <textarea id="editRequirements" rows="3"></textarea>
+        </div>
+
+        <div class="buttons">
+          <button id="btnCancelVacancy" type="button" class="btn-secondary">Cancelar</button>
+          <button id="btnSaveVacancy" type="button" class="btn-success">Guardar</button>
+        </div>
+      </div>
+    </div>
+
+    <button class="fab-accessibility" data-pl-toggle="a11y" aria-label="Activar o desactivar alta visibilidad">
+      <span id="fabLabel">Alta Visibilidad</span>
+    </button>
+    <script src="../shared/practilink.js"></script>
+    <script src="js/empresa.js"></script>
+    <script>
+      const form = document.getElementById("vacanteForm");
+      const inputs = form.querySelectorAll("input, textarea");
+      const progressBar = document.getElementById("progressBar");
+      const contador = document.getElementById("contador");
+      const actividades = document.getElementById("actividades");
+      const vacancyList = document.getElementById("vacancyList");
+      const draftVacancyList = document.getElementById("draftVacancyList");
+      const draftCount = document.getElementById("draftCount");
+      const btnAgregarVacante = document.getElementById("btnAgregarVacante");
+      const modal = document.getElementById("vacancyModal");
+      const draftVacancies = [];
+
+      function updateProgress() {
+        let filled = 0;
+        inputs.forEach((input) => {
+          if (input.value.trim() !== "") filled++;
+        });
+        let percent = (filled / inputs.length) * 100;
+        progressBar.style.width = percent + "%";
+      }
+
+      function formatVacancy(vac) {
+        const statusClass = vac.status === "active" ? "tag-success" : "tag-muted";
+        const statusLabel = vac.status === "active" ? "Activa" : "En revisión";
+        const appCount = vac.applications ? vac.applications.length : 0;
+        return `
+          <div class="vacancy" data-id="${vac.id}">
+            <strong>${vac.title}</strong><br />
+            <span class="tag ${statusClass}">${statusLabel}</span> · ${appCount} postulante(s)
+            <div style="margin-top:8px; display:flex; gap:8px;">
+              <button style="padding:6px 10px; border:none; border-radius:6px; background:#f0f0f0; cursor:pointer;" onclick="openEditVacancy('${vac.id}')">Editar</button>
+              <button style="padding:6px 10px; border:none; border-radius:6px; background:#dc2626; color:white; cursor:pointer;" onclick="deleteVacancy('${vac.id}')">Eliminar</button>
+            </div>
+          </div>
+        `;
+      }
+
+      function renderVacancies() {
+        const company = window.Empresa.getCurrentCompany();
+        const notice = document.getElementById('noCompanyNotice');
+        if (!company) {
+          if (notice) notice.style.display = 'block';
+          vacancyList.innerHTML = '<p style="color:#555;">Registra una empresa para ver las vacantes aquí.</p>';
+          return;
+        }
+
+        if (notice) notice.style.display = 'none';
+        const vacs = window.Empresa.getVacanciesByCompany(company.id);
+        vacancyList.innerHTML = vacs.map(formatVacancy).join('') || '<p style="color:#555;">No hay vacantes publicadas.</p>';
+      }
+
+      function clearForm() {
+        form.reset();
+        updateProgress();
+        contador.textContent = '0 / 320 caracteres';
+      }
+
+      function buildVacancyDataFromForm() {
+        return {
+          title: document.getElementById('titulo').value.trim(),
+          duration: document.getElementById('duracion').value.trim(),
+          modality: document.getElementById('modalidad').value,
+          location: document.getElementById('ubicacion').value.trim(),
+          contact: document.getElementById('contacto').value.trim(),
+          stipend: document.getElementById('apoyo').value.trim(),
+          schedule: document.getElementById('horario').value.trim(),
+          activities: document.getElementById('actividades').value.trim(),
+          requirements: document.getElementById('requisitos').value.trim(),
+          status: 'pending'
+        };
+      }
+
+      function isValidDraft(data) {
+        return Boolean(
+          data.title &&
+          data.duration &&
+          data.modality &&
+          data.location &&
+          data.contact &&
+          data.stipend &&
+          data.schedule
+        );
+      }
+
+      function renderDrafts() {
+        draftCount.textContent = `${draftVacancies.length} en cola`;
+        draftVacancyList.innerHTML = draftVacancies.map((vac, index) => `
+          <div class="vacancy-draft">
+            <strong>${vac.title}</strong>
+            <p>${vac.modality} · ${vac.duration}</p>
+            <p><strong>Ubicación:</strong> ${vac.location}</p>
+            <p><strong>Contacto:</strong> ${vac.contact}</p>
+            <p><strong>Apoyo:</strong> $${vac.stipend} MXN · <strong>Horario:</strong> ${vac.schedule}</p>
+            <button type="button" class="btn-danger" onclick="removeDraft(${index})">Quitar</button>
+          </div>
+        `).join('') || '<p style="color:#555;">Aún no hay vacantes en cola.</p>';
+      }
+
+      function addDraftVacancy() {
+        const notice = document.getElementById('noCompanyNotice');
+        const company = window.Empresa.getCurrentCompany();
+        if (!company) {
+          if (notice) notice.style.display = 'block';
+          return;
+        }
+        const data = buildVacancyDataFromForm();
+        if (!isValidDraft(data)) {
+          alert('Completa los datos principales: título, duración, modalidad, ubicación, contacto, apoyo y horario.');
+          return;
+        }
+        draftVacancies.push(data);
+        renderDrafts();
+        clearForm();
+      }
+
+      function handleSubmit(event) {
+        event.preventDefault();
+        const notice = document.getElementById('noCompanyNotice');
+        const company = window.Empresa.getCurrentCompany();
+        if (!company) {
+          if (notice) notice.style.display = 'block';
+          return;
+        }
+
+        if (!draftVacancies.length) {
+          const current = buildVacancyDataFromForm();
+          if (isValidDraft(current)) {
+            draftVacancies.push(current);
+          }
+        }
+
+        if (!draftVacancies.length) {
+          alert('Agrega al menos una vacante con "+ Agregar vacante" o completa el formulario actual.');
+          return;
+        }
+
+        draftVacancies.forEach((data) => window.Empresa.addVacancy(data));
+        draftVacancies.length = 0;
+        renderDrafts();
+        clearForm();
+        renderVacancies();
+        alert('Vacantes publicadas correctamente.');
+      }
+
+      function openEditVacancy(id) {
+        const company = window.Empresa.getCurrentCompany();
+        if (!company) return;
+        const vacs = window.Empresa.getVacanciesByCompany(company.id);
+        const vac = vacs.find(v => v.id === id);
+        if (!vac) return;
+        document.getElementById('editVacancyId').value = vac.id;
+        document.getElementById('editTitle').value = vac.title;
+        document.getElementById('editDuration').value = vac.duration;
+        document.getElementById('editActivities').value = vac.activities || '';
+        document.getElementById('editRequirements').value = vac.requirements || '';
+        modal.style.display = 'flex';
+      }
+
+      function closeModal() {
+        modal.style.display = 'none';
+      }
+
+      function saveVacancy() {
+        const id = document.getElementById('editVacancyId').value;
+        const data = {
+          title: document.getElementById('editTitle').value.trim(),
+          duration: document.getElementById('editDuration').value.trim(),
+          activities: document.getElementById('editActivities').value.trim(),
+          requirements: document.getElementById('editRequirements').value.trim()
+        };
+        if (!id) return;
+        window.Empresa.updateVacancy(id, data);
+        renderVacancies();
+        closeModal();
+      }
+
+      function deleteVacancy(id) {
+        if (!confirm('¿Eliminar esta vacante?')) return;
+        window.Empresa.deleteVacancy(id);
+        renderVacancies();
+      }
+
+      function removeDraft(index) {
+        draftVacancies.splice(index, 1);
+        renderDrafts();
+      }
+
+      window.removeDraft = removeDraft;
+
+      inputs.forEach((input) => {
+        input.addEventListener("input", updateProgress);
+      });
+
+      actividades.addEventListener("input", () => {
+        contador.textContent = actividades.value.length + " / 320 caracteres";
+      });
+
+      btnAgregarVacante.addEventListener('click', addDraftVacancy);
+      document.getElementById('vacanteForm').addEventListener('submit', handleSubmit);
+      document.getElementById('btnCancelVacancy').addEventListener('click', closeModal);
+      document.getElementById('btnSaveVacancy').addEventListener('click', saveVacancy);
+
+      renderVacancies();
+      renderDrafts();
+      updateProgress();
+    </script>
+  </body>
+</html>

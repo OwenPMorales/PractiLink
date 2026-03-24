@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PractiLink - Documentacion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/practilink.css">
+  <link rel="stylesheet" href="tutor.css">
+
+</head>
+<body class="tutor-page">
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
+  <div id="layout-root"></div>
+
+  <main class="main-content" id="main-content" tabindex="-1">
+    <div class="section-header">
+      <h2>Documentacion - Tesina</h2>
+    </div>
+    <p class="docs-intro">Revision y seguimiento del avance de la tesina de cada alumno del grupo. Desde aqui puedes abrir los documentos, revisar su historial, agregar comentarios y aprobar o rechazar versiones.</p>
+
+    <div class="docs-table-container table-container">
+      <table class="docs-table">
+        <thead>
+          <tr>
+            <th>Alumno</th>
+            <th>Documento</th>
+            <th>Fecha y hora</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="docs-student-name">Andrea Gomez Rios</div><div class="docs-student-id">Matricula: 0322103801</div></td>
+            <td>Tesina - Capitulo 2 v3.pdf</td>
+            <td>20 feb 2026 · 11:15 h</td>
+            <td><span class="badge badge-pendiente">Sin revisión</span></td>
+            <td>
+              <div class="doc-actions">
+                <button type="button" class="btn btn-outline btn-doc-ver" data-alumno="Andrea Gomez Rios" data-doc="Tesina - Capitulo 2 v3.pdf">Ver</button>
+                <button type="button" class="btn btn-outline btn-doc-descargar">Descargar</button>
+                <button type="button" class="btn btn-secondary btn-doc-historial" data-alumno="Andrea Gomez Rios">Historial</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><div class="docs-student-name">Bruno Martinez Luna</div><div class="docs-student-id">Matricula: 0322103802</div></td>
+            <td>Tesina - Borrador inicial.docx</td>
+            <td>19 feb 2026 · 18:42 h</td>
+            <td><span class="badge badge-pendiente">Sin revisión</span></td>
+            <td>
+              <div class="doc-actions">
+                <button type="button" class="btn btn-outline btn-doc-ver" data-alumno="Bruno Martinez Luna" data-doc="Tesina - Borrador inicial.docx">Ver</button>
+                <button type="button" class="btn btn-outline btn-doc-descargar">Descargar</button>
+                <button type="button" class="btn btn-secondary btn-doc-historial" data-alumno="Bruno Martinez Luna">Historial</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><div class="docs-student-name">Fernando Torres Mejia</div><div class="docs-student-id">Matricula: 0322103803</div></td>
+            <td>Tesina - Version final.pdf</td>
+            <td>18 feb 2026 · 09:30 h</td>
+            <td><span class="badge badge-pendiente">Sin revisión</span></td>
+            <td>
+              <div class="doc-actions">
+                <button type="button" class="btn btn-outline btn-doc-ver" data-alumno="Fernando Torres Mejia" data-doc="Tesina - Version final.pdf">Ver</button>
+                <button type="button" class="btn btn-outline btn-doc-descargar">Descargar</button>
+                <button type="button" class="btn btn-secondary btn-doc-historial" data-alumno="Fernando Torres Mejia">Historial</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><div class="docs-student-name">Diego Hernandez Vega</div><div class="docs-student-id">Matricula: 0322103804</div></td>
+            <td>Tesina - Capitulo 1 revisado.pdf</td>
+            <td>17 feb 2026 · 16:05 h</td>
+            <td><span class="badge badge-pendiente">Sin revisión</span></td>
+            <td>
+              <div class="doc-actions">
+                <button type="button" class="btn btn-outline btn-doc-ver" data-alumno="Diego Hernandez Vega" data-doc="Tesina - Capitulo 1 revisado.pdf">Ver</button>
+                <button type="button" class="btn btn-outline btn-doc-descargar">Descargar</button>
+                <button type="button" class="btn btn-secondary btn-doc-historial" data-alumno="Diego Hernandez Vega">Historial</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <section class="docs-review-statuses">
+      <div class="section-header">
+        <h3>Estados de revisión</h3>
+        <p>Abre el panel para ver documentos y comentarios por alumno.</p>
+      </div>
+
+      <div class="docs-status-grid">
+        <article class="card docs-status-card docs-status-card--revisados">
+          <h4>Revisados</h4>
+          <p class="text-muted" id="count-revisados">0 documentos</p>
+          <button class="btn btn-primary btn-open-status" data-status="revisados">Ver</button>
+        </article>
+
+        <article class="card docs-status-card docs-status-card--rechazados">
+          <h4>Rechazados</h4>
+          <p class="text-muted" id="count-rechazados">0 documentos</p>
+          <button class="btn btn-primary btn-open-status" data-status="rechazados">Ver</button>
+        </article>
+
+        <article class="card docs-status-card docs-status-card--aceptados">
+          <h4>Aceptados</h4>
+          <p class="text-muted" id="count-aceptados">0 documentos</p>
+          <button class="btn btn-primary btn-open-status" data-status="aceptados">Ver</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- Modal de estado por categoría -->
+    <div class="modal-overlay" id="modalStatusDocs" aria-hidden="true">
+      <div class="modal-box modal-box--wide" role="dialog" aria-modal="true">
+        <div class="modal-header" id="modalStatusTitulo">Estado de documentos</div>
+        <div class="modal-body docs-status-modal-body">
+          <div class="docs-status-modal-col">
+            <h4 id="statusCategory">--</h4>
+            <ul class="status-document-list" id="statusDocumentList"></ul>
+          </div>
+          <div class="docs-status-modal-col docs-status-modal-comments">
+            <h4>Comentarios</h4>
+            <div id="statusCommentsPanel" class="docs-status-comments-panel"></div>
+          </div>
+        </div>
+        <div class="doc-modal-actions docs-modal-actions-spaced">
+          <button type="button" class="btn btn-outline" id="btnCerrarStatus">Cerrar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card docs-summary-card">
+      <div class="info-card-header docs-summary-header">
+        <div>
+          <h3>Resumen rapido</h3>
+          <p>Estado general de los documentos del grupo</p>
+        </div>
+      </div>
+      <ul class="docs-summary-list">
+        <li><strong>4</strong> ultimos documentos cargados</li>
+        <li><strong>1</strong> sin revisar</li>
+        <li><strong>2</strong> en revision / con observaciones</li>
+        <li><strong>1</strong> version final validada</li>
+      </ul>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="modalDocumento" aria-hidden="true">
+    <div class="modal-box modal-box--wide" role="dialog" aria-modal="true">
+      <div class="modal-header" id="modalDocumentoTitulo">Documento del alumno</div>
+      <div class="modal-body">
+        <div class="doc-modal-layout">
+          <div class="doc-preview">
+            <p class="doc-preview-meta" id="docPreviewMeta">Selecciona un documento de la lista para ver mas detalles.</p>
+            <div class="doc-preview-box">
+              <p><strong>Vista previa del documento</strong></p>
+              <p class="doc-preview-help">PDF o archivo subido por el alumno.</p>
+            </div>
+            <div class="doc-preview-actions">
+              <button type="button" class="btn btn-primary" id="btnAbrirLector">Ver documento completo</button>
+              <button type="button" class="btn btn-outline" id="btnDescargarDesdeModal">Descargar documento</button>
+            </div>
+          </div>
+          <div class="doc-side-panel">
+            <h4>Comentarios del tutor</h4>
+            <div class="doc-comments-list" id="docCommentsList">
+              <p class="doc-comment-empty">Sin comentarios por el momento. Agrega tus observaciones para el alumno.</p>
+            </div>
+            <div class="form-group">
+              <label for="docComentario">Agregar comentario</label>
+              <textarea id="docComentario" placeholder="Escribe un comentario sobre esta version del documento..." aria-label="Comentario del tutor"></textarea>
+            </div>
+            <div class="doc-comment-actions">
+              <button type="button" class="btn btn-secondary" id="btnAgregarComentario">Agregar comentario</button>
+            </div>
+            <div class="doc-modal-actions">
+              <button type="button" class="btn btn-outline" id="btnCerrarDoc">Cerrar</button>
+              <button type="button" class="btn btn-danger" id="btnRechazarDoc">Rechazar version</button>
+              <button type="button" class="btn btn-primary" id="btnAprobarDoc">Aprobar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Lector de Documento -->
+  <div class="modal-overlay" id="modalLectorDocumento" aria-hidden="true">
+    <div class="modal-box modal-box--full docs-viewer-modal" role="dialog" aria-modal="true">
+      <div class="modal-header docs-viewer-header">
+        <h3 id="lectorDocumentoTitulo">Lector de Documento</h3>
+        <button type="button" class="btn btn-outline btn-sm" id="btnCerrarLector" aria-label="Cerrar lector">×</button>
+      </div>
+      <div class="modal-body docs-viewer-body">
+        <div class="lector-documento">
+          <div class="lector-header">
+            <h1>TESINA PROFESIONAL</h1>
+            <h2>Desarrollo de Software Multiplataforma</h2>
+            <p class="lector-meta">Presentado por: [Nombre del Alumno]</p>
+            <p class="lector-meta">Matrícula: [Número de Matrícula]</p>
+            <p class="lector-meta">Tutor: MCA. Laura Trejo Medina</p>
+            <p class="lector-meta">Fecha: [Fecha de entrega]</p>
+          </div>
+
+          <div class="lector-content">
+            <h3 class="lector-section-title">ÍNDICE</h3>
+            <ol class="lector-spaced-list">
+              <li>Introducción</li>
+              <li>Marco Teórico</li>
+              <li>Metodología</li>
+              <li>Desarrollo</li>
+              <li>Resultados</li>
+              <li>Conclusiones</li>
+              <li>Bibliografía</li>
+            </ol>
+
+            <h3 class="lector-section-title">1. INTRODUCCIÓN</h3>
+            <p>La tesina profesional representa un trabajo de investigación y desarrollo que permite al estudiante demostrar las competencias adquiridas durante su formación académica. Este documento presenta el desarrollo de una aplicación multiplataforma utilizando tecnologías modernas de desarrollo de software.</p>
+
+            <p>El objetivo principal de este proyecto es crear una solución tecnológica que resuelva una problemática real en el ámbito educativo, específicamente en la gestión de prácticas profesionales de estudiantes de ingeniería.</p>
+
+            <h3 class="lector-section-title">2. MARCO TEÓRICO</h3>
+            <p>El marco teórico se fundamenta en los principios de desarrollo de software moderno, incluyendo:</p>
+            <ul>
+              <li>Arquitecturas de software escalables</li>
+              <li>Desarrollo ágil y metodologías iterativas</li>
+              <li>Tecnologías web modernas (HTML5, CSS3, JavaScript)</li>
+              <li>Frameworks de desarrollo multiplataforma</li>
+            </ul>
+
+            <h3 class="lector-section-title">3. METODOLOGÍA</h3>
+            <p>La metodología utilizada sigue un enfoque de desarrollo ágil, dividido en las siguientes fases:</p>
+            <ol>
+              <li>Análisis de requisitos</li>
+              <li>Diseño de la arquitectura</li>
+              <li>Implementación del prototipo</li>
+              <li>Pruebas y validación</li>
+              <li>Despliegue y documentación</li>
+            </ol>
+
+            <h3 class="lector-section-title">4. DESARROLLO</h3>
+            <p>El desarrollo se realizó utilizando las siguientes tecnologías:</p>
+            <ul>
+              <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript vanilla</li>
+              <li><strong>Backend:</strong> Node.js con Express</li>
+              <li><strong>Base de datos:</strong> MongoDB</li>
+              <li><strong>Control de versiones:</strong> Git</li>
+            </ul>
+
+            <h3 class="lector-section-title">5. RESULTADOS</h3>
+            <p>Los resultados obtenidos demuestran el cumplimiento de los objetivos planteados:</p>
+            <ul>
+              <li>Interfaz de usuario intuitiva y responsive</li>
+              <li>Funcionalidades completas de gestión</li>
+              <li>Integración exitosa con base de datos</li>
+              <li>Documentación técnica completa</li>
+            </ul>
+
+            <h3 class="lector-section-title">6. CONCLUSIONES</h3>
+            <p>El proyecto desarrollado cumple con los estándares de calidad requeridos para una tesina profesional. La aplicación resultante proporciona una solución efectiva para la gestión de prácticas profesionales, facilitando el proceso administrativo y mejorando la experiencia tanto para estudiantes como para tutores.</p>
+
+            <h3 class="lector-section-title">7. BIBLIOGRAFÍA</h3>
+            <ol>
+              <li>Pressman, R. S. (2014). Ingeniería del Software. Un enfoque práctico.</li>
+              <li>Sommerville, I. (2011). Ingeniería del Software.</li>
+              <li>Fowler, M. (2003). UML Distilled.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modalHistorialDocs" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true">
+      <div class="modal-header" id="modalHistorialTitulo">Historial de documentos</div>
+      <div class="modal-body">
+        <p class="docs-history-intro" id="historialAlumnoNombre">Alumno: Selecciona un alumno para ver su historial.</p>
+        <ul class="docs-history-list">
+          <li class="docs-history-item">
+            <div class="docs-history-main">
+              <span class="docs-history-title">Tesina - Version final.pdf</span>
+              <span class="docs-history-meta">18 feb 2026 · 09:30 h · Estado: Validada</span>
+            </div>
+            <div class="docs-history-actions">
+              <button type="button" class="btn btn-outline btn-doc-ver">Ver</button>
+              <button type="button" class="btn btn-outline btn-doc-descargar">Descargar</button>
+            </div>
+          </li>
+          <li class="docs-history-item">
+            <div class="docs-history-main">
+              <span class="docs-history-title">Tesina - Version 2.pdf</span>
+              <span class="docs-history-meta">10 feb 2026 · 15:05 h · Estado: Con observaciones</span>
+            </div>
+            <div class="docs-history-actions">
+              <button type="button" class="btn btn-outline btn-doc-ver">Ver</button>
+              <button type="button" class="btn btn-outline btn-doc-descargar">Descargar</button>
+            </div>
+          </li>
+          <li class="docs-history-item">
+            <div class="docs-history-main">
+              <span class="docs-history-title">Tesina - Borrador inicial.docx</span>
+              <span class="docs-history-meta">02 feb 2026 · 19:22 h · Estado: Recibido</span>
+            </div>
+            <div class="docs-history-actions">
+              <button type="button" class="btn btn-outline btn-doc-ver">Ver</button>
+              <button type="button" class="btn btn-outline btn-doc-descargar">Descargar</button>
+            </div>
+          </li>
+        </ul>
+        <div class="doc-modal-actions docs-modal-actions-spaced">
+          <button type="button" class="btn btn-outline" id="btnCerrarHistorial">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="fab-accessibility" id="fabAccessibility" aria-label="Activar modo de alta visibilidad"><span id="fabLabel">Alta Visibilidad</span></button>
+
+  <script src="js/auth.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/mockup-tutor.js"></script>
+  <script src="js/documentos.js"></script>
+</body>
+</html>

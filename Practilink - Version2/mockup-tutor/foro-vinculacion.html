@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PractiLink - Foro Vinculación</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/practilink.css">
+  <link rel="stylesheet" href="tutor.css">
+</head>
+<body class="tutor-page">
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
+  <div id="layout-root"></div>
+
+  <main class="main-content" id="main-content" tabindex="-1">
+    <div class="foro-section-header">
+      <h2>Foro - Anuncios para Vinculación</h2>
+      <button type="button" class="btn btn-primary" id="btnNuevoAnuncio" aria-label="Publicar nuevo anuncio">Nuevo anuncio</button>
+    </div>
+    <p class="foro-intro">Publica comunicados y anuncios para el departamento de vinculación sobre vacantes, procesos de selección y coordinación de estancias profesionales.</p>
+
+    <div class="anuncios-carousel">
+      <div class="carousel-container">
+        <div class="carousel-track" id="carouselTrack"></div>
+        <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Anuncio anterior">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Anuncio siguiente">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M9 18L15 12L9 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="carousel-indicators" id="carouselIndicators"></div>
+    </div>
+
+    <div class="ver-todos-container">
+      <button class="btn btn-outline" id="btnVerTodos">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 6H20M4 12H20M4 18H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Ver todos los anuncios
+      </button>
+    </div>
+
+    <div class="foro-list-container" id="foroListContainer" hidden>
+      <div class="foro-list-header">
+        <h3>Todos los anuncios</h3>
+        <div class="foro-filters">
+          <button class="filter-btn active" data-filter="recientes">Más recientes</button>
+          <button class="filter-btn" data-filter="antiguos">Más antiguos</button>
+        </div>
+      </div>
+      <div class="foro-list" id="foroList">
+        <article class="foro-card">
+          <h3 class="foro-card-title">Nueva vacante en Tech Solutions</h3>
+          <p class="foro-card-meta">Publicado el 18 feb 2026 · MCA. Laura Trejo Medina</p>
+          <p class="foro-card-content">Se ha abierto una nueva vacante para desarrollador full-stack en Tech Solutions. Los alumnos interesados deben tener conocimientos en React y Node.js. Fecha límite de postulación: 25 de febrero.</p>
+          <div class="foro-card-actions">
+            <button type="button" class="btn btn-outline btn-eliminar-anuncio">Eliminar</button>
+          </div>
+        </article>
+        <article class="foro-card">
+          <h3 class="foro-card-title">Proceso de selección - Empresa XYZ</h3>
+          <p class="foro-card-meta">Publicado el 12 feb 2026 · MCA. Laura Trejo Medina</p>
+          <p class="foro-card-content">El proceso de selección para la empresa XYZ ha iniciado. Se requieren 3 alumnos para el área de desarrollo de software. Las entrevistas se realizarán la próxima semana.</p>
+          <div class="foro-card-actions">
+            <button type="button" class="btn btn-outline btn-eliminar-anuncio">Eliminar</button>
+          </div>
+        </article>
+        <article class="foro-card">
+          <h3 class="foro-card-title">Coordinación de estancias 2026</h3>
+          <p class="foro-card-meta">Publicado el 8 feb 2026 · MCA. Laura Trejo Medina</p>
+          <p class="foro-card-content">Recordatorio: La coordinación de estancias profesionales para el ciclo 2026 debe completarse antes del 15 de marzo. Favor de actualizar el estado de los alumnos asignados.</p>
+          <div class="foro-card-actions">
+            <button type="button" class="btn btn-outline btn-eliminar-anuncio">Eliminar</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="modalAnuncio" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true">
+      <div class="modal-header" id="modalAnuncioTitulo">Nuevo comunicado para vinculación</div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="anuncioTitulo">Título del anuncio <span class="label-required">*Requerido*</span></label>
+          <input type="text" id="anuncioTitulo" placeholder="Ej: Nueva vacante publicada" aria-label="Título del anuncio">
+        </div>
+        <div class="form-group">
+          <label for="anuncioContenido">Contenido del anuncio <span class="label-required">*Requerido*</span></label>
+          <textarea id="anuncioContenido" rows="6" placeholder="Escribe el contenido del anuncio para vinculación..." aria-label="Contenido del anuncio"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" id="btnCancelarAnuncio">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="btnPublicarAnuncio">Publicar anuncio</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="fab-accessibility" id="fabAccessibility" aria-label="Activar modo de alta visibilidad"><span id="fabLabel">Alta Visibilidad</span></button>
+  <script src="js/layout.js"></script>
+  <script src="js/mockup-tutor.js"></script>
+  <script src="js/foro.js"></script>
+</body>
+</html>
