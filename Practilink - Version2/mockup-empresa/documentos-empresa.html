@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Comunicación | Portal Empresa</title>
+    <title>Documentos | Portal Estadías</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@500;600&display=swap"
@@ -25,6 +25,7 @@
         </div>
         <div class="brand-title">Portal Empresa</div>
       </div>
+
       <nav>
         <a href="registro-empresa.html">
           <svg
@@ -107,7 +108,7 @@
           </svg>
           Seguimiento
         </a>
-        <a class="active" href="comunicacion.html">
+        <a href="comunicacion.html">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -121,7 +122,7 @@
           </svg>
           Comunicación
         </a>
-        <a href="documentos-empresa.html">
+        <a href="documentos-empresa.html" class="active">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -139,61 +140,66 @@
     </aside>
 
     <main class="main" id="contenidoPrincipal" tabindex="-1">
-      <h1>Comunicación con la Universidad</h1>
-      <p class="subtitle">
-        Envía mensajes al área de vinculación, tutores o alumnos asignados.
-      </p>
+      <div class="banner">
+        <div class="logo">ST</div>
+      </div>
 
-      <div class="progress-container">
-        <div class="progress" id="progressBar"></div>
+      <div class="profile-header">
+        <h1>Documentos</h1>
+        <p>
+          Visualiza y descarga documentos PDF relacionados con postulaciones y
+          estadías.
+        </p>
       </div>
 
       <div class="grid">
         <div class="card">
-          <form id="mensajeForm">
-            <label>Destinatario</label>
-            <select id="destino" required>
-              <option value="">Selecciona destinatario</option>
-              <option>Área de Vinculación</option>
-              <option>Tutor Académico</option>
-              <option>Alumno asignado</option>
-            </select>
-
-            <label>Asunto</label>
-            <input id="asunto" required />
-            <div class="error" id="errorAsunto">El asunto es obligatorio.</div>
-
-            <label>Mensaje</label>
-            <textarea id="mensaje" maxlength="500" required></textarea>
-            <small id="contador">0 / 500 caracteres</small>
-
-            <div class="buttons">
-              <button type="submit" class="btn-success">Enviar</button>
-              <button type="button" class="btn-secondary">
-                Guardar borrador
-              </button>
+          <h3 class="section-title">Documentos de Alumnos</h3>
+          <div class="document-item">
+            <div>
+              <h4>Curriculum Vitae - Juan Pérez</h4>
+              <p>Archivo PDF - 2.5 MB</p>
             </div>
-          </form>
-
-          <div class="help-box">
-            <strong>Recomendaciones:</strong><br />
-            - Usa un asunto claro y específico.<br />
-            - Explica el contexto del alumno o situación.<br />
-            - Mantén un tono formal y profesional.
+            <button class="btn-primary">Descargar</button>
+          </div>
+          <div class="document-item">
+            <div>
+              <h4>Carta de Recomendación - Juan Pérez</h4>
+              <p>Archivo PDF - 1.2 MB</p>
+            </div>
+            <button class="btn-primary">Descargar</button>
+          </div>
+          <div class="document-item">
+            <div>
+              <h4>Certificado de Inglés - Juan Pérez</h4>
+              <p>Archivo PDF - 0.8 MB</p>
+            </div>
+            <button class="btn-primary">Descargar</button>
           </div>
         </div>
 
         <div class="card">
-          <h3>Mensajes Recientes</h3>
-
-          <div class="message">
-            <strong>Solicitud de evaluación intermedia</strong><br />
-            <span class="tag tag-success">Enviado</span> · Hace 2 días
+          <h3 class="section-title">Documentos de Estadía</h3>
+          <div class="document-item">
+            <div>
+              <h4>Contrato de Estadía - Proyecto Frontend</h4>
+              <p>Archivo PDF - 3.1 MB</p>
+            </div>
+            <button class="btn-primary">Descargar</button>
           </div>
-
-          <div class="message">
-            <strong>Reporte de desempeño</strong><br />
-            <span class="tag tag-muted">En revisión</span> · Hace 5 días
+          <div class="document-item">
+            <div>
+              <h4>Reporte de Avance - Mes 1</h4>
+              <p>Archivo PDF - 1.5 MB</p>
+            </div>
+            <button class="btn-primary">Descargar</button>
+          </div>
+          <div class="document-item">
+            <div>
+              <h4>Evaluación Final</h4>
+              <p>Archivo PDF - 2.0 MB</p>
+            </div>
+            <button class="btn-primary">Descargar</button>
           </div>
         </div>
       </div>
@@ -207,49 +213,6 @@
       <span id="fabLabel">Alta Visibilidad</span>
     </button>
     <script src="../shared/practilink.js"></script>
-    <script>
-      const form = document.getElementById("mensajeForm");
-      const inputs = form.querySelectorAll("input, textarea, select");
-      const progressBar = document.getElementById("progressBar");
-      const contador = document.getElementById("contador");
-      const mensaje = document.getElementById("mensaje");
-
-      function updateProgress() {
-        let filled = 0;
-        inputs.forEach((input) => {
-          if (input.value.trim() !== "") filled++;
-        });
-        let percent = (filled / inputs.length) * 100;
-        progressBar.style.width = percent + "%";
-      }
-
-      inputs.forEach((input) => {
-        input.addEventListener("input", updateProgress);
-      });
-
-      mensaje.addEventListener("input", () => {
-        contador.textContent = mensaje.value.length + " / 500 caracteres";
-      });
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        let valid = true;
-
-        const asunto = document.getElementById("asunto");
-        if (asunto.value.trim() === "") {
-          document.getElementById("errorAsunto").style.display = "block";
-          valid = false;
-        } else {
-          document.getElementById("errorAsunto").style.display = "none";
-        }
-
-        if (valid) {
-          alert("Mensaje enviado correctamente ✔");
-          form.reset();
-          progressBar.style.width = "0%";
-          contador.textContent = "0 / 500 caracteres";
-        }
-      });
-    </script>
+    <script src="js/empresa.js"></script>
   </body>
 </html>

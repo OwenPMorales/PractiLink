@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Comunicación | Portal Empresa</title>
+    <title>Gestión de Vacantes | Portal Estadías</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@500;600&display=swap"
@@ -25,6 +25,7 @@
         </div>
         <div class="brand-title">Portal Empresa</div>
       </div>
+
       <nav>
         <a href="registro-empresa.html">
           <svg
@@ -65,7 +66,7 @@
           </svg>
           Vacantes
         </a>
-        <a href="gestion-vacantes.html">
+        <a href="gestion-vacantes.html" class="active">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -107,7 +108,7 @@
           </svg>
           Seguimiento
         </a>
-        <a class="active" href="comunicacion.html">
+        <a href="comunicacion.html">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -139,61 +140,53 @@
     </aside>
 
     <main class="main" id="contenidoPrincipal" tabindex="-1">
-      <h1>Comunicación con la Universidad</h1>
-      <p class="subtitle">
-        Envía mensajes al área de vinculación, tutores o alumnos asignados.
-      </p>
+      <div class="banner">
+        <div class="logo">ST</div>
+      </div>
 
-      <div class="progress-container">
-        <div class="progress" id="progressBar"></div>
+      <div class="profile-header">
+        <h1>Gestión de Vacantes</h1>
+        <p>
+          Administra tus vacantes publicadas: edita detalles o elimina las que
+          ya no necesites.
+        </p>
       </div>
 
       <div class="grid">
         <div class="card">
-          <form id="mensajeForm">
-            <label>Destinatario</label>
-            <select id="destino" required>
-              <option value="">Selecciona destinatario</option>
-              <option>Área de Vinculación</option>
-              <option>Tutor Académico</option>
-              <option>Alumno asignado</option>
-            </select>
-
-            <label>Asunto</label>
-            <input id="asunto" required />
-            <div class="error" id="errorAsunto">El asunto es obligatorio.</div>
-
-            <label>Mensaje</label>
-            <textarea id="mensaje" maxlength="500" required></textarea>
-            <small id="contador">0 / 500 caracteres</small>
-
-            <div class="buttons">
-              <button type="submit" class="btn-success">Enviar</button>
-              <button type="button" class="btn-secondary">
-                Guardar borrador
-              </button>
+          <h3 class="section-title">Vacantes Publicadas</h3>
+          <div class="vacante-item">
+            <div>
+              <h4>Desarrollador Frontend</h4>
+              <p>Carrera: Ingeniería en Sistemas Computacionales</p>
+              <span class="status-success">Activa</span>
             </div>
-          </form>
-
-          <div class="help-box">
-            <strong>Recomendaciones:</strong><br />
-            - Usa un asunto claro y específico.<br />
-            - Explica el contexto del alumno o situación.<br />
-            - Mantén un tono formal y profesional.
+            <div class="buttons">
+              <button class="btn-secondary">Editar</button>
+              <button class="btn-danger">Eliminar</button>
+            </div>
           </div>
-        </div>
-
-        <div class="card">
-          <h3>Mensajes Recientes</h3>
-
-          <div class="message">
-            <strong>Solicitud de evaluación intermedia</strong><br />
-            <span class="tag tag-success">Enviado</span> · Hace 2 días
+          <div class="vacante-item">
+            <div>
+              <h4>Backend Jr</h4>
+              <p>Carrera: Ingeniería en Sistemas Computacionales</p>
+              <span class="status-warning">En revisión</span>
+            </div>
+            <div class="buttons">
+              <button class="btn-secondary">Editar</button>
+              <button class="btn-danger">Eliminar</button>
+            </div>
           </div>
-
-          <div class="message">
-            <strong>Reporte de desempeño</strong><br />
-            <span class="tag tag-muted">En revisión</span> · Hace 5 días
+          <div class="vacante-item">
+            <div>
+              <h4>Analista de Datos</h4>
+              <p>Carrera: Ingeniería en Sistemas Computacionales</p>
+              <span class="status-success">Activa</span>
+            </div>
+            <div class="buttons">
+              <button class="btn-secondary">Editar</button>
+              <button class="btn-danger">Eliminar</button>
+            </div>
           </div>
         </div>
       </div>
@@ -207,49 +200,6 @@
       <span id="fabLabel">Alta Visibilidad</span>
     </button>
     <script src="../shared/practilink.js"></script>
-    <script>
-      const form = document.getElementById("mensajeForm");
-      const inputs = form.querySelectorAll("input, textarea, select");
-      const progressBar = document.getElementById("progressBar");
-      const contador = document.getElementById("contador");
-      const mensaje = document.getElementById("mensaje");
-
-      function updateProgress() {
-        let filled = 0;
-        inputs.forEach((input) => {
-          if (input.value.trim() !== "") filled++;
-        });
-        let percent = (filled / inputs.length) * 100;
-        progressBar.style.width = percent + "%";
-      }
-
-      inputs.forEach((input) => {
-        input.addEventListener("input", updateProgress);
-      });
-
-      mensaje.addEventListener("input", () => {
-        contador.textContent = mensaje.value.length + " / 500 caracteres";
-      });
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        let valid = true;
-
-        const asunto = document.getElementById("asunto");
-        if (asunto.value.trim() === "") {
-          document.getElementById("errorAsunto").style.display = "block";
-          valid = false;
-        } else {
-          document.getElementById("errorAsunto").style.display = "none";
-        }
-
-        if (valid) {
-          alert("Mensaje enviado correctamente ✔");
-          form.reset();
-          progressBar.style.width = "0%";
-          contador.textContent = "0 / 500 caracteres";
-        }
-      });
-    </script>
+    <script src="js/empresa.js"></script>
   </body>
 </html>
